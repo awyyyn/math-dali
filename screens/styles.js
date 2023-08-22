@@ -53,10 +53,35 @@ export default StyleSheet.create({
         paddingBottom: 30,
         paddingHorizontal: 30
     },
+    error: { 
+        position: 'absolute',
+        top: Dimensions.get('window').height = 30,
+        zIndex: 999,
+        right: Dimensions.get('window').width = 30,
+        backgroundColor: '#FF0099',
+        marginTop: 15,
+        padding: 10,
+        borderRadius: 8,
+        paddingHorizontal: 20,
+        opacity: 0.3, 
+    },
+    errorText: { 
+        position: 'absolute',
+        top: Dimensions.get('window').height = 30,
+        zIndex: 999,
+        right: Dimensions.get('window').width = 30,
+        backgroundColor: '#5cb85c',
+        marginTop: 15,
+        padding: 10,
+        borderRadius: 8,
+        paddingHorizontal: 20,
+        opacity: 0.3, 
+    },
     success: {
-        // position: 'absolute',
-        // top: Dimensions.get('window').height = 30,
-        // right: Dimensions.get('window').width = 30,
+        position: 'absolute',
+        top: Dimensions.get('window').height = 30,
+        zIndex: 999,
+        right: Dimensions.get('window').width = 30,
         backgroundColor: '#5cb85c',
         marginTop: 10,
         padding: 10,
@@ -67,5 +92,19 @@ export default StyleSheet.create({
     successText: {
         color: 'white',
         fontSize: Dimensions.get('window').fontScale = 14
+    },
+    option: {
+        // backgroundColor: 'red',
+        width: '80%',
+        marginVertical: 20,
+        display: 'flex',
+        flexDirection: 'row',  
+        paddingVertical: 5
+    },
+    optionText: {
+        fontSize: Dimensions.get('window').fontScale = 18
+    },
+    optionTitle: {
+        fontSize: Dimensions.get('window').fontScale = 24
     }
 })

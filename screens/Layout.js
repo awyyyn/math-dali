@@ -5,6 +5,7 @@ import styles from './styles'
 import { useFonts } from 'expo-font' 
 import * as SplashScreen from 'expo-splash-screen'
 import { ScrollView } from 'react-native-gesture-handler'
+import ExpoStatusBar from 'expo-status-bar/build/ExpoStatusBar'
 
 
 SplashScreen.preventAutoHideAsync();
@@ -28,6 +29,7 @@ export default function Layout({children, addStyle}) {
         
     return (
         <SafeAreaView>
+            <ExpoStatusBar style='auto' />
             <ScrollView contentContainerStyle={[styles.windowContainer, addStyle]} onLayout={onLayoutRootView}> 
                 {children}  
             </ScrollView>

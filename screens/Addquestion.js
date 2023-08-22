@@ -32,7 +32,7 @@ export default function Addquestion({navigation}) {
         choice1: '',
         choice2: '',
         choice3: '',
-        choice4: '',
+        level: '',
         solution: '',
         answer: '',
     }
@@ -54,62 +54,159 @@ export default function Addquestion({navigation}) {
         setAnswer(false);
     } 
 
+    async function insertData(id) {
+        const { data: questionData } = await supabase.from('questions')
+            .insert({
+                question: formData.question,
+                answer: formData.answer,
+                solution: formData.solution,
+                category: id   
+            }).select().single()
 
-    // console.log(session.session.user.email)
-    // console.log(session.session.user)
+        console.log("QUESTIONS", questionData)
+
+        const {data, error} = await supabase.from('options')
+            .insert([
+                {option: formData.choice1, q_id: questionData?.id},
+                {option: formData.choice2, q_id: questionData?.id},
+                {option: formData.choice3, q_id: questionData?.id},
+            ]).select()
+        if(error) console.log(error)
+        console.log(data)
+    }
 
     const handleSubmit = async() => { 
         setAdding(true);
 
-        const { data } = await supabase
-            .from('questions_tbl')
-            .insert({
-                question: formData.question, 
-                level: formData.category, 
-                email: session.session?.user?.email, 
-                answer: formData.answer, 
-                solution: formData.solution })
-            .select().single()   
-
-        // console.log(data.id)
-
-        await supabase.from('choices_tbl').insert([
-            {option_num: '1', option: formData.choice1, question_id: data.id},
-            {option_num: '2', option: formData.choice2, question_id: data.id},
-            {option_num: '3', option: formData.choice3, question_id: data.id},
-            {option_num: '4', option: formData.choice4, question_id: data.id},
-        ]) 
-        setFormData({
-            answer: '',
-            category: "",
-            choice1: "",
-            choice2: "",
-            choice3: "",
-            choice4: "",
-            question: "",
-            solution: ''
-        })
+        const { data: categoryData } = await supabase
+            .from('category')
+            .select('*, questions(*)')
+            .match({category: `${formData.category}`, level: `${formData.level}`}).single();
 
         setAdding(false);
-        right.value = withSpring(0)
-        opacity.value = withSpring(1) 
 
-        setTimeout(() => { 
-            right.value = withSpring(150)
-            opacity.value = withSpring(0) 
-        }, 3000);
+        // console.log(categoryData?.questions?.length)
+
+       
+
+        if(categoryData?.questions?.length == 5){
+            display2.value = withSpring('flex')
+            right2.value = withSpring(0)
+            opacity2.value = withSpring(1) 
+
+            setTimeout(() => { 
+                right2.value = withSpring(150)
+                opacity2.value = withSpring(0)
+                display2.value = withSpring('none')
+            }, 3000);
+            setAdding(false)
+            return
+        }
+
+        if(categoryData == null) { 
+            const { data } = await supabase.from('category')
+                .insert({
+                    level: formData.level,
+                    category: formData.category,
+                    email: session?.session?.user?.email
+                }).select().single();
+            insertData(data.id)
+            
+            setAdding(false);
+            display.value = withSpring('flex')
+            right.value = withSpring(0)
+            opacity.value = withSpring(1)
+            
+            setTimeout(() => { 
+                opacity.value = withSpring(0) 
+                right.value = withSpring(150)
+                display.value =  withSpring('none')
+            }, 3000);
+        }else{ 
+            insertData(categoryData?.id)
+            
+            setAdding(false);
+            display.value = withSpring('flex')
+            right.value = withSpring(0)
+            opacity.value = withSpring(1)
+            
+            setTimeout(() => { 
+                opacity.value = withSpring(0) 
+                right.value = withSpring(150)
+                display.value =  withSpring('none')
+            }, 3000);
+        }
+        
+
+        // if(count?.length == 5){
+        //     display2.value = withSpring('flex')
+        //     right2.value = withSpring(0)
+        //     opacity2.value = withSpring(1) 
+
+        //     setTimeout(() => { 
+        //         right2.value = withSpring(150)
+        //         opacity2.value = withSpring(0)
+        //         display2.value = withSpring('none')
+        //     }, 3000);
+        //     setAdding(false)
+        //     return
+        // }
+
+
+        // const { data } = await supabase
+        //     .from('category')
+        //     .insert({
+        //         level: formData.level,
+        //         category: formData.category,
+        //         email: session?.session?.user?.email, 
+        //     })
+        //     .select().single()
+
+        // // console.log(data.id)
+
+        // await supabase.from('choices_tbl').insert([
+        //     {/* option_num: '1', */ option: formData.choice1, question_id: data.id},
+        //     {/* option_num: '2', */ option: formData.choice2, question_id: data.id},
+        //     {/* option_num: '3', */ option: formData.choice3, question_id: data.id}, 
+        // ]);
+
+
+        // setFormData({
+        //     answer: '',
+        //     category: "",
+        //     choice1: "",
+        //     choice2: "",
+        //     choice3: "",
+        //     level: "",
+        //     question: "",
+        //     solution: ''
+        // })
+
   
     }
 
 
     
     const right = useSharedValue(100);
+    const display = useSharedValue('none')
     const opacity = useSharedValue(iintialopacity)
+    const right2 = useSharedValue(100);
+    const display2 = useSharedValue('none')
+    const opacity2 = useSharedValue(iintialopacity)
 
     const animatedStyles = useAnimatedStyle(() => ({
         transform: [{ translateX: right.value }],
         opacity: opacity.value,
+        display: display.value
     }));
+
+    const animatedStyles2 = useAnimatedStyle(() => ({
+        transform: [{ translateX: right2.value }],
+        opacity: opacity2.value,
+        display: display2.value
+    }));
+
+ 
 
     return (
         <Layout> 
@@ -129,6 +226,13 @@ export default function Addquestion({navigation}) {
                         value={formData.question}
                         onChangeText={(text) => setFormData(p => ({...p, question: text}))}
                     />
+                    <Input
+                        label="Level" 
+                        value={formData.level}  
+                        disabled={adding}
+                        keyboardType='numeric'
+                        onChangeText={(text) => setFormData(p => ({...p, level: text}))}
+                    /> 
                     <Input
                         label="Option 1"
                         multiline
@@ -152,13 +256,6 @@ export default function Addquestion({navigation}) {
                         
                     />
                     <Input
-                        label="Option 4"
-                        multiline 
-                        value={formData.choice4}
-                        disabled={adding}
-                        onChangeText={(text) => setFormData(p => ({...p, choice4: text}))}
-                    /> 
-                    <Input
                         label="Answer"
                         value={formData.answer}
                         disabled={adding}
@@ -175,12 +272,15 @@ export default function Addquestion({navigation}) {
                         title='Add'
                         color='secondary' 
                         loading={adding}
-                        disabled={!formData.answer || !formData.category || !formData.choice1 || !formData.choice2 || !formData.choice3 || !formData.choice4 || !formData.question || !formData.solution ? true : false }
+                        disabled={!formData.answer || !formData.category || !formData.choice1 || !formData.choice2 || !formData.choice3 || !formData.level || !formData.question || !formData.solution ? true : false }
                         containerStyle={{marginTop: 5}}  
                         onPress={handleSubmit}
                     />
                     <Animated.View style={[styles.success, animatedStyles]}>
                         <Text style={styles.successText}>Question added!</Text>
+                    </Animated.View> 
+                    <Animated.View style={[styles.error, animatedStyles2]}>
+                        <Text style={styles.successText}>Level {formData.level} is added already. </Text>
                     </Animated.View> 
                 </View>
             </ScrollView>
@@ -193,10 +293,9 @@ export default function Addquestion({navigation}) {
             </Dialog>
             <Dialog isVisible={answer} onPressOut={() => setAnswer(false)} >
                 <Dialog.Title title='Select Answer' /> 
-                <DialogButton type='clear' size='lg' onPress={() => handleAnswer('Option 1')} title="Option 1" /> 
-                <DialogButton type='clear' size='lg' onPress={() => handleAnswer('Option 2')} title="Option 2" /> 
-                <DialogButton type='clear' size='lg' onPress={() => handleAnswer('Option 3')} title="Option 3" /> 
-                <DialogButton type='clear' size='lg' onPress={() => handleAnswer('Option 4')} title="Option 4" /> 
+                <DialogButton type='clear' size='lg' onPress={() => handleAnswer(formData.choice1)} title="Option 1" /> 
+                <DialogButton type='clear' size='lg' onPress={() => handleAnswer(formData.choice2)} title="Option 2" /> 
+                <DialogButton type='clear' size='lg' onPress={() => handleAnswer(formData.choice3)} title="Option 3" />  
             </Dialog>
         </Layout>
     )

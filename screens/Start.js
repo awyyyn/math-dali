@@ -14,10 +14,10 @@ export default function Start({navigation}) {
             </View>
 
             <ScrollView  style={{maxHeight: '60%', width: '100%'}} contentContainerStyle={{alignItems:'center'}}>
-                {['Beginner', 'intermediate', 'Expert'].map(item => (
+                {['Beginner', 'Intermediate', 'Expert'].map(item => (
                     <LevelButton 
                         key={item}
-                        handlePress={(item) => console.log(item) }
+                        handlePress={(item) => navigation.navigate(item) }
                         value={item}
                     />
                 ))}

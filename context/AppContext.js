@@ -9,7 +9,8 @@ export default function AppContext({children}) {
 
     const [sound, setSound] = useState()
     const [context, setContext] = useState();
-    const [session, setSession] = useState({session: null})
+    const [session, setSession] = useState({session: null});
+    const [mute, setMute] = useState(false);
 
     useEffect(() => { 
         async function getSession () {
@@ -29,10 +30,14 @@ export default function AppContext({children}) {
         console.log(value)
         const { sound } = await Audio.Sound.createAsync(require('../assets/sound/siniskwela.mp3')) 
         setSound(sound)
-        if(value){
-            await sound.pauseAsync()
+        await sound.playAsync()
+        if(value){ 
+            setMute(true)
+            await sound.setIsMutedAsync(true)
         }else{
-            await sound.playAsync()
+            setMute(false)
+            await sound.setIsMutedAsync(false)
+            await sound.setIsLoopingAsync()
         }
     }
   
@@ -55,7 +60,7 @@ export default function AppContext({children}) {
     console.log("SESSUIB IN ROOT", session)
 
     return (
-        <SettingsContext.Provider value={{playSound, session, logout, setSession}}>
+        <SettingsContext.Provider value={{playSound, session, logout, setSession, mute}}>
             {children}
         </SettingsContext.Provider>
     )

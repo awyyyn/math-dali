@@ -11,14 +11,12 @@ import { supabase } from '../lib/supabase'
 export default function Settings({navigation}) {
  
   
-
-    const [mute, setMute] = useState(false);
+ 
     const [pressed, setPressed] = useState(false);
 
-    const { playSound, session, logout } = useContext(SettingsContext) 
+    const { playSound, session, logout, mute } = useContext(SettingsContext) 
  
-    const handleMute = async() => {
-        setMute(prev => !prev); 
+    const handleMute = async() => { 
         playSound(!mute)
     } 
 
