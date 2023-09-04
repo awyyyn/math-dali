@@ -10,8 +10,7 @@ import { supabase } from '../lib/supabase'
 
 export default function Settings({navigation}) {
  
-  
- 
+   
     const [pressed, setPressed] = useState(false);
 
     const { playSound, session, logout, mute } = useContext(SettingsContext) 
@@ -32,8 +31,8 @@ export default function Settings({navigation}) {
                 <Button
                     type='solid'
                     containerStyle={{width: '100%'}} 
-                    title={session.session ? 'Add Question' : 'Sign in'}
-                    onPress={() => navigation.navigate(session.session ? 'Addquestion' : 'Sign in')}
+                    title={session.session ? 'Dashboard' : 'Sign in'}
+                    onPress={() => navigation.navigate(session.session ? 'Administrator' : 'Sign in')}
                 />
                 <Button
                     type='clear'
@@ -41,13 +40,12 @@ export default function Settings({navigation}) {
                     title={'Home'}
                     onPress={() => navigation.navigate('Home')}
                 />
-                  <Button
+                  {/* <Button
                     type='clear'
                     containerStyle={{width: '100%'}}  
                     title={'log'}
-                    onPress={() => logout()}
-                />
-
+                    onPress={() => w()}
+                />  */}
             </View>
         </Layout>
     )

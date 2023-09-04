@@ -95,7 +95,7 @@ export default function Signin({navigation}) {
                             setEmail('')
                             setPassword('')
                             setSession(data)
-                            navigation.navigate('Settings')
+                            navigation.navigate('Administrator')
                             setLoading(false)
                         }}
                     />

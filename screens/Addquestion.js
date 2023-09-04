@@ -86,9 +86,7 @@ export default function Addquestion({navigation}) {
         setAdding(false);
 
         // console.log(categoryData?.questions?.length)
-
-       
-
+ 
         if(categoryData?.questions?.length == 5){
             display2.value = withSpring('flex')
             right2.value = withSpring(0)
