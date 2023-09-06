@@ -4,7 +4,7 @@ export default StyleSheet.create({
     homeContainer: { 
         justifyContent: 'space-evenly', 
         alignItems: 'center',
-        backgroundColor: "#FCF7F8"
+        // backgroundColor: "#FCF7F8",
     },
     navContainer: {
         columnGap: 10,
@@ -106,5 +106,9 @@ export default StyleSheet.create({
     },
     optionTitle: {
         fontSize: Dimensions.get('window').fontScale = 24
+    },
+    bgImage: {
+        width: Dimensions.get('screen').width,
+        height: Dimensions.get('screen').height
     }
 })

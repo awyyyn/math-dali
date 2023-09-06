@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, ImageBackground } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import styles from './styles';
@@ -13,9 +13,9 @@ export default function Rules({navigation}) {
 
     return (
         <Layout>
-            <View style={[styles.windowContainer, styles.between, styles.paddingBottom]}>
+            <ImageBackground source={require('../assets/bg1.png')} imageStyle={{opacity: 0.3}} style={[styles.windowContainer, styles.between, styles.paddingBottom]}>
                 <View style={styles.rulesContainer}>
-                    <Text style={[styles.title, {}]}>
+                    <Text style={[styles.title, {color: '#335C67'}]}>
                         Rules & Mechanics
                     </Text>  
                     {!next ? (
@@ -29,15 +29,15 @@ export default function Rules({navigation}) {
                         </View>
                     ) : (
                         <Text style={[styles.rulesParagraph, { marginTop: 20}]}>
-                            2. Each level of the game has a time limit. In order to get bonus points and move on to the next level, the player must complete the solving task as quickly as possible within the allotted time. The player's completing time and the right answer are the two different ways to score. The difficulty level will determine the score based on how quickly a player can solve the puzzle. Each additional point that the player's correct answer differs from will be determined by the number of seconds it took to solve the problem.
+                            2. Each level of the game has a different time limit according to the level of difficulties. In order to earn points the player must complete solving the problem within the alloted time. The total score can be only be reveal after answering all the problems as well as the solution for every questions.
                         </Text> 
                     )}  
                 </View> 
                 <Button 
                     title={next ? "Home" : "Next"} 
                     color={next ? "" : ""}
-                    size='lg'
-                    type='clear'
+                    size='lg' 
+                    buttonStyle={{backgroundColor: '#335C67'}}
                     onPress={() => {
                         if(next){
                             navigation.navigate('Home');
@@ -46,7 +46,7 @@ export default function Rules({navigation}) {
                         }
                     }}
                 />
-            </View> 
+            </ImageBackground> 
         </Layout> 
     )
 }

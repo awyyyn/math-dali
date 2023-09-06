@@ -29,7 +29,7 @@ export default function Layout({children, addStyle}) {
         
     return (
         <SafeAreaView>
-            <ExpoStatusBar style='auto' />
+            <ExpoStatusBar style='light' backgroundColor='#335C67' />
             <ScrollView contentContainerStyle={[styles.windowContainer, addStyle]} onLayout={onLayoutRootView}> 
                 {children}  
             </ScrollView>

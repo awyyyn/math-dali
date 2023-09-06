@@ -129,7 +129,7 @@ export default function Level({route, navigation}) {
 
 
                 <ScrollView>
-                    {data.map((item, qI) => { 
+                    {data?.map((item, qI) => { 
                         const yourAnswer = Object.values(allAnswer)[qI] 
                         // if(yourAnswer === item.answer) setScore(s => s + 1)
                         return(

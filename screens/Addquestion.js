@@ -62,8 +62,7 @@ export default function Addquestion({navigation}) {
                 solution: formData.solution,
                 category: id   
             }).select().single()
-
-        console.log("QUESTIONS", questionData)
+ 
 
         const {data, error} = await supabase.from('options')
             .insert([
@@ -108,6 +107,7 @@ export default function Addquestion({navigation}) {
                     category: formData.category,
                     email: session?.session?.user?.email
                 }).select().single();
+                
             insertData(data.id)
             
             setAdding(false);

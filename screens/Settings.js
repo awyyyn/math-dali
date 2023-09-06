@@ -1,4 +1,4 @@
-import { View, Pressable, TouchableOpacity } from 'react-native'
+import { View, Pressable, TouchableOpacity, ImageBackground, Dimensions } from 'react-native'
 import { useContext, useEffect, useState } from 'react'
 import Layout from './Layout'
 import styles from './styles'
@@ -22,31 +22,30 @@ export default function Settings({navigation}) {
     const icon = mute ? 'volume-off' : 'volume-up'
 
     return (
-        <Layout addStyle={{justifyContent: 'space-around', alignItems: 'center'}}>
-            <Text h3 >Volume {mute ? 'Off' : 'On'}</Text>
-                {/* <TouchableHighlight onPressIn={() => setPressed(true)} onPressOut={() => setPressed(false)} style={{backgroundColor: 'transparent'}} containerStyle={{backgroundColor: 'transparent'}}>  */}
-                    <Icon name={icon} solid size={150} onPress={handleMute} color={mute ? '#ABA9C3' : '#275DAD'} raised  disabledStyle underlayColor="#FFFFFF01"  />
-                {/* </TouchableHighlight> */}
-            <View style={{width: '70%', rowGap: 10}}>
-                <Button
-                    type='solid'
-                    containerStyle={{width: '100%'}} 
-                    title={session.session ? 'Dashboard' : 'Sign in'}
-                    onPress={() => navigation.navigate(session.session ? 'Administrator' : 'Sign in')}
-                />
-                <Button
-                    type='clear'
-                    containerStyle={{width: '100%'}}  
-                    title={'Home'}
-                    onPress={() => navigation.navigate('Home')}
-                />
-                  {/* <Button
-                    type='clear'
-                    containerStyle={{width: '100%'}}  
-                    title={'log'}
-                    onPress={() => w()}
-                />  */}
-            </View>
+        <Layout >
+            <ImageBackground style={[{alignItems: 'center', justifyContent: 'space-around', height: Dimensions.get('screen').height}, styles.homeContainer]}  
+            imageStyle={{opacity: 0.3, objectFit: 'fill'}} source={require('../assets/bg1.png')} >
+                <Text h3 style={{color: '#004E64'}}>Volume {mute ? 'Off' : 'On'}</Text>
+                    {/* <TouchableHighlight onPressIn={() => setPressed(true)} onPressOut={() => setPressed(false)} style={{backgroundColor: 'transparent'}} containerStyle={{backgroundColor: 'transparent'}}>  */}
+                        <Icon    name={icon} solid size={150} onPress={handleMute} color={mute ? '#004E64' : '#25A18E'} raised  disabledStyle underlayColor="#FFFFFF01"   />
+                    {/* </TouchableHighlight> */}
+                <View style={{width: '70%', rowGap: 10}}>
+                    <Button
+                        type='solid'
+                        buttonStyle={{backgroundColor: "#25A18E"}}
+                        containerStyle={{width: '100%'}} 
+                        title={session.session ? 'Dashboard' : 'Sign in'}
+                        onPress={() => navigation.navigate(session.session ? 'Administrator' : 'Sign in')}
+                    />
+                    <Button
+                        type='clear'
+                        containerStyle={{width: '100%'}}  
+                        title={'Home'}
+                        titleStyle={{color: "#004E64"}}
+                        onPress={() => navigation.navigate('Home')}
+                    /> 
+                </View>
+            </ImageBackground>
         </Layout>
     )
 }

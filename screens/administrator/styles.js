@@ -22,5 +22,11 @@ export default StyleSheet.create({
     button: {
         minWidth: 80,
         marginLeft: 10
+    },
+    inputLabel: {
+        color: "#12312380",
+        fontWeight: '700',
+        fontSize: 16
+        
     }
 })

@@ -13,7 +13,7 @@ export default function SetButton({
 
     return (
         <Button
-            title={value}w
+            title={value}
             disabled={disabled}
             onPress={() => handleClick(setNumber, value)} 
         />

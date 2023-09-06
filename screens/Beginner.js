@@ -1,106 +1,106 @@
-import { View, Dimensions } from 'react-native'
+import { View, Dimensions, ImageBackground } from 'react-native'
 import { Button, Text } from '@rneui/themed'
 import Layout from './Layout'
 import { ScrollView } from 'react-native-gesture-handler'
 import { level1 } from './beginnersDefaultData' 
 import { useEffect, useState } from 'react'
-import { supabase } from '../lib/supabase'
-import IntermediateLevel from './IntermediateLevel'
+import { supabase } from '../lib/supabase' 
+import { numOfSets } from '../lib/helpers'
+import styles from './styles'
 
 export default function Beginner({navigation}) {
 
     const [levels, setLevels] = useState([level1]);
+    const [loading, setLoading] = useState(false)
+
  
 
-    useEffect(() => {
+    async function getData() {
+        const { data } = await supabase.from('category')
+            .select(`*, questions( *, options(*) )`).eq('category', "Beginner") 
 
-        async function getData() {
-            const { data } = await supabase.from('category')
-                .select(`*, questions(*, options(*)) `).eq('category', 'Beginner')
+        console.log(data); 
+ 
 
-             
-           const data2 = data?.filter(item => {
-                return item.questions.length == 5 && item.category == "Beginner" 
-           }).map((item, i) => {
-            return item.questions?.flatMap((item2) => { 
+        const newSet = data?.filter(a => {
+            return a?.questions.length >= 5
+        })?.map(i => {
+            return i.questions.filter(aa => aa.is_active == true)?.flatMap((k => {
                 return {
-                    id: item.id,
-                    level: item.level,
-                    question: item2.question,
-                    solution: item2.solution,
-                    answer: item2.answer,
-                    options: item2.options.filter(optionD => { 
+                    id: i.id,
+                    level: i.level,
+                    question: k.question,
+                    solution: k.solution,
+                    answer: k.answer,
+                    is_active: k.is_active,
+                    options: k.options.filter(optionD => { 
                         return {
                             option: optionD.option
                         } 
                     })
-                } 
-            })
-       })
+                }
+            }))
+        }) 
 
-           console.log("DADADA", data2)
-        //    console.log(levels.concat(data2))
-            setLevels(d => d.concat(data2))
+        console.log(newSet.map(a => a[0].level), "sad")
 
-        //    const data3 = data2?.map((item, i) => {
-        //         return item.questions?.flatMap((item2) => { 
-        //             return {
-        //                 id: item.id,
-        //                 level: item.level,
-        //                 question: item2.question,
-        //                 solution: item2.solution,
-        //                 answer: item2.answer,
-        //                 options: item2.options.filter(optionD => { 
-        //                     return {
-        //                         option: optionD.option
-        //                     } 
-        //                 })
-        //             } 
-        //         })
-        //    })
-            
-            // console.log(data3)
-            // console.log("LEVEL", levels)
-            // if(data3.length > 0){
-            //     setLevels(d => ([...d, data3 ]))
-            // }
+        setLevels(p => ([level1, ...newSet]))
+ 
 
-        }
+        // const resultData = setB.filter(item => item.is_active == true) 
+        
+        // setLevels(level => ([...level, resultData])) 
+    } 
+
+    useEffect(() => {
+
+        setLoading(true)
 
         getData()
 
+        setLoading(false)
+
+
     }, []);
+ 
  
   
     return (
-        <Layout >
+        <ImageBackground 
+            source={require('../assets/bg1.png')} 
+            style={[styles.bgImage]}
+            imageStyle={{opacity: 0.3, objectFit: 'fill'}} 
+        >
             {/* <ScrollView contentContainerStyle={{}}> */}
-            <Text h3 style={{alignSelf: 'center', marginTop: 50, marginBottom: 25}}>  Beginner Level</Text> 
+            <Text h3 style={{alignSelf: 'center', marginTop: 75, marginBottom: 20, color: "#004E64"}}>  Beginner Level</Text> 
             <View style={{height: Dimensions.get('window').height = '80%', alignItems: 'center', width: '100%'}}>
-                <ScrollView contentContainerStyle={{width: 'auto'}}> 
+                <ScrollView  > 
 
-                    {levels?.map((level, i) => (
+                    {loading ?<></> : levels?.map((level, i) => {
+                        
+                        return (
 
-                        <Button 
-                            key={i}
-                            containerStyle={{
-                                width: Dimensions.get('window').width = 250,
-                                backgroundColor: 'red',
-                                marginVertical: 10
-                            }}
-                            onPress={() => {
-                                navigation.navigate('Level', {
-                                    data: level
-                                })
-                            }}
-                            title={`Level ${i + 1}`}
-
-                        />
-                    ))}
-                    
+                            <Button 
+                                key={i}
+                                containerStyle={{
+                                    width: Dimensions.get('window').width = 250,
+                                    backgroundColor: 'red',
+                                    marginVertical: 10,
+                                    display: level.length == 5 ? 'flex' : 'none'
+                                }}
+                                buttonStyle={{backgroundColor: "#25A18E"}}
+                                onPress={() => {
+                                    navigation.navigate('Level', {
+                                        data: level
+                                    })
+                                }}
+                                title={`Set ${i == 0 ? "A" : numOfSets[levels[i - 1][0].level]}`}
+    
+                            />
+                        )
+                    })}  
                 </ScrollView>
             </View>
-        {/* </ScrollView> */}
-        </Layout>
+        </ImageBackground>  
     )
 }

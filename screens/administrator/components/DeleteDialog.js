@@ -9,6 +9,7 @@ export default function DeleteDialog({
     isOpen,
     handleClose, 
     id,
+    deleteDialog
 }) {
 
 
@@ -21,8 +22,12 @@ export default function DeleteDialog({
             setDeleting(false)
             return console.log(error)
         }
-        setDeleting(false) 
-        handleClose();
+
+        setTimeout(() => {
+            setDeleting(false) 
+            deleteDialog()
+            handleClose();
+        }, 1500)
     }
 
 
@@ -49,6 +54,7 @@ export default function DeleteDialog({
                     ]}   
                     loading={deleting}  
                     onPress={handleDelete}
+
 
                 />
                 <Dialog.Button 

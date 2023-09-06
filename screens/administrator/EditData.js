@@ -67,8 +67,7 @@ export default function EditData({route, navigation}) {
                 <View style={{marginBottom: 15}}>
                     <Text style={{paddingHorizontal: 10, fontSize: 16, color: '#8c8c8c', fontWeight: '900'}}>Answer</Text>
                     <Picker 
-                        mode='dropdown' 
-                        
+                        mode='dropdown'  
                         style={{borderWidth: 2, borderColor: '#8c8c8c', borderStyle: 'solid'}}
                         selectedValue={form.answer}
                         onValueChange={(val) => setForm(f => ({...f, answer: val}))}
