@@ -10,7 +10,7 @@ import { supabase } from '../../lib/supabase'
 
 export default function EditData({route, navigation}) {
 
-    const { question: q } = route.params;
+    const { question: q, category, setNumber, value, isTrue, snackBar } = route.params; 
 
     const [saving, setSaving] = useState(false);
  
@@ -42,8 +42,7 @@ export default function EditData({route, navigation}) {
 
     return (
         <SafeAreaView>
-            <ScrollView contentContainerStyle={{paddingVertical: 15, paddingHorizontal: 20}}>
-                <Text h1>Edit Data</Text> 
+            <ScrollView contentContainerStyle={{paddingVertical: 15, paddingHorizontal: 20}}> 
                 <TextInput
                     inputLabel={"Question"}
                     inputValue={form.question}
@@ -85,6 +84,7 @@ export default function EditData({route, navigation}) {
                 />
                 <Button
                     title="Save Changes"
+                    buttonStyle={{backgroundColor: "#335C67"}}
                     onPress={async() => {
                         setSaving(true)
                         if(form.optionA != q.options[0].option){
@@ -106,7 +106,14 @@ export default function EditData({route, navigation}) {
                             answer: form.answer
                         }).eq('id', q.id)
                         setSaving(false)
-                        navigation.goBack()
+                        navigation.navigate("SetScreen", {
+                            category, 
+                            setNumber, 
+                            value, 
+                            isTrue, 
+                            snackBar: "Question updated!",
+                            q: ""
+                        })
                     }}
                     loading={saving}
                 />
@@ -114,6 +121,12 @@ export default function EditData({route, navigation}) {
                     containerStyle={{marginTop: 15}}
                     title="Cancel"
                     type='outline'
+                    titleStyle={{
+                        color: "#335C67"
+                    }}
+                    buttonStyle={{
+                        borderColor: "#335C67",
+                    }}
                     onPress={() => {
                         navigation.goBack()
                     }}

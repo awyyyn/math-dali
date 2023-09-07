@@ -17,7 +17,7 @@ import SkeletonQuestion from './components/SkeletonQuestion';
 import { Snackbar, Stack } from '@react-native-material/core';
 
 export default function SetScreen({ route, navigation }) {
-    const { setNumber, value, isTrue, category, snackBar } = route.params;
+    const { setNumber, value, isTrue, category, snackBar, q } = route.params;
     const [loading, setLoading] = useState(isTrue);
     const [refresh, setRefresh] = useState(false);
     const [questions, setQuestions] = useState([]);
@@ -185,8 +185,12 @@ export default function SetScreen({ route, navigation }) {
         if(type == 'edit'){ 
             navigation.navigate('EditData', {
                 question: q,
-                category
-            });
+                category,
+                setNumber, 
+                value, 
+                isTrue,  
+                snackBar
+            }); 
         }else{
             setIsOpenDeleteDialog(true)
         }

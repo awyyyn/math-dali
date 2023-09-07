@@ -16,8 +16,8 @@ export default function Logout() {
             logout() 
             navigation.navigate('Home')
         }} style={{display: 'flex', marginRight: 10, flexDirection: 'row', gap: 5}}>
-            <Text style={{color:"#FF0000"}}>Log out</Text>
-            <Icon name='logout' color='#FF0000' />
+            <Text style={{color:"#ff686b"}}>Log out</Text>
+            <Icon name='logout' color='#ff686b' />
         </TouchableOpacity>
     )
 }

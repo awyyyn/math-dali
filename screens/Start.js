@@ -23,7 +23,9 @@ export default function Start({navigation}) {
                     {['Beginner', 'Intermediate', 'Expert'].map(item => (
                         <LevelButton 
                             key={item}
-                            handlePress={(item) => navigation.navigate(item) }
+                            handlePress={(item) => navigation.navigate('Levels', {
+                                category: item
+                            }) }
                             value={item}
                             
                         />

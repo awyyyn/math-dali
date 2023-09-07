@@ -8,7 +8,7 @@ import styles from './styles'
 import { Stack } from '@react-native-material/core'
 import { numOfSets } from '../lib/helpers'
 
-export default function Level({route, navigation}) {
+export default function Quiz({route, navigation}) {
  
     const { data } = route.params
     const [time, setTime] = useState(10); 
@@ -74,9 +74,7 @@ export default function Level({route, navigation}) {
         }
 
     }, [start, isRunning])
-
-    
-    console.log(score)
+ 
  
     if(num > 4){ 
 

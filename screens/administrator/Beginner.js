@@ -56,7 +56,8 @@ export default function Beginner({navigation}) {
             value: value,
             isTrue: true,
             category: 'Beginner',
-            snackBar: ""
+            snackBar: "",
+            q: ""
         })
     }
  
@@ -127,6 +128,7 @@ export default function Beginner({navigation}) {
                 </View>
     
                 <FAB    
+                    buttonStyle={{backgroundColor: "#004E64"}}
                     placement='right'  
                     visible={true}
                     icon={{ name: 'add', color: 'white' }}  

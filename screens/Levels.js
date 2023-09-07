@@ -10,8 +10,9 @@ import styles from './styles'
 import { Stack } from '@react-native-material/core' 
 
 
-export default function Beginner({navigation}) {
+export default function Levels({route, navigation}) {
 
+    const { category } = route.params
     const [levels, setLevels] = useState([level1]);
     const [loading, setLoading] = useState(false); 
     const [refresh, setRefresh] = useState(false);
@@ -24,7 +25,7 @@ export default function Beginner({navigation}) {
             setLoading(true)
         }
         const { data, error } = await supabase.from('category')
-            .select(`*, questions( *, options(*) )`).eq('category', "Beginner") 
+            .select(`*, questions( *, options(*) )`).eq('category', category) 
 
         if(error){
             alert(error.message)
@@ -82,7 +83,7 @@ export default function Beginner({navigation}) {
             imageStyle={{opacity: 0.3, objectFit: 'fill'}} 
         >
             {/* <ScrollView contentContainerStyle={{}}> */}
-            <Text h3 style={{alignSelf: 'center', marginTop: 75, marginBottom: 20, color: "#004E64"}}>  Beginner Level</Text> 
+            <Text h3 style={{alignSelf: 'center', marginTop: 75, marginBottom: 20, color: "#004E64"}}>{category} Level</Text> 
             <View style={{height: Dimensions.get('window').height = '80%', alignItems: 'center', width: '100%'}}>
                 <ScrollView  
                     refreshControl={
@@ -114,7 +115,7 @@ export default function Beginner({navigation}) {
                                     }}
                                     buttonStyle={{backgroundColor: "#25A18E"}}
                                     onPress={() => {
-                                        navigation.navigate('Level', {
+                                        navigation.navigate('Quiz', {
                                             data: level
                                         })
                                     }}

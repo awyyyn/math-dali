@@ -102,7 +102,8 @@ export default StyleSheet.create({
         paddingVertical: 5
     },
     optionText: {
-        fontSize: Dimensions.get('window').fontScale = 18
+        fontSize: Dimensions.get('window').fontScale = 18,
+        color: "#DAD7CD"
     },
     optionTitle: {
         fontSize: Dimensions.get('window').fontScale = 24

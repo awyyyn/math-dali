@@ -11,7 +11,7 @@ export default function AddButton({
             onPress={handleClick}
             title={value}
             size='sm'
-            buttonStyle={{paddingHorizontal: 15, paddingVertical: 7}}
+            buttonStyle={{paddingHorizontal: 15, paddingVertical: 7, backgroundColor: "#335C67"}}
         />
     )
 }

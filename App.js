@@ -22,6 +22,8 @@ import Logout from './components/Logout';
 import EditData from './screens/administrator/EditData';
 import AddQuestion from './screens/administrator/AddQuestion'; 
 import { Provider } from '@react-native-material/core';
+import Quiz from './screens/Quiz';
+import Levels from './screens/Levels';
 
 
 const Stack = createStackNavigator();
@@ -34,11 +36,20 @@ export default function App({navigation}) {
     headerShown: true, 
   }
 
+  const headerStyles = {  
+    headerTitleStyle: {
+      color: '#FFF'
+    },
+    headerStyle: {
+      backgroundColor: "#335C67", 
+    },
+    headerTintColor: "#FFF"
+  }
+
   return ( 
     <AppContext> 
       <Provider>
-        <NavigationContainer> 
-
+        <NavigationContainer>  
           <Stack.Navigator  
             initialRouteName='Home'
             // detachInactiveScreens
@@ -58,6 +69,8 @@ export default function App({navigation}) {
             <Stack.Screen name='IntermediateLevel' component={IntermediateLevel}   />
             <Stack.Screen name='Expert' component={Expert}   />
             <Stack.Screen name='ExpertLevel' component={ExpertLevel}   />
+            <Stack.Screen name='Levels' component={Levels} />
+            <Stack.Screen name='Quiz' component={Quiz} />
           
 
             <Stack.Screen name='Sign in' component={Signin}  />  
@@ -66,13 +79,13 @@ export default function App({navigation}) {
             <Stack.Screen 
               name='AddQuestion' 
               component={AddQuestion} 
-              options={nestedAdminScreen} 
+              options={{...nestedAdminScreen, ...headerStyles}} 
               
             />
             <Stack.Screen 
               name='SetScreen' 
               component={SetScreen}    
-              options={{ headerShown: true }}
+              options={{ headerShown: true, ...headerStyles, headerBackTitleStyle: {color: '#FFF'}}}
             />
             <Stack.Screen 
               name="Administrator" 
@@ -80,15 +93,15 @@ export default function App({navigation}) {
               options={{
                 headerShown: true,
                 headerRight: () => <Logout />,
-                headerLeft: null
+                headerLeft: null,
+                ...headerStyles,
+                
               }}
             />
 
             <Stack.Screen 
               name='EditData' 
-              options={{
-                presentation: "modal"
-              }} 
+              options={{...nestedAdminScreen, ...headerStyles}} 
               component={EditData}
             /> 
  

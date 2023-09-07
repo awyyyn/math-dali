@@ -229,6 +229,7 @@ export default function AddQuestion({route, navigation}) {
                     containerStyle={{
                         paddingHorizontal: 10
                     }}
+                    buttonStyle={{backgroundColor: "#335C67"}}
                     loading={adding}
                     
                     onPress={() => { 
