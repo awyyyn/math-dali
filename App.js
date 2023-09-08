@@ -24,12 +24,29 @@ import AddQuestion from './screens/administrator/AddQuestion';
 import { Provider } from '@react-native-material/core';
 import Quiz from './screens/Quiz';
 import Levels from './screens/Levels';
+import { StatusBar } from 'expo-status-bar';
+import { supabase } from './lib/supabase';
 
 
 const Stack = createStackNavigator();
 
-export default function App({navigation}) {
+export default function App() {
+
+  const [sessions, setSession] = useState();
+
+  useEffect(() => { 
+    
+    const getData = async () => {
+      const { data } = await supabase.auth.getSession()
+      setSession(data.session)
+    }
+
+    getData()
+
+  }, [])
   
+  console.log("================================================================================================================================================================")
+  console.log(sessions)
   
   const nestedAdminScreen = {
     presentation: "modal",
@@ -50,8 +67,9 @@ export default function App({navigation}) {
     <AppContext> 
       <Provider>
         <NavigationContainer>  
+          <StatusBar animated networkActivityIndicatorVisible style='light' backgroundColor='#004E64' />
           <Stack.Navigator  
-            initialRouteName='Home'
+            initialRouteName={`Home`}
             // detachInactiveScreens
             screenOptions={{
               headerShown: false,  
@@ -70,8 +88,7 @@ export default function App({navigation}) {
             <Stack.Screen name='Expert' component={Expert}   />
             <Stack.Screen name='ExpertLevel' component={ExpertLevel}   />
             <Stack.Screen name='Levels' component={Levels} />
-            <Stack.Screen name='Quiz' component={Quiz} />
-          
+            <Stack.Screen name='Quiz' component={Quiz} /> 
 
             <Stack.Screen name='Sign in' component={Signin}  />  
 

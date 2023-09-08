@@ -6,12 +6,32 @@ import { Text  } from 'react-native-elements';
 import Beginner from './Beginner';
 import Intermediate from './Intermediate';
 import Expert from './Expert';
+import { useEffect } from 'react';
+import { BackHandler } from 'react-native';
+import { StackActions, useNavigation } from '@react-navigation/native';
 
 
 const Tab = createMaterialTopTabNavigator();
 
 
 export default function Administrator() {
+
+    const navigation = useNavigation()
+
+    useEffect(() => {
+        
+
+        const backAction = () => { 
+            navigation.dispatch(StackActions.popToTop());
+            return true;  
+        };
+
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+        
+        return () => { 
+            backHandler.remove()
+        }
+    }, [])
 
     return (   
         <>  

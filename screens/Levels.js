@@ -16,7 +16,7 @@ export default function Levels({route, navigation}) {
     const [levels, setLevels] = useState([level1]);
     const [loading, setLoading] = useState(false); 
     const [refresh, setRefresh] = useState(false);
-
+    const seconds = category == "Beginner" ? 10 : category == "Intermediate" ? 20 : 30
   
     async function getData(refresh) {
         if(refresh){
@@ -29,6 +29,9 @@ export default function Levels({route, navigation}) {
 
         if(error){
             alert(error.message)
+            
+            setRefresh(false)
+            setLoading(false)
             return
         }
 
@@ -116,7 +119,8 @@ export default function Levels({route, navigation}) {
                                     buttonStyle={{backgroundColor: "#25A18E"}}
                                     onPress={() => {
                                         navigation.navigate('Quiz', {
-                                            data: level
+                                            data: level,
+                                            seconds
                                         })
                                     }}
                                     // title={`${i}`}

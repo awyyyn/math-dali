@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { Dimensions, ImageBackground, View } from 'react-native'
 import { Text } from '@rneui/themed'
 import React, { useContext } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
@@ -29,6 +29,8 @@ export default function AddQuestion({route, navigation}) {
         answer: '',
         solution: ""
     })
+
+    console.log(category, setNumber)
 
     const [formErr, setFormErr] = useState({
         question: '',
@@ -117,9 +119,13 @@ export default function AddQuestion({route, navigation}) {
 
     } 
  
-    return (
-        <SafeAreaView>
-            <ScrollView contentContainerStyle={{paddingHorizontal: 20}}> 
+    return ( 
+        <ImageBackground 
+            source={require('../../assets/bg.jpg')}
+            style={{paddingHorizontal: 20, paddingVertical: 50}}
+            imageStyle={{opacity: 0.1, height: Dimensions.get('screen').height}}
+        > 
+            <ScrollView > 
                 {/* <Text h3 style={{marginBottom: 20}}>Add Question</Text>  */}
 
                 <TextInput  
@@ -244,7 +250,7 @@ export default function AddQuestion({route, navigation}) {
                     buttonStyle={{marginTop: 20}}
                     title="Back"
                 /> */}
-            </ScrollView>
-        </SafeAreaView>
+            </ScrollView> 
+        </ImageBackground>  
     )
 }

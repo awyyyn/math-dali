@@ -12,6 +12,7 @@ import Animated, {
 import { SettingsContext} from '../../context/AppContext';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { StackActions, useNavigation } from '@react-navigation/native';
 
 
 
@@ -19,17 +20,16 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 const initialOffset = 10;
 const iintialopacity = 0;
 
-export default function Signin({navigation}) {
+export default function Signin() {
 
     const { setSession, session } = useContext(SettingsContext)
- 
+    const navigation = useNavigation()
+
     const [showPass, setShowPass] = useState(true)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("")
-
- 
 
     const right = useSharedValue(100);
     const opacity = useSharedValue(iintialopacity)
@@ -38,7 +38,13 @@ export default function Signin({navigation}) {
         transform: [{ translateX: right.value }],
         opacity: opacity.value,
     }));
+ 
 
+    useEffect(() => {
+
+        console.log('asd')
+
+    }, [])
 
       
 

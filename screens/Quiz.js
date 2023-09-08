@@ -10,8 +10,8 @@ import { numOfSets } from '../lib/helpers'
 
 export default function Quiz({route, navigation}) {
  
-    const { data } = route.params
-    const [time, setTime] = useState(10); 
+    const { data, seconds } = route.params
+    const [time, setTime] = useState(seconds); 
     const [start, setStart] = useState(false);
     const [allAnswer, setAllAnswer] = useState({
         answer1: '',
@@ -109,12 +109,24 @@ export default function Quiz({route, navigation}) {
 
                     <Stack direction='row' justify='between' ph={20}>
                         <Text>Score</Text>
-                        <Text>{score * 20} / 100</Text>
+                        <Stack direction='row'>
+                            <Text style={{color: score >= 4 ? "#25A18E90" : "#9E2A2B"}}>{score * 20} </Text>
+                            <Text>/ 100</Text>
+                        </Stack>
                     </Stack>
 
-                    <Stack direction='row' justify='between' ph={20}>
+                    <Stack direction='row' justify='between' ph={20} mb={5}>
                         <Text>Correct Answer</Text>
-                        <Text>{score} / 5</Text>
+                        <Stack direction='row'>
+                            <Text style={{color: score >= 4 ? "#25A18E90" : "#9E2A2B"}}>{score} </Text>
+                            <Text>/ 5</Text>
+                        </Stack> 
+                    </Stack>
+
+                    
+                    <Stack direction='row' justify='between' ph={20} mb={5}>
+                        <Text>Remark</Text>
+                        <Text style={{color: score >= 4 ? "#25A18E90" : "#9E2A2B"}}>{score >= 4 ? "Passed" : "Failed"}</Text>
                     </Stack>
  
 

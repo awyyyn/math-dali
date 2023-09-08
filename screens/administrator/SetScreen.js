@@ -1,9 +1,9 @@
-import { TouchableOpacity, Image, View } from 'react-native'
+import { TouchableOpacity, Image, View, ImageBackground, Dimensions, BackHandler } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { RectButton, RefreshControl, ScrollView, Switch, } from 'react-native-gesture-handler';
 import styles from './styles'
-import { CommonActions } from '@react-navigation/native'
+import { CommonActions, StackActions } from '@react-navigation/native'
 import { Dialog, Icon, Text } from '@rneui/themed';
 import { useEffect, useCallback } from 'react';
 import Table, { Section, StaticCell, Cell } from 'react-native-js-tableview';
@@ -35,14 +35,20 @@ export default function SetScreen({ route, navigation }) {
  
  
     const handleAddQuestion = () => { 
-        navigation.navigate('AddQuestion', {
-            category: 'Beginner',
-            setNumber, 
-            value, 
-            isTrue,  
-            snackBar
-        })
-        
+        if(numberOfQuestions == 7){
+            setNotif("You can only add 7 questions per set!")
+            setTimeout(() => {
+                setNotif("")
+            }, 3000) 
+        }else{
+            navigation.navigate('AddQuestion', {
+                category,
+                setNumber, 
+                value, 
+                isTrue,  
+                snackBar
+            })
+        }
     }
 
     async function getData (){
@@ -50,8 +56,10 @@ export default function SetScreen({ route, navigation }) {
         const { data, error } = await supabase
             .from('category')
             .select(`*, questions(*, options(*))`)
-            .match({'level': setNumber, category: category})
+            .match({'level': setNumber, category})
             .single();  
+
+            console.log("DATA", data.questions, category, setNumber)
 
         setQuestions(data?.questions
             .sort((a, b) => {
@@ -69,13 +77,25 @@ export default function SetScreen({ route, navigation }) {
         setLoading(false)
     }
     
-    console.log("active", activeQuestions)
+    
     const getRealTime  = useCallback(() => {
+        const backAction = () => { 
+            navigation.dispatch(StackActions.pop(1));
+            return true;  
+        };
+
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+         
         const subscribe = supabase.channel("any")
             .on('postgres_changes', {event: '*', schema: 'public', table: 'questions'}, (payload => getData()))
             .subscribe()
             // .on('postgres_changes', {event: 'INSERT', schema: 'public', table: 'questions'}, (payload => getData()))
-        return () => subscribe.unsubscribe()
+        return () => {
+            subscribe.unsubscribe()
+            
+            backHandler.remove()
+        }
+
 
     }, [])
 
@@ -86,7 +106,7 @@ export default function SetScreen({ route, navigation }) {
     useEffect(() => {  
 
         navigation.setOptions({
-          title: "Beginner " +  value, // Initial title
+          title: `${category} ` +  value, // Initial title
         });
         
         getData(); 
@@ -110,12 +130,9 @@ export default function SetScreen({ route, navigation }) {
         setRefresh(false)
     } 
 
-    const handleSwitch = async(id, value) => {  
+    const handleSwitch = async(id, value) => {   
 
-        console.log(activeQuestions, 'asd')
-
-        if(activeQuestions < 5){
-            console.log("ASD")
+        if(activeQuestions < 5){ 
             if(value == true){
                 setActiveQuestions(p => p - 1)
             }else{
@@ -204,14 +221,18 @@ export default function SetScreen({ route, navigation }) {
     } 
 
     return ( 
-        <> 
-            {notif &&
-                <Snackbar
-                    elevation={10} 
-                    message={notif}
-                    style={{ zIndex: 99, position: "absolute", start: 80, end: 16, top: 16, backgroundColor: '#00667E' }}
-                />
-            }    
+        <>   
+            <ImageBackground 
+                source={require('../../assets/bg.jpg')}
+                imageStyle={{opacity: 0.1, height: Dimensions.get('screen').height}}
+            > 
+                {notif &&
+                    <Snackbar
+                        elevation={10} 
+                        message={notif}
+                        style={{ zIndex: 99, position: "absolute", start: 80, end: 16, top: 16, backgroundColor: '#004E64' }}
+                    />
+                }    
                 {loading ? 
                     <>
                         <View style={{paddingVertical: 15, paddingHorizontal: 20}}>
@@ -233,7 +254,8 @@ export default function SetScreen({ route, navigation }) {
                         <ScrollView 
                             contentContainerStyle={{
                                 paddingVertical: 15,
-                                paddingHorizontal: 20
+                                paddingHorizontal: 20,
+                                paddingBottom: 140
                             }}
                             refreshControl={
                                 <RefreshControl 
@@ -306,8 +328,7 @@ export default function SetScreen({ route, navigation }) {
                                     ))
                                     }
                                 </View>  
-                            } 
-                        
+                            }  
                         </ScrollView>  
                     </>
                 }
@@ -319,6 +340,7 @@ export default function SetScreen({ route, navigation }) {
                     handleClose={() => setIsOpenDeleteDialog(false)}
                     id={question.id}
                 /> 
+            </ImageBackground>
         </>
     )
 }

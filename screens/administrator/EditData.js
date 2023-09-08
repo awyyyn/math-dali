@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { BackHandler, Dimensions, ImageBackground, View } from 'react-native'
 import { Text } from 'react-native-elements'
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -35,14 +35,19 @@ export default function EditData({route, navigation}) {
             optionC: q.options[2].option,
             answer: q.answer
         });
+ 
 
     }, [])
 
 
 
-    return (
-        <SafeAreaView>
-            <ScrollView contentContainerStyle={{paddingVertical: 15, paddingHorizontal: 20}}> 
+    return (  
+        <ImageBackground 
+            source={require('../../assets/bg.jpg')}
+            style={{paddingHorizontal: 20, paddingVertical: 50}}
+            imageStyle={{opacity: 0.1, height: Dimensions.get('screen').height}}
+        >  
+            <ScrollView> 
                 <TextInput
                     inputLabel={"Question"}
                     inputValue={form.question}
@@ -132,6 +137,6 @@ export default function EditData({route, navigation}) {
                     }}
                 />
             </ScrollView>
-        </SafeAreaView>
+        </ImageBackground> 
     )
 }
