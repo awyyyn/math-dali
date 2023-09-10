@@ -14,6 +14,7 @@ export default function SetButton({
     return (
         <Button
             title={value}
+            buttonStyle={{backgroundColor: "#004E64"}}
             disabled={disabled}
             onPress={() => handleClick(setNumber, value)} 
         />

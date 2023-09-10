@@ -6,7 +6,9 @@ import { useState, useEffect, useCallback } from 'react'
 import { Button, Input, ListItem } from '@rneui/themed'
 import styles from './styles'
 import { Stack } from '@react-native-material/core'
+import { BlurView } from 'expo-blur';
 import { numOfSets } from '../lib/helpers'
+import { Icon } from 'react-native-elements'
 
 export default function Quiz({route, navigation}) {
  
@@ -146,10 +148,7 @@ export default function Quiz({route, navigation}) {
                                                 <ListItem.Title>
                                                     {qI + 1}. {`   `}
                                                     {item.question}
-                                                </ListItem.Title>
-                                                <ListItem.Subtitle style={{paddingLeft: 30}}>
-                                                    Answer: {`  `} {item.answer}
-                                                </ListItem.Subtitle>
+                                                </ListItem.Title> 
                                                 <ListItem.Subtitle style={{paddingLeft: 30, textAlign: 'justify'}}>
                                                     Solution: {item.solution}
                                                 </ListItem.Subtitle>
@@ -161,17 +160,24 @@ export default function Quiz({route, navigation}) {
                                     {item.options.map(({option}, i) => {
                                         const isEqual = yourAnswer === option
                                         return (
-                                            <ListItem key={i} containerStyle={{paddingLeft: 40, backgroundColor: 'transparent' }} >
+                                            <ListItem key={i} containerStyle={{paddingLeft: 40, backgroundColor: 'transparent' }}>
                                                 <ListItem.Content 
                                                     style={{
-                                                        backgroundColor: isEqual ? yourAnswer === item.answer ? '#25A18E90' : '#9E2A2B70' : '', 
+                                                        backgroundColor: isEqual ? yourAnswer === item.answer ? '#25A18E90' : '#9E2A2B70' : item.answer === option ? '#25A18E90' : 'transparent', 
                                                         paddingHorizontal: 10, 
-                                                        paddingVertical: 5
+                                                        paddingVertical: 5,
+                                                        display: 'flex',
+                                                        justifyContent: "space-between",
+                                                        flexDirection: 'row'
                                                     }}>
                                                     <ListItem.Title>
-                                                        {i == 0 ? 'a.' : i == 1 ? 'b.' : 'c' }  {option}
-                                                        
+                                                        {i == 0 ? 'a.' : i == 1 ? 'b.' : 'c' }  {option} 
                                                     </ListItem.Title>
+                                                    {item.answer === option ?
+                                                        <Icon name='check' /> :
+                                                        isEqual && yourAnswer !== item.answer && 
+                                                        <Icon name="close" />
+                                                    }
                                                 </ListItem.Content>
                                             </ListItem>
                                         )
@@ -209,17 +215,27 @@ export default function Quiz({route, navigation}) {
                 </Text> 
                 <Text style={{textAlign: 'center', fontSize: 30, marginTop: 10, fontWeight: '600'}}>Set {numOfSets[data[0].level - 1]}</Text>
                 <ScrollView contentContainerStyle={{width : '100%', paddingVertical: 10}}> 
-                    <Text 
-                        style={[styles.optionTitle,
-                        {
-                            width: '85%',
-                            textAlign: 'center',
-                            alignSelf: 'center',
-                            marginBottom: 30
-                        }]}
-                    >
-                        {num + 1}. {data[num].question}
-                    </Text>
+                    <View style={{position: "relative"}}> 
+                        {/* <BlurView intensity={start ? 0 : 20} style={{width: "85%", zIndex: 99, height: '100%', alignSelf: "center", position: 'absolute'}} />  */}
+                        <Text 
+                            style={[styles.optionTitle, 
+                            {
+                                color:  start ? "#000" : '#fff0',
+                                    textShadowColor: start ? "rgba(0, 0, 0, 0)" : "rgba(0,0,0, 0.9)",
+                                    textShadowOffset: {
+                                      width: 0,
+                                      height: 0,
+                                    },
+                                    textShadowRadius: start ? 0 : 20,
+                                width: '85%',
+                                textAlign: 'center',
+                                alignSelf: 'center',
+                                marginBottom: 30
+                            }]}
+                        >
+                            {num + 1}. {data[num].question}
+                        </Text>
+                    </View>
                     {data[num].options.map(({option}, i) => (
                         <Pressable 
                             onPress={() => {
@@ -233,6 +249,7 @@ export default function Quiz({route, navigation}) {
                                 style={[
                                     styles.option,
                                     {
+                                        position: 'relative',
                                         backgroundColor: "#004E64",
                                         // borderWidth: option == answer ? 3 : 1,, 
                                         alignSelf: 'center',
@@ -241,17 +258,33 @@ export default function Quiz({route, navigation}) {
                                     }
                                 ]}
                             >
+                                {/* <BlurView intensity={start ? 0 : 10} style={{width: "115%", zIndex: 99, height: '330%', alignSelf: "center", position: 'absolute'}} />  */}
                                 <Text
                                     style={[styles.optionText,
                                         {
+                                            color:  start ? "#DAD7CD" : '#fff0',
+                                            textShadowColor: start ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255, 0.9)",
+                                            textShadowOffset: {
+                                              width: 0,
+                                              height: 0,
+                                            },
+                                            textShadowRadius: start ? 0 : 20, 
                                             marginRight: 10,
-                                            color: '#DAD7CD'
+                                            // color: '#DAD7CD'
                                         }
                                     ]}
                                 >
                                     {i == 0 ? 'a' : i == 1 ? 'b' : 'c' }.
                                 </Text>
-                                <Text style={styles.optionText}>{option}</Text>  
+                                <Text style={[styles.optionText, {
+                                    color:  start ? "#DAD7CD" : '#fff0',
+                                    textShadowColor: start ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255, 0.9)",
+                                    textShadowOffset: {
+                                      width: 0,
+                                      height: 0,
+                                    },
+                                    textShadowRadius: start ? 0 : 20, 
+                                }]}>{option}</Text>  
                             </View>
                         </Pressable>
                     ))}

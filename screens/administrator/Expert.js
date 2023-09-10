@@ -36,7 +36,7 @@ export default function Expert({navigation}) {
             return 
         }
         setLastSet(data.length + 1)
-        setSets(data)
+        setSets(data.sort((a, b) => a.id - b.id))
         setLoading(false)
     }
  
@@ -52,6 +52,7 @@ export default function Expert({navigation}) {
         return () => {
             subscription.unsubscribe()    
         }
+
     }, [])
  
     const handleClick = (path, value) => {
@@ -134,54 +135,57 @@ export default function Expert({navigation}) {
                             </>
                         }
                     </View>
-        
-                    <FAB    
-                        placement='right'  
-                        visible={true} 
-                        buttonStyle={{backgroundColor: "#004E64"}} 
-                        icon={{ name: 'add', color: 'white' }}  
-                        onPress={() => setAddDialog(true)}
-                    /> 
-                        <Dialog visible={addDialog} onDismiss={() => setAddDialog(false)} >
-                            <DialogHeader title={`Add a new Set?`} />  
-                            <DialogContent>
-                                <Text>Add Set {numOfSets[lastSet]}</Text>
-                            </DialogContent>
-                            <DialogActions>
-                                <Stack direction='row-reverse' mh={10} mb={10} spacing={5} >
-                                    <Button 
-                                        title={"Yes"}
-                                        buttonStyle={{minWidth: 70, marginLeft: 10,backgroundColor: "#004E64"}}
-                                        onPress={async() => {
-                                            setAdding(true)
-                                            const { error } = await supabase.from('category').insert({'category': 'Expert', level: (lastSet + 1), email: session.session.user.email})
-                                            if(error) {
-                                                alert(error.message)
-                                                setAdding(false)
-                                                return
-                                            }
-                                            setSnackBarMessage(`Set ${numOfSets[lastSet]}  is added`)
-                                            setAddDialog(false)
-                                            setTimeout(() => {
-                                                setAdding(false)
-                                                setSnackBarMessage('')
-                                            }, 3000)
+                    <Dialog visible={addDialog} onDismiss={() => setAddDialog(false)} >
+                        <DialogHeader title={`Add a new Set?`} />  
+                        <DialogContent>
+                            <Text>Add Set {numOfSets[lastSet]}</Text>
+                        </DialogContent>
+                        <DialogActions>
+                            <Stack direction='row-reverse' mh={10} mb={10} spacing={5} >
+                                <Button 
+                                    title={"Yes"}
+                                    buttonStyle={{minWidth: 70, marginLeft: 10,backgroundColor: "#004E64"}}
+                                    onPress={async() => {
+                                        setAdding(true)
+                                        const { error } = await supabase.from('category').insert({'category': 'Expert', level: (lastSet + 1), email: session.session.user.email})
+                                        if(error) {
+                                            alert(error.message)
+                                            setAdding(false)
+                                            return
+                                        }
+                                        setSnackBarMessage(`Set ${numOfSets[lastSet]}  is added`)
+                                        setAddDialog(false)
+                                        setTimeout(() => {
+                                            setAdding(false)
+                                            setSnackBarMessage('')
+                                        }, 3000)
 
-                                        }}
-                                        loading={adding}
-                                    />
-                                    <Button 
-                                        buttonStyle={{minWidth: 60, borderColor: '#004E64'}}
-                                        titleStyle={{color: "#004E64"}}
-                                        title={"No"}
-                                        type='outline'
-                                        onPress={() => setAddDialog(false)} 
-                                    />
-                                </Stack>
-                            </DialogActions>
-                        </Dialog> 
+                                    }}
+                                    loading={adding}
+                                />
+                                <Button 
+                                    buttonStyle={{minWidth: 60, borderColor: '#004E64'}}
+                                    titleStyle={{color: "#004E64"}}
+                                    title={"No"}
+                                    type='outline'
+                                    onPress={() => setAddDialog(false)} 
+                                />
+                            </Stack>
+                        </DialogActions>
+                    </Dialog> 
                 </ScrollView> 
             </ImageBackground>
+            
+        
+            {numOfSets.length != lastSet &&
+                <FAB    
+                    buttonStyle={{backgroundColor: "#335C67"}}
+                    placement='right'  
+                    visible={true} 
+                    icon={{ name: 'add', color: 'white' }}  
+                    onPress={() => setAddDialog(true)}
+                /> 
+            }
         </>
     )
 }

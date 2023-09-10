@@ -111,5 +111,13 @@ export default StyleSheet.create({
     bgImage: {
         width: Dimensions.get('screen').width,
         height: Dimensions.get('screen').height
+    },
+    blurText: {
+        textShadowColor: "rgba(255,255,255,0.8)",
+        textShadowOffset: {
+            width: 0,
+            height: 0,
+        },
+        textShadowRadius: 10,
     }
 })

@@ -53,10 +53,17 @@ export default function Levels({route, navigation}) {
                     })
                 }
             }))
-        }) 
+        })
+ 
  
 
-        setLevels([level1, ...newSet]);
+        const randomized = newSet.map((item) => {
+            return item.sort((a, b) => 0.5 - Math.random())
+        })
+ 
+ 
+
+        setLevels([level1, ...randomized]);
          
         if(refresh){
             setRefresh(false)
