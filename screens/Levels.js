@@ -57,13 +57,13 @@ export default function Levels({route, navigation}) {
  
  
 
-        const randomized = newSet.map((item) => {
-            return item.sort((a, b) => 0.5 - Math.random())
-        })
+        // const randomized = newSet.map((item) => {
+        //     return item.sort((a, b) => 0.5 - Math.random())
+        // })
  
  
 
-        setLevels([level1, ...randomized]);
+        setLevels([level1, ...newSet]);
          
         if(refresh){
             setRefresh(false)
@@ -126,7 +126,7 @@ export default function Levels({route, navigation}) {
                                     buttonStyle={{backgroundColor: "#25A18E"}}
                                     onPress={() => {
                                         navigation.navigate('Quiz', {
-                                            data: level,
+                                            data: level.sort((a, b) => 0.5 - Math.random()),
                                             seconds
                                         })
                                     }}

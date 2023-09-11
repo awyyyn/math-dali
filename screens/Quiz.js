@@ -187,9 +187,9 @@ export default function Quiz({route, navigation}) {
                         })} 
                     </ScrollView>  
                     <Button 
-                        title="Home"
+                        title="Back"
                         buttonStyle={{backgroundColor: "#004E64", height: 60}}
-                        onPress={() => navigation.navigate('Home')} />
+                        onPress={() => navigation.goBack()} />
                 </ImageBackground>
             </Layout>
         )
