@@ -10,13 +10,14 @@ export default function AppContext({children}) {
     const [sound, setSound] = useState()
     const [context, setContext] = useState();
     const [session, setSession] = useState({session: null});
-    const [mute, setMute] = useState(false);
-
+    const [mute, setMute] = useState(false); 
+    
     useEffect(() => { 
         async function getSession () {
             const { data } = await supabase.auth.getSession();
             setSession(data)
         } 
+        playSound() 
         getSession() 
 
     }, [])
@@ -27,23 +28,24 @@ export default function AppContext({children}) {
     }
 
     async function playSound (value) {
+
         console.log(value)
-        const { sound } = await Audio.Sound.createAsync(require('../assets/sound/siniskwela.mp3')) 
-        setSound(sound)
-        await sound.playAsync()
+        const { sound } = await Audio.Sound.createAsync(require('../assets/sound/steam-cafe.mp3')) 
+        setSound(sound) 
+
+
         if(value){ 
             setMute(true)
-            await sound.setIsMutedAsync(true)
+            await sound.setIsMutedAsync(true) 
+            await sound.pauseAsync() 
         }else{
             setMute(false)
             await sound.setIsMutedAsync(false)
-            await sound.setIsLoopingAsync()
+            await sound.setIsLoopingAsync(true) 
+            await sound.playAsync()
         }
     }
-  
-    useEffect(() => {
-        playSound() 
-    }, []);
+   
     
     useEffect(() => {
         
@@ -55,9 +57,7 @@ export default function AppContext({children}) {
           : undefined;
       }, [sound])
       
-    
-
-    console.log("SESSUIB IN ROOT", session)
+     
 
     return (
         <SettingsContext.Provider value={{playSound, session, logout, setSession, mute}}>

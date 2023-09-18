@@ -9,13 +9,7 @@ import Rules from './screens/Rules';
 import Start from './screens/Start';
 import Settings from './screens/Settings'; 
 import AppContext from './context/AppContext';
-import Signin from './screens/auth/Signin'; 
-import Beginner from './screens/Beginner';
-import Level from './screens/Level';
-import Intermediate from './screens/Intermediate';
-import IntermediateLevel from './screens/IntermediateLevel';
-import Expert from './screens/Expert';
-import ExpertLevel from './screens/ExpertLevel'; 
+import Signin from './screens/auth/Signin';   
 import Administrator from './screens/administrator/Administrator'; 
 import SetScreen from './screens/administrator/SetScreen';
 import Logout from './components/Logout';
@@ -31,22 +25,7 @@ import { supabase } from './lib/supabase';
 const Stack = createStackNavigator();
 
 export default function App() {
-
-  const [sessions, setSession] = useState();
-
-  useEffect(() => { 
-    
-    const getData = async () => {
-      const { data } = await supabase.auth.getSession()
-      setSession(data.session)
-    }
-
-    getData()
-
-  }, [])
-  
-  console.log("================================================================================================================================================================")
-  console.log(sessions)
+ 
   
   const nestedAdminScreen = {
     presentation: "modal",
@@ -81,12 +60,12 @@ export default function App() {
             <Stack.Screen name='Start' component={Start}  />
             <Stack.Screen name='Settings' component={Settings}  />
             {/* <Stack.Screen name='Addquestion' component={Addquestion}   /> */}
-            <Stack.Screen name='Beginner' component={Beginner}   />
+            {/* <Stack.Screen name='Beginner' component={Beginner}   />
             <Stack.Screen name='Level' component={Level}   />
             <Stack.Screen name='Intermediate' component={Intermediate}   />
             <Stack.Screen name='IntermediateLevel' component={IntermediateLevel}   />
             <Stack.Screen name='Expert' component={Expert}   />
-            <Stack.Screen name='ExpertLevel' component={ExpertLevel}   />
+            <Stack.Screen name='ExpertLevel' component={ExpertLevel}   /> */}
             <Stack.Screen name='Levels' component={Levels} />
             <Stack.Screen name='Quiz' component={Quiz} /> 
 
