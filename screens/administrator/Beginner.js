@@ -1,4 +1,4 @@
-import { Button, Text } from 'react-native-elements'
+import { Button, Input, Text } from 'react-native-elements'
 import React, { useEffect, useState } from 'react'
 import { RefreshControl, ScrollView } from 'react-native-gesture-handler'
 import { BackHandler, Dimensions, ImageBackground, TouchableOpacity, TouchableOpacityComponent, View } from 'react-native'
@@ -28,6 +28,8 @@ export default function Beginner() {
     const [lastSet, setLastSet] = useState(0);
     const [snackBarMessage, setSnackBarMessage] = useState('') 
     const [refresh, setRefresh] = useState(false)
+    const [timerErrMessage, setTimerErrMessage] = useState('')
+    const [timer, setTimer] = useState('')
  
  
     async function getSets () {
@@ -60,8 +62,7 @@ export default function Beginner() {
 
 
     }, [navigation])
-     
-    console.log(123123, numOfSets.length == lastSet.length, numOfSets.length, lastSet)
+      
  
     const handleClick = (path, value) => {
         navigation.navigate('SetScreen', {
@@ -146,16 +147,34 @@ export default function Beginner() {
                     <Dialog visible={addDialog} onDismiss={() => setAddDialog(false)} >
                         <DialogHeader title={`Add a new Set?`} />  
                         <DialogContent>
-                            <Text>Add Set {numOfSets[lastSet]}</Text>
+                            <Input 
+                                label={`Set timer for set ${numOfSets[lastSet]} (seconds)`}
+                                value={timer}
+                                keyboardType='number-pad'
+                                onChangeText={(text) => setTimer(text)}
+                                errorMessage={timerErrMessage}
+
+                            />
                         </DialogContent>
                         <DialogActions>
                             <Stack direction='row-reverse' mh={10} mb={10} spacing={5} >
                                 <Button 
-                                    title={"Yes"}
+                                    title={"Confirm"}
                                     buttonStyle={{minWidth: 70, marginLeft: 10,backgroundColor: "#004E64"}}
                                     onPress={async() => {
+                                        setTimerErrMessage('')
+                                        if(!timer || !/^\d+$/.test(timer)) {
+                                            return setTimerErrMessage('Please enter a valid number')
+                                        }
                                         setAdding(true)
-                                        const { error } = await supabase.from('category').insert({'category': 'Beginner', level: (lastSet + 1), email: session.session.user.email})
+                                        const { error } = await supabase.from('category')
+                                            .insert({
+                                                'category': 'Beginner', 
+                                                level: (lastSet + 1), 
+                                                email: session.session.user.email,
+                                                time: timer
+                                            });
+
                                         if(error) {
                                             alert(error.message)
                                             setAdding(false)
@@ -174,9 +193,13 @@ export default function Beginner() {
                                 <Button 
                                     buttonStyle={{minWidth: 60, borderColor: '#004E64'}}
                                     titleStyle={{color: "#004E64"}}
-                                    title={"No"}
+                                    title={"Cancel"}
                                     type='outline'
-                                    onPress={() => setAddDialog(false)} 
+                                    onPress={() => {
+                                        setAddDialog(false)
+                                        setTimer('')
+                                        setTimerErrMessage('')
+                                    }} 
                                 />
                             </Stack>
                         </DialogActions>

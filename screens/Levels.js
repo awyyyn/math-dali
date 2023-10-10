@@ -2,7 +2,7 @@ import { View, Dimensions, ImageBackground } from 'react-native'
 import { Button, Skeleton, Text } from '@rneui/themed'
 import Layout from './Layout'
 import { RefreshControl, ScrollView } from 'react-native-gesture-handler'
-import { level1 } from './beginnersDefaultData' 
+import { beginnerLevel1, expertLevel1, intermediateLevel1 } from './defaultQuestions' 
 import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase' 
 import { numOfSets } from '../lib/helpers'
@@ -11,13 +11,15 @@ import { Stack } from '@react-native-material/core'
 
 
 export default function Levels({route, navigation}) {
-
-    const { category } = route.params
+    const { category, color } = route.params
+    const level1 = category === "Beginner" ? beginnerLevel1 : category === "Intermediate" ? intermediateLevel1 : expertLevel1
     const [levels, setLevels] = useState([level1]);
     const [loading, setLoading] = useState(false); 
     const [refresh, setRefresh] = useState(false);
-    const seconds = category == "Beginner" ? 10 : category == "Intermediate" ? 20 : 30
+    const seconds = category == "Beginner" ? 15 : category == "Intermediate" ? 30 : 45
   
+    console.log(color)
+
     async function getData(refresh) {
         if(refresh){
             setRefresh(true)
@@ -41,6 +43,7 @@ export default function Levels({route, navigation}) {
             return i.questions.filter(aa => aa.is_active == true)?.flatMap((k => {
                 return {
                     id: i.id,
+                    time: i.time,
                     level: i.level,
                     question: k.question,
                     solution: k.solution,
@@ -55,6 +58,7 @@ export default function Levels({route, navigation}) {
             }))
         })
  
+        // console.log(newSet)
  
 
         // const randomized = newSet.map((item) => {
@@ -113,21 +117,21 @@ export default function Levels({route, navigation}) {
                         </> : 
 
                         levels?.map((level, i) => { 
+ 
                             return (
 
                                 <Button 
                                     key={i}
                                     containerStyle={{
-                                        width: Dimensions.get('window').width = 250,
-                                        backgroundColor: 'red',
+                                        width: Dimensions.get('window').width = 250, 
                                         marginVertical: 10,
                                         display: level?.length == 5 ? 'flex' : 'none'
                                     }}
-                                    buttonStyle={{backgroundColor: "#25A18E"}}
+                                    buttonStyle={{backgroundColor: color}}
                                     onPress={() => {
                                         navigation.navigate('Quiz', {
                                             data: level.sort((a, b) => 0.5 - Math.random()),
-                                            seconds
+                                            seconds: level[0].level > 1 ? level[0].time : seconds
                                         })
                                     }}
                                     // title={`${i}`}

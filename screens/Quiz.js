@@ -1,14 +1,18 @@
-import { View, Text, Pressable, Dimensions, ImageBackground } from 'react-native'
+import { View, Text, Pressable, Dimensions, ImageBackground, TouchableHighlight } from 'react-native'
 // import React from 'react'
 import Layout from './Layout'
 import { ScrollView } from 'react-native-gesture-handler'
 import { useState, useEffect, useCallback } from 'react'
-import { Button, Input, ListItem } from '@rneui/themed'
+import { Button, ButtonGroup, Input, ListItem } from '@rneui/themed'
 import styles from './styles'
 import { Stack } from '@react-native-material/core'
 import { BlurView } from 'expo-blur';
 import { numOfSets } from '../lib/helpers'
-import { Icon } from 'react-native-elements'
+import { Icon, LinearProgress } from 'react-native-elements'
+import { SafeAreaView } from 'react-native-safe-area-context' 
+import { LinearGradient } from 'expo-linear-gradient';
+import { CountdownCircleTimer, useCountdown } from 'react-native-countdown-circle-timer' 
+
 
 export default function Quiz({route, navigation}) {
  
@@ -25,7 +29,7 @@ export default function Quiz({route, navigation}) {
     const [answer, setAnswer] = useState(''); 
     const [num, setNum] = useState(0);
     const [isRunning, setIsRunning] = useState(false);  
-    const [score, setScore] = useState(0)
+    const [score, setScore] = useState(0);
 
     if(time < 0){
         if(num === 0){
@@ -53,7 +57,7 @@ export default function Quiz({route, navigation}) {
         setNum(n => n + 1); 
         setIsRunning(false)
         
-        setTime(10);
+        setTime(seconds);
         if(num > 4){
             setIsRunning(false)
         }else{
@@ -66,7 +70,7 @@ export default function Quiz({route, navigation}) {
         if(isRunning && time >= 0 && num < 5){
             interval = setInterval(() => {
                 setTime(p => p - 1 )
-            }, 1000) 
+            }, 1100) 
         }else{
             clearInterval(interval)
         }
@@ -78,6 +82,40 @@ export default function Quiz({route, navigation}) {
     }, [start, isRunning])
  
  
+
+    if(!start) return (
+        <Layout>
+            <ImageBackground 
+                imageStyle={{opacity: 0.2, objectFit: 'fill'}} 
+                source={require("../assets/bg1.png")} 
+                style={{
+                    height: '100%',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 30
+                }}
+            > 
+                <Text style={{fontSize: 30, textAlign: 'center', fontWeight: '600', paddingHorizontal: 20}}>You only have {seconds} seconds to answer each problem.</Text> 
+                
+                <Button buttonStyle={{height: 100, borderRadius: 999, width: 100}} onPress={() => { 
+                    setStart(true)
+                    setIsRunning(true) 
+                }}
+                    ViewComponent={LinearGradient}
+                    linearGradientProps={{
+                        colors: ['#00667E', 'lightblue'],
+                        start: {x: 0, y: 0.5 },
+                        end: { x: 1, y: 0.5 },   
+                    }}
+                >
+                    Start
+                </Button> 
+
+            </ImageBackground>
+        </Layout>
+    )
+
+
     if(num > 4){ 
 
         return (
@@ -109,13 +147,13 @@ export default function Quiz({route, navigation}) {
 
                     </View>
 
-                    <Stack direction='row' justify='between' ph={20}>
-                        <Text>Score</Text>
+                    {/* <Stack direction='row' justify='between' ph={20}>
+                        <Text>Equivalent Score</Text>
                         <Stack direction='row'>
                             <Text style={{color: score >= 4 ? "#25A18E90" : "#9E2A2B"}}>{score * 20} </Text>
                             <Text>/ 100</Text>
                         </Stack>
-                    </Stack>
+                    </Stack> */}
 
                     <Stack direction='row' justify='between' ph={20} mb={5}>
                         <Text>Correct Answer</Text>
@@ -147,9 +185,9 @@ export default function Quiz({route, navigation}) {
                                             <ListItem.Content>
                                                 <ListItem.Title>
                                                     {qI + 1}. {`   `}
-                                                    {item.question}
+                                                    {`${item.question}`}
                                                 </ListItem.Title> 
-                                                <ListItem.Subtitle style={{paddingLeft: 30, textAlign: 'justify'}}>
+                                                <ListItem.Subtitle style={{paddingLeft: 30, paddingTop: 15, textAlign: 'justify'}}>
                                                     Solution: {item.solution}
                                                 </ListItem.Subtitle>
                                             </ListItem.Content>
@@ -202,31 +240,48 @@ export default function Quiz({route, navigation}) {
                 imageStyle={{opacity: 0.2, objectFit: 'fill'}}
                 style={{height: '100%', position: 'relative'}}
             >
-                <Text h3 
-                    style={{
-                        alignSelf: 'center',
-                        marginTop: 50,
-                        fontSize: 20,
-                        fontWeight: '900',
-                        color: time < 4 ? "red" : "#123"
-                    }}
-                >
-                    {time}
-                </Text> 
-                <Text style={{textAlign: 'center', fontSize: 30, marginTop: 10, fontWeight: '600'}}>Set {numOfSets[data[0].level - 1]}</Text>
+                <Stack direction='row-reverse' spacing={6} justify='between' ph={40} mt={30} mb={15}>
+                    <Text h3 
+                        style={{
+                            alignSelf: 'center',
+                            // marginTop: 50,
+                            fontSize: 40,
+                            fontWeight: '900',
+                            color: time < 4 ? "red" : time < 6 ? "#F7B801" : "#004777"
+                        }}
+                    >
+                        {time}
+                    </Text>  
+                    {/* <CountdownCircleTimer
+                        size={70}
+                        trailStrokeWidth={2}
+                        strokeLinecap='round'
+                        strokeWidth={2}
+                        isPlaying={start}
+                        duration={time} 
+                        colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+                        colorsTime={[7, 5, 3, 0]}
+                        onComplete={() => ({shouldRepeat: true, delay: 1})}
+                        initialRemainingTime={seconds}
+                        // onUpdate={() => ({shouldRepeat: true})}
+                        isSmoothColorTransition
+                    >
+                        {({ remainingTime,  elapsedTime, color}) => (
+                            <Text style={{color: color, fontSize: 26, fontWeight: '900'}}>{remainingTime}</Text>
+                        )    }
+                    </CountdownCircleTimer> */}
+                    <Text style={{fontSize: 20, marginTop: 10, fontWeight: '600'}}>Set {numOfSets[data[0].level - 1]}</Text>
+                    {/* <Animated.View style={[{width: '5%', borderRadius: 4, alignSelf: "center", height: 20, backgroundColor: '#00667E'}]}>
+                        <Text>Hello World</Text> 
+                    </Animated.View> */}
+                </Stack>
                 <ScrollView contentContainerStyle={{width : '100%', paddingVertical: 10}}> 
                     <View style={{position: "relative"}}> 
                         {/* <BlurView intensity={start ? 0 : 20} style={{width: "85%", zIndex: 99, height: '100%', alignSelf: "center", position: 'absolute'}} />  */}
                         <Text 
                             style={[styles.optionTitle, 
                             {
-                                color:  start ? "#000" : '#fff0',
-                                    textShadowColor: start ? "rgba(0, 0, 0, 0)" : "rgba(0,0,0, 0.9)",
-                                    textShadowOffset: {
-                                      width: 0,
-                                      height: 0,
-                                    },
-                                    textShadowRadius: start ? 0 : 20,
+                                color: "#000",  
                                 width: '85%',
                                 textAlign: 'center',
                                 alignSelf: 'center',
@@ -260,46 +315,16 @@ export default function Quiz({route, navigation}) {
                             >
                                 {/* <BlurView intensity={start ? 0 : 10} style={{width: "115%", zIndex: 99, height: '330%', alignSelf: "center", position: 'absolute'}} />  */}
                                 <Text
-                                    style={[styles.optionText,
-                                        {
-                                            color:  start ? "#DAD7CD" : '#fff0',
-                                            textShadowColor: start ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255, 0.9)",
-                                            textShadowOffset: {
-                                              width: 0,
-                                              height: 0,
-                                            },
-                                            textShadowRadius: start ? 0 : 20, 
-                                            marginRight: 10,
-                                            // color: '#DAD7CD'
-                                        }
-                                    ]}
+                                    style={[styles.optionText]}
                                 >
                                     {i == 0 ? 'a' : i == 1 ? 'b' : 'c' }.
                                 </Text>
-                                <Text style={[styles.optionText, {
-                                    color:  start ? "#DAD7CD" : '#fff0',
-                                    textShadowColor: start ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255, 0.9)",
-                                    textShadowOffset: {
-                                      width: 0,
-                                      height: 0,
-                                    },
-                                    textShadowRadius: start ? 0 : 20, 
-                                }]}>{option}</Text>  
+                                <Text style={[styles.optionText]}> {option}</Text>  
                             </View>
                         </Pressable>
                     ))}
 
-                </ScrollView>
-                {!start && 
-                    <Button 
-                        title="Start"
-                        buttonStyle={{height: 60, backgroundColor: '#004E64'}}
-                        onPress={() => {
-                            setStart(true)
-                            setIsRunning(true)
-                        }}
-                    />
-                }
+                </ScrollView> 
             </ImageBackground>
         </Layout>
     )

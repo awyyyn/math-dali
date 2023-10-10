@@ -1,7 +1,7 @@
 import { Button, Text } from 'react-native-elements'
 import React, { useEffect, useState } from 'react'
 import { RefreshControl, ScrollView } from 'react-native-gesture-handler'
-import { Dimensions, ImageBackground, TouchableOpacity, TouchableOpacityComponent, View } from 'react-native'
+import { BackHandler, Dimensions, ImageBackground, TouchableOpacity, TouchableOpacityComponent, View } from 'react-native'
 import SetButton from './components/SetButton'
 import { FAB } from 'react-native-elements';
 import Icon, { FA5Style } from 'react-native-vector-icons/FontAwesome5'
@@ -12,7 +12,8 @@ import { DialogTitle } from '@rneui/base/dist/Dialog/Dialog.Title'
 import { Skeleton } from '@rneui/themed'
 import { useContext } from 'react'
 import { SettingsContext } from '../../context/AppContext';
-import { numOfSets } from '../../lib/helpers'
+import { numOfSets } from '../../lib/helpers';
+
 
 export default function Intermediate({navigation}) {
       
@@ -25,21 +26,25 @@ export default function Intermediate({navigation}) {
     const [lastSet, setLastSet] = useState(0);
     const [snackBarMessage, setSnackBarMessage] = useState('') 
     const [refresh, setRefresh] = useState(false)
+    const [timerErrMessage, setTimerErrMessage] = useState('')
+    const [timer, setTimer] = useState('')
+ 
 
     async function getSets () {
         setLoading(true)
         const { data, error } = await supabase.from('category').select().eq('category', "Intermediate")
-
         if(error){
             alert(error.message)
             setLoading(false)
             return 
-        } 
-        setLastSet(data.length)
+        }
+        setLastSet(data.length + 1)
         setSets(data.sort((a, b) => a.id - b.id))
         setLoading(false)
     }
-  
+ 
+        
+ 
     useEffect(() => {
         getSets()
 
@@ -47,12 +52,12 @@ export default function Intermediate({navigation}) {
             .on('postgres_changes', { event: "INSERT", schema: 'public', table: 'category'}, (payload => getSets()))
             .subscribe()
 
-        return () => subscription.unsubscribe()
+        return () => {
+            subscription.unsubscribe()    
+        }
 
     }, [])
-    
-    console.log(lastSet, numOfSets.length, "HELLO WORLD")
-
+ 
     const handleClick = (path, value) => {
         navigation.navigate('SetScreen', {
             setNumber: path,
@@ -67,11 +72,10 @@ export default function Intermediate({navigation}) {
     
     return (
         <>
-            <ImageBackground
-                source={require('../../assets/bg.jpg')}
+            <ImageBackground 
+                source={require('../../assets/bg.jpg')} 
                 imageStyle={{opacity: 0.1, height: Dimensions.get('screen').height}}
-            > 
-            
+            >
                 {snackBarMessage &&
                     <Snackbar
                         message={snackBarMessage}
@@ -104,8 +108,8 @@ export default function Intermediate({navigation}) {
                                     setRefresh(false)
                                     return 
                                 }
-                                setLastSet(data.length)
-                                setSets(data.sort((a, b) => a.id - b.id))
+                                setLastSet(data.length + 1)
+                                setSets(data)
                                 setRefresh(false)
                             }}
                         />
@@ -134,7 +138,6 @@ export default function Intermediate({navigation}) {
                             </>
                         }
                     </View>
-        
                     <Dialog visible={addDialog} onDismiss={() => setAddDialog(false)} >
                         <DialogHeader title={`Add a new Set?`} />  
                         <DialogContent>
@@ -143,11 +146,15 @@ export default function Intermediate({navigation}) {
                         <DialogActions>
                             <Stack direction='row-reverse' mh={10} mb={10} spacing={5} >
                                 <Button 
-                                    title={"Yes"}
+                                    title={"Confirm"}
                                     buttonStyle={{minWidth: 70, marginLeft: 10,backgroundColor: "#004E64"}}
                                     onPress={async() => {
+                                        setTimerErrMessage('')
+                                        if(!timer || !/^\d+$/.test(timer)) {
+                                            return setTimerErrMessage('Please enter a valid number')
+                                        }
                                         setAdding(true)
-                                        const { error } = await supabase.from('category').insert({'category': 'Intermediate', level: (lastSet + 1), email: session.session.user.email})
+                                        const { error } = await supabase.from('category').insert({'category': 'Intermediate', level: (lastSet + 1), email: session.session.user.email, time: timer})
                                         if(error) {
                                             alert(error.message)
                                             setAdding(false)
@@ -155,8 +162,8 @@ export default function Intermediate({navigation}) {
                                         }
                                         setSnackBarMessage(`Set ${numOfSets[lastSet]}  is added`)
                                         setAddDialog(false)
+                                        setAdding(false)
                                         setTimeout(() => {
-                                            setAdding(false)
                                             setSnackBarMessage('')
                                         }, 3000)
 
@@ -166,22 +173,26 @@ export default function Intermediate({navigation}) {
                                 <Button 
                                     buttonStyle={{minWidth: 60, borderColor: '#004E64'}}
                                     titleStyle={{color: "#004E64"}}
-                                    title={"No"}
+                                    title={"Cancel"}
                                     type='outline'
-                                    onPress={() => setAddDialog(false)} 
+                                    onPress={() => { 
+                                        setAddDialog(false)
+                                        setTimerErrMessage('')
+                                        setTimer('')
+                                    }} 
                                 />
                             </Stack>
                         </DialogActions>
                     </Dialog> 
-                </ScrollView>
+                </ScrollView> 
             </ImageBackground>
             
+        
             {numOfSets.length != lastSet &&
                 <FAB    
                     buttonStyle={{backgroundColor: "#335C67"}}
                     placement='right'  
                     visible={true} 
-                    disabled={adding}
                     icon={{ name: 'add', color: 'white' }}  
                     onPress={() => setAddDialog(true)}
                 /> 

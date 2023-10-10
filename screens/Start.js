@@ -4,14 +4,17 @@ import React from 'react'
 import Layout from './Layout'
 import { ScrollView } from 'react-native-gesture-handler'
 import { LevelButton } from '../components'
-import styles from './styles'
+import styles from './styles'; 
 
 export default function Start({navigation}) {
+
+    const colors = ['#78c6a3', '#358f80', '#036666']
+
     return ( 
         <Layout  >
             <ImageBackground 
                 source={require('../assets/bg1.png')}  
-                style={[{alignItems: 'center', justifyContent: 'space-around', height: Dimensions.get('screen').height}, styles.homeContainer]} 
+                style={[{alignItems: 'center', justifyContent: 'space-around', height: Dimensions.get('screen').height, paddingVertical: 40}, styles.homeContainer]} 
                 imageStyle={{opacity: 0.3, objectFit: 'fill'}} 
             >
                 <View> 
@@ -20,14 +23,15 @@ export default function Start({navigation}) {
                 </View>
 
                 <ScrollView  style={{maxHeight: '60%', width: '100%'}} contentContainerStyle={{alignItems:'center'}}>
-                    {['Beginner', 'Intermediate', 'Expert'].map(item => (
+                    {['Beginner', 'Intermediate', 'Expert'].map((item, i) => (
                         <LevelButton 
                             key={item}
                             handlePress={(item) => navigation.navigate('Levels', {
-                                category: item
+                                category: item,
+                                color: colors[i]
                             }) }
                             value={item}
-                            
+                            color={colors[i]}
                         />
                     ))}
                 </ScrollView>
@@ -37,7 +41,8 @@ export default function Start({navigation}) {
                     size='lg'
                     title='Home'
                     titleStyle={{color: '#004E64'}}
-                    containerStyle={{width: '70%', }}
+                    buttonStyle={{marginBottom: 20}}
+                    containerStyle={{width: '70%'}}
                     onPress={() => navigation.navigate('Home')}
                 /> 
             </ImageBackground> 
