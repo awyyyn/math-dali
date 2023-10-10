@@ -132,7 +132,13 @@ export default function SetScreen({ route, navigation }) {
 
     const handleSwitch = async(id, value) => {   
 
-        if(activeQuestions < 5){ 
+        if(activeQuestions < 5){  
+            setNotif("Minimum Active Question is 5!")
+            setTimeout(() => {
+                setNotif("")
+            }, 3000)
+        }else{
+            console.log("MAX")
             if(value == true){
                 setActiveQuestions(p => p - 1)
             }else{
@@ -157,34 +163,7 @@ export default function SetScreen({ route, navigation }) {
             );
                 
             await supabase.from('questions').update({is_active: !value}).eq('id', id); 
-        }else{
-            console.log("MAX")
-            if(value == true){ 
-                setActiveQuestions(p => p - 1)
-                setQuestions(prev => prev.map((question) => {
-                    if (question.id === id) {
-                        return{
-                            ...question,
-                            is_active: false
-                            // Toggle is_active
-                        }
-                    }else{
-                        return question;
-                    }
-                  })
-                  .sort((a, b) => {
-                      const timestampA = new Date(a.created_at);
-                      const timestampB = new Date(b.created_at); 
-                      return timestampA - timestampB;
-                  })
-                ); 
-                await supabase.from('questions').update({is_active: !value}).eq('id', id); 
-            }else{
-                setNotif("You can only activate 5 questions at a time!")
-                setTimeout(() => {
-                    setNotif("")
-                }, 3000)
-            }
+                 
         }
 
     }

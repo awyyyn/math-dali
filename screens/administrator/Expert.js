@@ -1,4 +1,4 @@
-import { Button, Text } from 'react-native-elements'
+import { Button, Input, Text } from 'react-native-elements'
 import React, { useEffect, useState } from 'react'
 import { RefreshControl, ScrollView } from 'react-native-gesture-handler'
 import { BackHandler, Dimensions, ImageBackground, TouchableOpacity, TouchableOpacityComponent, View } from 'react-native'

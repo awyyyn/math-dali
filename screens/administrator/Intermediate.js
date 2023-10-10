@@ -1,4 +1,4 @@
-import { Button, Text } from 'react-native-elements'
+import { Button, Input, Text } from 'react-native-elements'
 import React, { useEffect, useState } from 'react'
 import { RefreshControl, ScrollView } from 'react-native-gesture-handler'
 import { BackHandler, Dimensions, ImageBackground, TouchableOpacity, TouchableOpacityComponent, View } from 'react-native'
@@ -141,7 +141,14 @@ export default function Intermediate({navigation}) {
                     <Dialog visible={addDialog} onDismiss={() => setAddDialog(false)} >
                         <DialogHeader title={`Add a new Set?`} />  
                         <DialogContent>
-                            <Text>Add Set {numOfSets[lastSet]}</Text>
+                            <Input 
+                                label={`Set timer for set ${numOfSets[lastSet]} (seconds)`}
+                                value={timer}
+                                keyboardType='number-pad'
+                                onChangeText={(text) => setTimer(text)}
+                                errorMessage={timerErrMessage}
+
+                            />
                         </DialogContent>
                         <DialogActions>
                             <Stack direction='row-reverse' mh={10} mb={10} spacing={5} >

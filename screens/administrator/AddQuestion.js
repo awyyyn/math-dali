@@ -58,7 +58,8 @@ export default function AddQuestion({route, navigation}) {
             solution: form.solution,
             answer: form.answer,
             is_active: false,
-            category: categoryData.id
+            category: categoryData.id,
+            is_active: true
         }).select().single();
 
         if(error){
