@@ -34,6 +34,7 @@ export default function Home({navigation}) {
                     <TouchableOpacity
                         onPress={async() => {
                             const data = await AsyncStorage.multiGet(['role', 'schoolId', 'schoolName'])
+                            await AsyncStorage.setItem('appLaunched', '')
                             console.log(data[0][1])
                             console.log(data[1][1])
                             

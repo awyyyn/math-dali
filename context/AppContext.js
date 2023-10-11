@@ -11,16 +11,8 @@ export default function AppContext({children}) {
     const [sound, setSound] = useState()
     const [context, setContext] = useState();
     const [session, setSession] = useState({session: null});
-    const [schoolInfo, setSchoolInfo] = useState({
-        role: '',
-        schoolId: '',
-        schoolName: '' 
-    })
-    const [mute, setMute] = useState(false); 
-    
-    console.log("================================== SC")
-    console.log(schoolInfo)
-    console.log("================================== SC")
+    const [isLaunched, setIsLaunched] = useState('');
+    const [mute, setMute] = useState(false);  
 
     useEffect(() => { 
         async function getSession () {
@@ -74,7 +66,7 @@ export default function AppContext({children}) {
      
 
     return (
-        <SettingsContext.Provider value={{playSound, session, logout, setSession, mute, schoolInfo, setSchoolInfo}}>
+        <SettingsContext.Provider value={{playSound, session, logout, setSession, mute, isLaunched, setIsLaunched}}>
             {children}
         </SettingsContext.Provider>
     )

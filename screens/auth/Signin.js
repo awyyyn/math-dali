@@ -124,6 +124,9 @@ export default function Signin() {
                                 setLoading(true);
                                 const { data, error } = await supabase.auth.signInWithPassword({email, password})
 
+                                console.log(data)
+                                console.log("================================================")
+                                console.log(error)
 
                                 if(error) {
                                     setLoading(false)
@@ -150,8 +153,8 @@ export default function Signin() {
                                 await AsyncStorage.multiSet([['role', `${adminData?.role}`], ['schoolId', `${adminData?.school_id}`], ['schoolName', `${adminData?.school_name}`]] )
                                 // await AsyncStorage.multiSet([['role', `${adminData?.role}`], ['schoolId', `${adminData?.school_id}`], ['schoolName', `${adminData?.school_name}`]] )
                                 
-                                const aaaa = await AsyncStorage.multiGet(['schoolId', 'schoolName', 'role'])
-                                console.log(aaaa)
+                                // await AsyncStorage.multiGet(['schoolId', 'schoolName', 'role'])
+                                // console.log(aaaa)
                                 setEmail('')
                                 setPassword('')
                                 setSession(data)
