@@ -1,5 +1,5 @@
 import { TouchableOpacity, Image, View, ImageBackground, Dimensions, BackHandler } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { RectButton, RefreshControl, ScrollView, Switch, } from 'react-native-gesture-handler';
 import styles from './styles'
@@ -15,10 +15,12 @@ import DeleteDialog from './components/DeleteDialog';
 import EditDialog from './components/EditDialog'; 
 import SkeletonQuestion from './components/SkeletonQuestion';
 import { Snackbar, Stack } from '@react-native-material/core';
+import { SettingsContext } from '../../context/AppContext';
 
 export default function SetScreen({ route, navigation }) {
-    const { setNumber, value, isTrue, category, snackBar, q } = route.params;
+    const { setNumber, value, isTrue, category, snackBar, q, schoolId, schoolName } = route.params;
     const [loading, setLoading] = useState(isTrue);
+    const { session, schoolInfo } = useContext(SettingsContext)
     const [refresh, setRefresh] = useState(false);
     const [questions, setQuestions] = useState([]);
     const [notif, setNotif] = useState('');
@@ -32,7 +34,7 @@ export default function SetScreen({ route, navigation }) {
         answer: '',
         is_active: '',
     }); 
- 
+     
  
     const handleAddQuestion = () => { 
         if(numberOfQuestions == 7){
@@ -46,7 +48,9 @@ export default function SetScreen({ route, navigation }) {
                 setNumber, 
                 value, 
                 isTrue,  
-                snackBar
+                snackBar,
+                schoolId,
+                schoolName
             })
         }
     }
@@ -56,7 +60,10 @@ export default function SetScreen({ route, navigation }) {
         const { data, error } = await supabase
             .from('category')
             .select(`*, questions(*, options(*))`)
-            .match({'level': setNumber, category})
+            .match({
+                'level': setNumber, 
+                "school_id": Number(schoolId),
+                category})
             .single();  
 
             console.log("DATA", data.questions, category, setNumber)
@@ -70,9 +77,9 @@ export default function SetScreen({ route, navigation }) {
             })
         )  
 
-        setActiveQuestions(data.questions.filter(q => q.is_active == true).length)
+        setActiveQuestions(data?.questions.filter(q => q.is_active == true).length)
 
-        setNumberOfQuestions(data.questions.length)
+        setNumberOfQuestions(data?.questions.length)
  
         setLoading(false)
     }
@@ -131,14 +138,13 @@ export default function SetScreen({ route, navigation }) {
     } 
 
     const handleSwitch = async(id, value) => {   
-
-        if(activeQuestions < 5){  
+        console.log(value)
+        if(activeQuestions < 6 && value !== ""){  
             setNotif("Minimum Active Question is 5!")
             setTimeout(() => {
                 setNotif("")
             }, 3000)
-        }else{
-            console.log("MAX")
+        }else{ 
             if(value == true){
                 setActiveQuestions(p => p - 1)
             }else{
@@ -297,7 +303,7 @@ export default function SetScreen({ route, navigation }) {
                                                 {question.options?.map(({option, id}, k) => (
                                                     <StaticCell
                                                         key={k} 
-                                                        title={`${k == 0 ? 'a.' : k == 1 ? 'b.' : 'c.'} ${option}`}
+                                                        title={`${k == 0 ? 'a.' : k == 1 ? 'b.' : k == 2 ? 'c.' : 'd.'} ${option}`}
                                                         accessory={`${option == question.answer ? 'checkmark' : ""}`}
                                                     /> 
                                                 ))}

@@ -1,5 +1,6 @@
  
-import { useEffect, useState } from 'react'
+import Onboard from './screens/Onboard';
+import { useEffect, useLayoutEffect, useState } from 'react'
 import 'react-native-gesture-handler';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -8,6 +9,7 @@ import Home from './screens/Home';
 import Rules from './screens/Rules'; 
 import Start from './screens/Start';
 import Settings from './screens/Settings'; 
+
 import AppContext from './context/AppContext';
 import Signin from './screens/auth/Signin';   
 import Administrator from './screens/administrator/Administrator'; 
@@ -18,14 +20,40 @@ import AddQuestion from './screens/administrator/AddQuestion';
 import { Provider } from '@react-native-material/core';
 import Quiz from './screens/Quiz';
 import Levels from './screens/Levels';
-import { StatusBar } from 'expo-status-bar';
-import { supabase } from './lib/supabase';
+import { StatusBar } from 'expo-status-bar'; 
+import ForgotPassword from './screens/auth/ForgotPassword';
+import AsyncStorage from '@react-native-async-storage/async-storage'; 
 
 
 const Stack = createStackNavigator();
 
 export default function App() {
- 
+  
+  const [isLaunched, setIsLaunched] = useState(false)
+
+  useEffect(() => { 
+    (async function () {
+      
+      try {
+        // await AsyncStorage.removeItem('appLaunched')
+        const appData = await AsyncStorage.getItem('appLaunched')   
+        console.log(appData, "Asd")
+        if (appData != null) { 
+          setIsLaunched(appData)
+        }
+        // else{
+        //   await AsyncStorage.setItem('appLaunched', "Launched")
+        //   setIsLaunched(true)
+        // } 
+      } catch (error) {
+        alert(error?.message)
+      }
+        
+    })()
+
+  }, [isLaunched])
+
+  
   
   const nestedAdminScreen = {
     presentation: "modal",
@@ -41,67 +69,72 @@ export default function App() {
     },
     headerTintColor: "#FFF"
   }
+  
+  console.log(isLaunched)
 
   return ( 
     <AppContext> 
       <Provider>
-        <NavigationContainer>  
-          <StatusBar animated networkActivityIndicatorVisible style='light' backgroundColor='#004E64' />
-          <Stack.Navigator  
-            initialRouteName={`Home`}
-            // detachInactiveScreens
-            screenOptions={{
-              headerShown: false,  
-            }} 
-          > 
+        <StatusBar animated networkActivityIndicatorVisible style='light' backgroundColor='#004E64' />
+          <NavigationContainer>  
+            <Stack.Navigator 
+              initialRouteName={!isLaunched ? "Onboarding" : "Home"}
+              screenOptions={{
+                headerShown: false,  
+              }} 
+            >   
+              {!isLaunched && (
+                <Stack.Screen name='Onboarding' component={Onboard} />
+              )}
+              <Stack.Screen name='Home' component={Home}  />
+              <Stack.Screen name='Rules' component={Rules}  />
+              <Stack.Screen name='Start' component={Start}  />
+              <Stack.Screen name='Settings' component={Settings}  />
+              {/* <Stack.Screen name='Addquestion' component={Addquestion}   /> */
+              /* <Stack.Screen name='Beginner' component={Beginner}   />
+              <Stack.Screen name='Level' component={Level}   />
+              <Stack.Screen name='Intermediate' component={Intermediate}   />
+              <Stack.Screen name='IntermediateLevel' component={IntermediateLevel}   />
+              <Stack.Screen name='Expert' component={Expert}   />
+              <Stack.Screen name='ExpertLevel' component={ExpertLevel}   /> */}
+              <Stack.Screen name='Levels' component={Levels} />
+              <Stack.Screen name='Quiz' component={Quiz} /> 
 
-            <Stack.Screen name='Home' component={Home}  />
-            <Stack.Screen name='Rules' component={Rules}  />
-            <Stack.Screen name='Start' component={Start}  />
-            <Stack.Screen name='Settings' component={Settings}  />
-            {/* <Stack.Screen name='Addquestion' component={Addquestion}   /> */}
-            {/* <Stack.Screen name='Beginner' component={Beginner}   />
-            <Stack.Screen name='Level' component={Level}   />
-            <Stack.Screen name='Intermediate' component={Intermediate}   />
-            <Stack.Screen name='IntermediateLevel' component={IntermediateLevel}   />
-            <Stack.Screen name='Expert' component={Expert}   />
-            <Stack.Screen name='ExpertLevel' component={ExpertLevel}   /> */}
-            <Stack.Screen name='Levels' component={Levels} />
-            <Stack.Screen name='Quiz' component={Quiz} /> 
-
-            <Stack.Screen name='Sign in' component={Signin}  />  
+              <Stack.Screen name='Sign in' component={Signin}  />  
+              <Stack.Screen name='forgotPassword' component={ForgotPassword} />
 
 
-            <Stack.Screen 
+              <Stack.Screen 
               name='AddQuestion' 
               component={AddQuestion} 
               options={{...nestedAdminScreen, ...headerStyles}} 
               
-            />
-            <Stack.Screen 
-              name='SetScreen' 
-              component={SetScreen}    
-              options={{ headerShown: true, ...headerStyles, headerBackTitleStyle: {color: '#FFF'}}}
-            />
-            <Stack.Screen 
-              name="Administrator" 
-              component={Administrator} 
-              options={{
-                headerShown: true,
-                headerRight: () => <Logout />,
-                headerLeft: null,
-                ...headerStyles,
-                
-              }}
-            />
+              />
+              
+              <Stack.Screen 
+                name='SetScreen' 
+                component={SetScreen}    
+                options={{ headerShown: true, ...headerStyles, headerBackTitleStyle: {color: '#FFF'}}}
+              />
+              
+              <Stack.Screen 
+                name="Administrator" 
+                component={Administrator} 
+                options={{
+                  headerShown: true,
+                  headerRight: () => <Logout />,
+                  headerLeft: null,
+                  ...headerStyles,
+                  
+                }}
+              />
 
-            <Stack.Screen 
+              <Stack.Screen 
               name='EditData' 
-              options={{...nestedAdminScreen, ...headerStyles}} 
-              component={EditData}
-            /> 
- 
-          </Stack.Navigator>   
+                options={{...nestedAdminScreen, ...headerStyles}} 
+                component={EditData}
+              />  
+            </Stack.Navigator>   
         </NavigationContainer>  
       </Provider>
     </AppContext>

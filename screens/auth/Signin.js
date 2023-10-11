@@ -1,7 +1,8 @@
 import { View, StyleSheet, Dimensions, ImageBackground } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import Layout from '../Layout'
-import { Button, Text, Input, Icon } from '@rneui/themed'
+import { Button, Text, Input, Icon } from '@rneui/themed';
+import { Link } from '@react-navigation/native'
 import { supabase } from '../../lib/supabase';
 import Animated, {
   useSharedValue,
@@ -13,6 +14,7 @@ import { SettingsContext} from '../../context/AppContext';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StackActions, useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
@@ -22,7 +24,7 @@ const iintialopacity = 0;
 
 export default function Signin() {
 
-    const { setSession, session } = useContext(SettingsContext)
+    const { setSession, session, setSchoolInfo } = useContext(SettingsContext)
     const navigation = useNavigation()
 
     const [showPass, setShowPass] = useState(true)
@@ -104,6 +106,14 @@ export default function Signin() {
                             }
                             // placeholder='Username'
                         />
+                        {/* <View>
+                            <TouchableOpacity
+                            
+                            onPress={() => navigation.navigate('forgotPassword')}
+                            > 
+                                <Text style={{textAlign: "right"}}>Forgot Password ?</Text> 
+                            </TouchableOpacity>
+                        </View> */}
                         <Button 
                             title='Log in' 
                             buttonStyle={{backgroundColor: '#335C67'}}
@@ -111,8 +121,9 @@ export default function Signin() {
                             loading={loading}
                             disabled={!email || !password ? true : false}
                             onPress={async() => { 
-                                setLoading(true)
+                                setLoading(true);
                                 const { data, error } = await supabase.auth.signInWithPassword({email, password})
+
 
                                 if(error) {
                                     setLoading(false)
@@ -126,7 +137,21 @@ export default function Signin() {
                                     }, 3000)
                                     return 
                                 }
-                                // console.log(data)
+
+                                const { data: adminData, error: adminError} = await supabase.from('administrator').select().eq('email', email).single();
+                            
+                                if(adminError) {
+                                    return alert(adminError.message);
+                                }
+
+                                // console.log()
+
+                                // console.log(data) 
+                                await AsyncStorage.multiSet([['role', `${adminData?.role}`], ['schoolId', `${adminData?.school_id}`], ['schoolName', `${adminData?.school_name}`]] )
+                                // await AsyncStorage.multiSet([['role', `${adminData?.role}`], ['schoolId', `${adminData?.school_id}`], ['schoolName', `${adminData?.school_name}`]] )
+                                
+                                const aaaa = await AsyncStorage.multiGet(['schoolId', 'schoolName', 'role'])
+                                console.log(aaaa)
                                 setEmail('')
                                 setPassword('')
                                 setSession(data)

@@ -19,24 +19,26 @@ export default function AddQuestion({route, navigation}) {
 
     const { session } = useContext(SettingsContext)
     const email = session.session.user.email
-    const { category, setNumber, value, isTrue, snackBar } = route.params
+    const { category, setNumber, value, isTrue, snackBar, schoolId, schoolName } = route.params
     const [adding, setAdding] = useState(false);
     const [form, setForm] = useState({
         question: '',
         optionA: '',
         optionB: '',
         optionC: '',
+        optionD: '',
         answer: '',
         solution: ""
     })
 
-    console.log(category, setNumber)
+    console.log(route.params)
 
     const [formErr, setFormErr] = useState({
         question: '',
         optionA: '',
         optionB: '',
         optionC: '',
+        optionD: '',
         answer: '',
         solution: ""
     })
@@ -44,40 +46,46 @@ export default function AddQuestion({route, navigation}) {
 
     const handleSubmit = async() => {
         
-        if(formErr.answer || formErr.optionA || formErr.optionB || formErr.optionC || formErr.question || formErr.solution || !form.answer || !form.optionA || !form.optionB || !form.optionC || !form.question || !form.solution ){
+        if(formErr.answer || formErr.optionA || formErr.optionB || formErr.optionC || formErr.question || formErr.solution || !form.answer || !form.optionA || !form.optionB || !form.optionC || !form.optionC || !form.question || !form.solution ){
             return false 
         }
 
         setAdding(true); 
         
         const { data: categoryData } = await supabase.from('category')
-            .select(`*`).match({category, level: setNumber}).single()
+            .select(`*`).match({category, level: setNumber, school_id: schoolId}).single()
    
         const { data, error } = await supabase.from('questions').insert({
             question: form.question,
             solution: form.solution,
             answer: form.answer,
             is_active: false,
-            category: categoryData.id,
-            is_active: true
+            category: categoryData?.id,
+            is_active: true,
+            school_id: schoolId 
         }).select().single();
 
         if(error){
-
-            return console.log(error)
+            // alert(error.message)
+            return console.log(error.message)
         }
 
         await supabase.from('options').insert([
             {q_id: data.id, option: form.optionA},
             {q_id: data.id, option: form.optionB},
             {q_id: data.id, option: form.optionC},
+            {q_id: data.id, option: form.optionD},
         ]);
+
         setAdding(false);
+        
         navigation.navigate("SetScreen", {
             category, 
             setNumber, 
             value, 
             isTrue, 
+            schoolId,
+            schoolName,
             snackBar: "Question added successfully!"
         })
     }
@@ -177,6 +185,18 @@ export default function AddQuestion({route, navigation}) {
                     errorMessage={formErr.optionC}
                 />
 
+                <TextInput
+                    inputLabel="Option D"
+                    isDisabled={adding}
+                    isMultiline={true}
+                    inputValue={form.optionD}
+                    handleChange={(text) => {
+                        setForm(f => ({...f, optionD: text}))
+                        setFormErr(f => ({...f, optionD: ""}))
+                    }}
+                    errorMessage={formErr.optionD}
+                />
+
                 <View
                     style={[styles.column,
                         {
@@ -214,6 +234,16 @@ export default function AddQuestion({route, navigation}) {
                                 // enabled={form.optionC}
                             /> 
                         }
+
+                        {form.optionD != "" &&
+                            <Picker.Item 
+                                label='Option D' 
+                                value={form.optionD ? form.optionD : ""}  
+                                // enabled={form.optionC}
+                            /> 
+                        }
+
+                        
                         
                     </Picker>
                 </View>

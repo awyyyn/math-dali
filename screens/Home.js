@@ -6,6 +6,7 @@ import styles from './styles'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import NavButton from '../components/NavButton' 
 import Layout from './Layout'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 export default function Home({navigation}) {
@@ -16,6 +17,8 @@ export default function Home({navigation}) {
     }
   
 
+
+
     return ( 
         <Layout>
             <ImageBackground 
@@ -23,10 +26,26 @@ export default function Home({navigation}) {
                 imageStyle={{opacity: 0.3, objectFit: 'fill'}} 
                 source={require('../assets/bg1.png')} 
             >   
-                <Image 
-                    source={require('../assets/math-dali.png')} 
-                    style={{objectFit: 'contain', width: 300, height: 100}}     
-                />
+                <View>
+                    <Image 
+                        source={require('../assets/math-dali.png')} 
+                        style={{objectFit: 'contain', width: 300, height: 100}}     
+                    />
+                    <TouchableOpacity
+                        onPress={async() => {
+                            const data = await AsyncStorage.multiGet(['role', 'schoolId', 'schoolName'])
+                            console.log(data[0][1])
+                            console.log(data[1][1])
+                            
+                        }}
+                    >
+                        <Text 
+                            style={{textAlign: 'center'}}
+                        >
+                            Ligao National High School
+                        </Text>
+                    </TouchableOpacity>
+                </View>
 
                 <View style={styles.navContainer}>
                     <NavButton 

@@ -2,6 +2,7 @@ import { View, Text } from 'react-native'
 import { useEffect, useState, createContext } from 'react' 
 import { Audio } from 'expo-av'
 import { supabase } from '../lib/supabase'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export const SettingsContext = createContext()
 
@@ -10,20 +11,32 @@ export default function AppContext({children}) {
     const [sound, setSound] = useState()
     const [context, setContext] = useState();
     const [session, setSession] = useState({session: null});
+    const [schoolInfo, setSchoolInfo] = useState({
+        role: '',
+        schoolId: '',
+        schoolName: '' 
+    })
     const [mute, setMute] = useState(false); 
     
+    console.log("================================== SC")
+    console.log(schoolInfo)
+    console.log("================================== SC")
+
     useEffect(() => { 
         async function getSession () {
             const { data } = await supabase.auth.getSession();
+            // await AsyncStorage.multiSet([['role', `${adminData?.role}`], ['schoolId', `${adminData?.school_id}`], ['schoolName', `${adminData?.school_name}`]] )
             setSession(data)
         } 
-        playSound() 
+        // playSound() 
         getSession() 
 
     }, [])
     
     async function logout () {
         await supabase.auth.signOut()
+        const aaaa = await AsyncStorage.multiRemove(['schoolId', 'schoolName', 'role'])
+        console.log(aaaa)
         setSession({session: null}) 
     }
 
@@ -55,12 +68,13 @@ export default function AppContext({children}) {
               sound.unloadAsync();
             }
           : undefined;
+
       }, [sound])
       
      
 
     return (
-        <SettingsContext.Provider value={{playSound, session, logout, setSession, mute}}>
+        <SettingsContext.Provider value={{playSound, session, logout, setSession, mute, schoolInfo, setSchoolInfo}}>
             {children}
         </SettingsContext.Provider>
     )

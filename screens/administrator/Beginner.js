@@ -14,6 +14,7 @@ import { useContext } from 'react'
 import { SettingsContext } from '../../context/AppContext';
 import { numOfSets } from '../../lib/helpers'
 import { useNavigation, StackActions } from '@react-navigation/native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 export default function Beginner() {
@@ -29,20 +30,35 @@ export default function Beginner() {
     const [snackBarMessage, setSnackBarMessage] = useState('') 
     const [refresh, setRefresh] = useState(false)
     const [timerErrMessage, setTimerErrMessage] = useState('')
-    const [timer, setTimer] = useState('')
+    const [timer, setTimer] = useState('');
+    const [schoolInfo, setSchoolInfo] = useState({
+        role: '',
+        schoolId: '',
+        schoolName: ''
+    })
  
  
     async function getSets () {
+
+        
+        const keys = await AsyncStorage.multiGet(['role', 'schoolId', 'schoolName']);
+
+        setSchoolInfo({
+            role: keys[0][1],
+            schoolId: keys[1][1],
+            schoolName: [2][1]
+        }) 
+
         setLoading(true)
-        const { data, error } = await supabase.from('category').select().eq('category', "Beginner")
+        const { data, error } = await supabase.from('category').select().match({'category': "Beginner", 'school_id': Number(keys[1][1])})
         if(error){
             alert(error.message)
             setLoading(false)
             return 
         } 
-        setLastSet(data.length + 1)
-        setSets(data.sort((a, b) => a.id - b.id))
-        console.log(lastSet, 'asd', numOfSets.length)
+        
+        setLastSet(data?.length + 1)  
+        setSets(data?.sort((a, b) => a.id - b.id)) 
         setLoading(false)
     } 
     
@@ -70,6 +86,8 @@ export default function Beginner() {
             value: value,
             isTrue: true,
             category: 'Beginner',
+            schoolId: schoolInfo.schoolId,
+            schoolName: schoolInfo.schoolName,
             snackBar: "",
             q: ""
         })
@@ -108,7 +126,7 @@ export default function Beginner() {
                             refreshing={refresh}
                             onRefresh={async() => {
                                 setRefresh(true)
-                                const { data, error } = await supabase.from('category').select().eq('category', "Beginner")
+                                const { data, error } = await supabase.from('category').select().match({'category': "Beginner", 'school_id': Number(schoolInfo?.schoolId)})
                                 if(error){
                                     alert(error.message)
                                     setRefresh(false)
@@ -145,11 +163,13 @@ export default function Beginner() {
                     </View>
         
                     <Dialog visible={addDialog} onDismiss={() => setAddDialog(false)} >
-                        <DialogHeader title={`Add a new Set?`} />  
-                        <DialogContent>
+                        {/* <DialogHeader title={``} />   */}
+                        <DialogContent >
                             <Input 
                                 label={`Set timer for set ${numOfSets[lastSet]} (seconds)`}
                                 value={timer}
+                                style={{textAlign: 'center', fontSize: 22}}
+                                labelStyle={{marginTop: 50}}
                                 keyboardType='number-pad'
                                 onChangeText={(text) => setTimer(text)}
                                 errorMessage={timerErrMessage}
@@ -172,7 +192,8 @@ export default function Beginner() {
                                                 'category': 'Beginner', 
                                                 level: (lastSet + 1), 
                                                 email: session.session.user.email,
-                                                time: timer
+                                                time: timer,
+                                                school_id: Number(schoolInfo?.schoolId)
                                             });
 
                                         if(error) {
