@@ -53,7 +53,7 @@ export default function MainAdmin() {
 
 
         return () => {
-            subscription.unsubscribe()
+            supabase.removeChannel(subscription)
         }
 
     }, [])
@@ -77,7 +77,7 @@ export default function MainAdmin() {
                 <TouchableOpacity 
                     style={styles.buttonContainer}
                     activeOpacity={0.8}
-                    
+                    onPress={() => navigation.navigate('Create Admin')}
                 >
                     <View
                         

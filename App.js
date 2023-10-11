@@ -24,6 +24,7 @@ import { StatusBar } from 'expo-status-bar';
 import ForgotPassword from './screens/auth/ForgotPassword';
 import AsyncStorage from '@react-native-async-storage/async-storage'; 
 import EditAdmin from './screens/administrator/EditAdmin';
+import CreateAdmin from './screens/administrator/CreateAdmin';
 
   
 const nestedAdminScreen = {
@@ -128,6 +129,13 @@ const Screeens = ({}) => {
           ...headerStyles,
         }}
         component={EditAdmin} />
+      <Stack.Screen 
+        name="Create Admin" 
+        options={{
+          headerShown: true,
+          ...headerStyles,
+        }}
+        component={CreateAdmin} />
 
       <Stack.Screen 
         name='AddQuestion' 
