@@ -32,6 +32,30 @@ export default function MainAdmin() {
             setInitLoading(false);
             // console.log(schools)
         })() 
+
+
+        const subscription = supabase
+                                .channel('any')
+                                .on("postgres_changes", {
+                                    event: "*",
+                                    schema: "public",
+                                    table: "administrator",
+                                }, async(payload) => {
+                                    const { data, error } = await supabase.from('administrator').select();
+                                    if(error) {
+                                        alert(error.message)
+                                        return console.log(error.message)
+                                    }
+                                    setAdmins(data)
+                                    setFiltered(data)
+                                })
+                                .subscribe()
+
+
+        return () => {
+            subscription.unsubscribe()
+        }
+
     }, [])
 
     useEffect(() => {
