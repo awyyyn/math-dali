@@ -18,7 +18,9 @@ export default function Onboard() {
     const [schools, setSchools] = useState([])
     const [initLoading, setInitLoading] = useState(false);
     const [schoolName, setSchoolName] = useState(null)
-    const [schoolId, setSchoolId] = useState(null)
+    const [schoolId, setSchoolId] = useState(null);
+    const [inputId, setInputId] = useState('');
+    const [err, setErr] = useState('')
 
     useEffect(() => {
         
@@ -131,7 +133,7 @@ export default function Onboard() {
                         </Stack>
                         <Stack>
                             <Text>School ID</Text>
-                            <Picker 
+                            {/* <Picker 
                                 enabled={false}
                                 // dropdownIconRippleColor={'#ffffff00'}
                                 // dropdownIconColor={'#ffffff00'}
@@ -140,13 +142,33 @@ export default function Onboard() {
                             >
                                 <Picker.Item label='School ID' value={''} />
                                 <Picker.Item label={schoolId} value={schoolId} />
-                            </Picker>
+                            </Picker> */}
+                            <Input 
+                                errorMessage={err &&  err}
+                                value={inputId}
+                                keyboardType='number-pad'
+                                maxLength={6} 
+                                style={{textAlign: 'center', letterSpacing: Dimensions.get('screen').fontScale = 40}}
+                                onTouchStart={() => {
+                                    setErr("")
+                                }}
+                                onChangeText={(text) => {
+                                    if(/^\d+$/.test(text) || (!text)) {
+                                        setInputId(text)
+                                    }
+                                }} 
+                            />
                         </Stack>
 
                         <Button
                             title='Submit'
                             // containerStyle={{paddingHorizontal: 10}}
                             onPress={async() => {
+                                setErr('')
+                                if(inputId !== schoolId){
+                                    return setErr('School ID does not match!')
+                                }
+                                console.log()
                                 await AsyncStorage.setItem('appLaunched', "LAUNCHED!")
                                 if(!schoolId || !schoolName) {
                                     alert('Please select a school')
