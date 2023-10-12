@@ -7,13 +7,17 @@ import { Button, Icon, Text } from '@rneui/themed'
 import { NavButton } from '../components'
 import { TouchableHighlight } from 'react-native-gesture-handler'
 import { supabase } from '../lib/supabase'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useNavigation, StackActions } from '@react-navigation/native'
 
-export default function Settings({navigation}) {
+export default function Settings() {
+    
+    const navigation = useNavigation();
  
    
     const [pressed, setPressed] = useState(false);
 
-    const { playSound, session, logout, mute } = useContext(SettingsContext) 
+    const { playSound, session, logout, mute, setIsLaunched } = useContext(SettingsContext) 
  
     const handleMute = async() => { 
         playSound(!mute)
@@ -37,6 +41,22 @@ export default function Settings({navigation}) {
                         title={session.session ? 'Dashboard' : 'Sign in'}
                         onPress={() => navigation.navigate(session.session ? 'Administrator' : 'Sign in')}
                     />
+                    
+                    <Button
+                        type='clear'
+                        containerStyle={{width: '100%'}}
+                        buttonStyle={{backgroundColor: "#004E64"}}  
+                        title={'Reset School Reference'}
+                        titleStyle={{color: "#FFFFFF"}}
+                        onPress={async() => {
+                            await AsyncStorage.setItem('appLaunched', '');
+                            await AsyncStorage.multiRemove(['schoolId', 'schoolName', 'role'])
+                            setIsLaunched('')
+                            navigation.dispatch({
+                                ...StackActions.replace('Onboarding')
+                            })
+                        }}
+                    /> 
                     <Button
                         type='clear'
                         containerStyle={{width: '100%'}}  

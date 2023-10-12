@@ -103,10 +103,10 @@ const Screeens = ({}) => {
       headerShown: false,  
     }} 
   >   
-    {!isLaunched && (
+      <Stack.Screen name='Home' component={Home}  />
+      {!isLaunched && (
         <Stack.Screen name='Onboarding' component={Onboard} />
       )}
-      <Stack.Screen name='Home' component={Home}  />
       <Stack.Screen name='Rules' component={Rules}  />
       <Stack.Screen name='Start' component={Start}  />
       <Stack.Screen name='Settings' component={Settings}  />

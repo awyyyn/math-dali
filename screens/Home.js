@@ -1,5 +1,5 @@
 import { Dimensions, ImageBackground, View } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Button, Image, Text } from '@rneui/themed'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import styles from './styles'
@@ -7,15 +7,34 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import NavButton from '../components/NavButton' 
 import Layout from './Layout'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { SettingsContext } from '../context/AppContext'
 
 
-export default function Home({navigation}) {
+export default function Home({route, navigation}) {
+ 
 
-  
+    const { isLaunched } = useContext(SettingsContext)
+
+    const [schoolName, setSchoolName] = useState(null)
+
+    useEffect(() => {
+
+        (async() => {
+            const data = await AsyncStorage.getItem('schoolName')
+            if(!data) setSchoolName('Reset The School Reference')
+            console.log(data, "HELLO WORLD")
+            setSchoolName(data)
+        })()
+
+        // return () => {
+        //     setSchoolName()
+        // }
+
+    }, [isLaunched])
+
     const handleNavigation = (screen) => {
         navigation.navigate(`${screen}`)
     }
-  
 
 
 
@@ -43,7 +62,7 @@ export default function Home({navigation}) {
                         <Text 
                             style={{textAlign: 'center'}}
                         >
-                            Ligao National High School
+                            {schoolName}
                         </Text>
                     </TouchableOpacity>
                 </View>

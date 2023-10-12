@@ -28,7 +28,7 @@ export default function AppContext({children}) {
     async function logout () {
         await supabase.auth.signOut()
         const aaaa = await AsyncStorage.multiRemove(['schoolId', 'schoolName', 'role'])
-        console.log(aaaa)
+        // console.log(aaaa)
         setSession({session: null}) 
     }
 

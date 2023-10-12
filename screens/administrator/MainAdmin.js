@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { View, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
-import { Text } from 'react-native-elements' 
+import { Dialog, Text } from 'react-native-elements' 
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { supabase } from '../../lib/supabase';
 import { RefreshControl, ScrollView } from 'react-native-gesture-handler';
@@ -13,6 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function MainAdmin() {
 
+    const [toDeleteModal, setToDeleteModal] = useState(false)
     const navigation = useNavigation();
     const [search, setSearch] = useState('')
     const [schools, setSchools] = useState([]);
@@ -20,6 +21,10 @@ export default function MainAdmin() {
     const [filtered, setFiltered] = useState(admins);
     const [initLoading, setInitLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
+    const [toDelete, setToDelete] = useState({
+        id: '',
+        email: ''
+    });
 
     useEffect(() => { 
         (async () => {
@@ -67,11 +72,44 @@ export default function MainAdmin() {
         )) 
 
     }, [search]) 
-
-    console.log(filtered)
+ 
 
     return (
+        
         <View style={{width: Dimensions.get('screen').width}}>
+            {/* ==================================== MODAL ==================================== */}
+            <Dialog
+                isVisible={toDeleteModal}
+                onDismiss={() => setToDeleteModal(false)}
+            >
+                <Dialog.Title title='Delete Admin' />
+                {/* <Dialog.Loading /> */}
+                <View style={{marginBottom: 15, marginTop: 10}}>
+                    <Text style={{fontSize: Dimensions.get('screen').fontScale = 16}}>Are you sure you want to delete admin {toDelete.email}?</Text>
+                </View>
+                <Dialog.Actions >
+                    <Dialog.Button 
+                        containerStyle={[styles.dialogButton]}
+                        title="Confirm"
+                        titleStyle={{color: "#FFF"}}
+                        buttonStyle={{
+                            backgroundColor: 'red',
+                        }}
+                        // linearGradientProps={l}
+                    />
+                    <Dialog.Button  
+                        containerStyle={[styles.dialogButton, {marginRight: 8}]}
+                        title="Cancel"
+                        titleStyle={{color: "#FFF"}}
+                        buttonStyle={{
+                            backgroundColor: 'green',
+                        }}
+                        onPress={() => setToDeleteModal(false)}
+                    />
+                </Dialog.Actions>
+            </Dialog>
+
+            {/* ==================================== */}
             <Text h3 style={{paddingHorizontal: 20, paddingTop: 10}}>Manage Admins</Text>
             <View style={styles.container}>
                 <TouchableOpacity 
@@ -215,6 +253,15 @@ export default function MainAdmin() {
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         style={{paddingHorizontal: 10}}
+                                        // onPress={}
+                                        onPress={() => {
+                                            setToDelete({
+                                                email: admin.email,
+                                                id: admin.id
+                                            })
+                                            setToDeleteModal(true)
+                                        }}
+
                                     >
                                         <Text>Delete</Text>
                                     </TouchableOpacity>
@@ -285,5 +332,8 @@ const styles = StyleSheet.create({
     },
     minWidthSchool: {
         minWidth: 200
+    },
+    dialogButton: {
+        minWidth: 80
     }
 })

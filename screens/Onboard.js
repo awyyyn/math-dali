@@ -1,21 +1,53 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { View, StyleSheet, Dimensions, ImageBackground } from 'react-native'
 import { Button, Input, Text } from 'react-native-elements'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Layout from './Layout'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, StackActions } from '@react-navigation/native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { BlurView } from 'expo-blur'
 import { Stack } from '@react-native-material/core'
 import { SettingsContext } from '../context/AppContext'
+import { supabase } from '../lib/supabase'
+import { Picker } from '@react-native-picker/picker'
 
-export default function Onboard() {
-
+export default function Onboard() { 
     const { setIsLaunched } = useContext(SettingsContext)
-    const navigation = useNavigation()
-    const [schoolId, setSchoolId] = useState('')
-    const [schoolName, setSchoolName] = useState('')
+    const navigation = useNavigation() 
+    const [schools, setSchools] = useState([])
+    const [initLoading, setInitLoading] = useState(false);
+    const [schoolName, setSchoolName] = useState(null)
+    const [schoolId, setSchoolId] = useState(null)
+
+    useEffect(() => {
+        
+        (async () => {
+            setInitLoading(true)
+            const { data, error } = await supabase.from('administrator').select() 
+            console.log(data)
+            if(error) {
+                console.log(error.message)
+                alert(error.message)
+                setInitLoading(false)
+                return
+            }
+            
+            
+            setSchools(data?.map(item => {
+                return {
+                    id: item.school_id,
+                    name: item.school_name
+                }
+            }))
+            
+            setInitLoading(false)
+
+        })()
+
+    }, [])
+ 
+    console.log(schools[2], "SELECTED")
 
 
 
@@ -29,20 +61,15 @@ export default function Onboard() {
                 }}
                 style={{
                     backgroundColor: "#FFFFFF",
+                    position: 'relative',
+                    zIndex: 4
                 }}
             >
-                <ScrollView contentContainerStyle={styles.main}>
+                {/* <ScrollView contentContainerStyle={styles.main}>
                     <Stack
                         spacing={15}
                         style={styles.form}
-                    >
-                        <Text 
-                            h3
-                            style={{
-                                textAlign: 'center',
-                                color: "#00667E"
-                            }}
-                        >Math Dali</Text>
+                    > 
                         <View>
                             <Input  
                                 errorMessage='asd'
@@ -72,11 +99,68 @@ export default function Onboard() {
                             onPress={async() => {
                                 await AsyncStorage.setItem('appLaunched', "LAUNCHED!")
                                 setIsLaunched(true)
-                                navigation.navigate('Home')
+                                navigation.dispatch({
+                                    ...StackActions.replace('Home')
+                                })
                             }}  
                         /> 
                     </Stack>
-                </ScrollView>
+                </ScrollView> */}
+                <View
+                    style={styles.main}
+                >
+                    <Stack spacing={15} style={styles.wrapper}>
+                        <Stack>
+                            <Text>School Name</Text>
+                            <Picker 
+                                selectedValue={schoolName}
+                                onValueChange={(val, i) => {
+                                    setSchoolName(val) 
+                                    setSchoolId(schools[i -1]?.id)
+                                }}
+                            >
+                                <Picker.Item label='Select School' value={''} />
+                                {schools.map(item => (
+                                    <Picker.Item 
+                                        label={item.name} 
+                                        value={item.name}
+                                        key={item.id}
+                                    />
+                                ))}
+                            </Picker>
+                        </Stack>
+                        <Stack>
+                            <Text>School ID</Text>
+                            <Picker 
+                                enabled={false}
+                                // dropdownIconRippleColor={'#ffffff00'}
+                                // dropdownIconColor={'#ffffff00'}
+                                dropdownIconColor="#FFFFFF"
+                                selectedValue={schoolId ? schoolName == "" ? '' : schoolId : ''} 
+                            >
+                                <Picker.Item label='School ID' value={''} />
+                                <Picker.Item label={schoolId} value={schoolId} />
+                            </Picker>
+                        </Stack>
+
+                        <Button
+                            title='Submit'
+                            // containerStyle={{paddingHorizontal: 10}}
+                            onPress={async() => {
+                                await AsyncStorage.setItem('appLaunched', "LAUNCHED!")
+                                if(!schoolId || !schoolName) {
+                                    alert('Please select a school')
+                                    return
+                                }
+                                await AsyncStorage.multiSet([['schoolId', schoolId], ['schoolName', schoolName]])
+                                setIsLaunched(true)
+                                // navigation.dispatch({
+                                //     ...StackActions.replace('Home')
+                                // })
+                            }}  
+                        /> 
+                    </Stack>
+                </View>
             </ImageBackground>
         </Layout>
     )
@@ -85,13 +169,23 @@ export default function Onboard() {
 
 const styles = StyleSheet.create({
     main: { 
-        width: '100%',
+        width: Dimensions.get('screen').width,
+        height: Dimensions.get('screen').height,
         // height: '100%',
-        // flex: 1,
+        // flex: 1, 
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative', 
-        paddingTop: "120%", 
+        zIndex: 10
+        // paddingTop: "120%", 
+    },
+    wrapper: {
+        position: 'absolute',  
+        zIndex: 99999999,
+        width: Dimensions.get('screen').width,
+        // height: 200
+        top: "60%",
+        paddingHorizontal: 20
     },
     form: {
         padding: 20,

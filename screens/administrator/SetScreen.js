@@ -66,7 +66,10 @@ export default function SetScreen({ route, navigation }) {
                 category})
             .single();  
 
-            console.log("DATA", data.questions, category, setNumber)
+            if(error){
+                console.log(error)
+            }
+ 
 
         setQuestions(data?.questions
             .sort((a, b) => {
@@ -76,6 +79,8 @@ export default function SetScreen({ route, navigation }) {
                 return timestampA - timestampB;
             })
         )  
+        console.log(data)
+        // setQuestions()
 
         setActiveQuestions(data?.questions.filter(q => q.is_active == true).length)
 
@@ -94,7 +99,9 @@ export default function SetScreen({ route, navigation }) {
         const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
          
         const subscribe = supabase.channel("any")
-            .on('postgres_changes', {event: '*', schema: 'public', table: 'questions'}, (payload => getData()))
+            .on('postgres_changes', {event: '*', schema: 'public', table: 'questions'}, (payload =>{
+                getData(); 
+            }))
             .subscribe()
             // .on('postgres_changes', {event: 'INSERT', schema: 'public', table: 'questions'}, (payload => getData()))
         return () => {
