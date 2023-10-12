@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Layout from './Layout'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation, StackActions } from '@react-navigation/native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { RefreshControl, ScrollView } from 'react-native-gesture-handler'
 import { BlurView } from 'expo-blur'
 import { Stack } from '@react-native-material/core'
 import { SettingsContext } from '../context/AppContext'
@@ -20,7 +20,8 @@ export default function Onboard() {
     const [schoolName, setSchoolName] = useState(null)
     const [schoolId, setSchoolId] = useState(null);
     const [inputId, setInputId] = useState('');
-    const [err, setErr] = useState('')
+    const [err, setErr] = useState('');
+    const [refresh, setRefresh] = useState(false)
 
     useEffect(() => {
         
@@ -55,135 +56,163 @@ export default function Onboard() {
 
     return (
         <Layout>        
-            <ImageBackground     
-                source={require('../assets/onboardbg.png')}
-                imageStyle={{
-                    backgroundColor: "#FFFFFF",
-                    height: Dimensions.get('screen').height
-                }}
-                style={{
-                    backgroundColor: "#FFFFFF",
-                    position: 'relative',
-                    zIndex: 4
-                }}
-            >
-                {/* <ScrollView contentContainerStyle={styles.main}>
-                    <Stack
-                        spacing={15}
-                        style={styles.form}
-                    > 
-                        <View>
-                            <Input  
-                                errorMessage='asd'
-                                label="School Name"
-                                labelStyle={styles.labelStyle}
-                            />
+            <ScrollView
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refresh}
+                        onRefresh={async() => {
+                            setRefresh(true)
+                            const { data, error } = await supabase.from('administrator').select() 
+                            console.log(data)
+                            if(error) {
+                                console.log(error.message)
+                                alert(error.message)
+                                setRefresh(false)
+                                return
+                            } 
                             
-                        </View>
-
-                        <View>
-                            <Input  
-                                errorMessage='asd'
-                                keyboardType='decimal-pad'  
-                                value={schoolId}
-                                onChangeText={(text) => {
-                                    if(/^\d+$/.test) setSchoolId(text)
-                                }}
-                                maxLength={6}
-                                label="School ID Number"
-                                labelStyle={styles.labelStyle}
-                            />
-
-                        </View>
-
-                        <Button
-                            title='Submit'
-                            onPress={async() => {
-                                await AsyncStorage.setItem('appLaunched', "LAUNCHED!")
-                                setIsLaunched(true)
-                                navigation.dispatch({
-                                    ...StackActions.replace('Home')
-                                })
-                            }}  
-                        /> 
-                    </Stack>
-                </ScrollView> */}
-                <View
-                    style={styles.main}
+                            setSchools(data?.map(item => {
+                                return {
+                                    id: item.school_id,
+                                    name: item.school_name
+                                }
+                            }))
+                            
+                            setRefresh(false)
+                        }}
+                    />
+                }   
+            >
+                <ImageBackground     
+                    source={require('../assets/onboardbg.png')}
+                    imageStyle={{
+                        backgroundColor: "#FFFFFF",
+                        height: Dimensions.get('screen').height
+                    }}
+                    style={{
+                        backgroundColor: "#FFFFFF",
+                        position: 'relative',
+                        zIndex: 4
+                    }}
                 >
-                    <Stack spacing={15} style={styles.wrapper}>
-                        <Stack>
-                            <Text>School Name</Text>
-                            <Picker 
-                                selectedValue={schoolName}
-                                onValueChange={(val, i) => {
-                                    setSchoolName(val) 
-                                    setSchoolId(schools[i -1]?.id)
-                                }}
-                            >
-                                <Picker.Item label='Select School' value={''} />
-                                {schools.map(item => (
-                                    <Picker.Item 
-                                        label={item.name} 
-                                        value={item.name}
-                                        key={item.id}
-                                    />
-                                ))}
-                            </Picker>
-                        </Stack>
-                        <Stack>
-                            <Text>School ID</Text>
-                            {/* <Picker 
-                                enabled={false}
-                                // dropdownIconRippleColor={'#ffffff00'}
-                                // dropdownIconColor={'#ffffff00'}
-                                dropdownIconColor="#FFFFFF"
-                                selectedValue={schoolId ? schoolName == "" ? '' : schoolId : ''} 
-                            >
-                                <Picker.Item label='School ID' value={''} />
-                                <Picker.Item label={schoolId} value={schoolId} />
-                            </Picker> */}
-                            <Input 
-                                errorMessage={err &&  err}
-                                value={inputId}
-                                keyboardType='number-pad'
-                                maxLength={6} 
-                                style={{textAlign: 'center', letterSpacing: Dimensions.get('screen').fontScale = 40}}
-                                onTouchStart={() => {
-                                    setErr("")
-                                }}
-                                onChangeText={(text) => {
-                                    if(/^\d+$/.test(text) || (!text)) {
-                                        setInputId(text)
-                                    }
-                                }} 
-                            />
-                        </Stack>
+                    {/* <ScrollView contentContainerStyle={styles.main}>
+                        <Stack
+                            spacing={15}
+                            style={styles.form}
+                        > 
+                            <View>
+                                <Input  
+                                    errorMessage='asd'
+                                    label="School Name"
+                                    labelStyle={styles.labelStyle}
+                                />
+                                
+                            </View>
 
-                        <Button
-                            title='Submit'
-                            // containerStyle={{paddingHorizontal: 10}}
-                            onPress={async() => {
-                                setErr('')
-                                if(inputId !== schoolId){
-                                    return setErr('School ID does not match!')
-                                }
-                                console.log()
-                                await AsyncStorage.setItem('appLaunched', "LAUNCHED!")
-                                if(!schoolId || !schoolName) {
-                                    alert('Please select a school')
-                                    return
-                                }
-                                await AsyncStorage.multiSet([['schoolId', schoolId], ['schoolName', schoolName]])
-                                setIsLaunched(true)
-                                // navigation.dispatch({
-                                //     ...StackActions.replace('Home')
-                                // })
-                            }}  
-                        /> 
-                    </Stack>
-                </View>
-            </ImageBackground>
+                            <View>
+                                <Input  
+                                    errorMessage='asd'
+                                    keyboardType='decimal-pad'  
+                                    value={schoolId}
+                                    onChangeText={(text) => {
+                                        if(/^\d+$/.test) setSchoolId(text)
+                                    }}
+                                    maxLength={6}
+                                    label="School ID Number"
+                                    labelStyle={styles.labelStyle}
+                                />
+
+                            </View>
+
+                            <Button
+                                title='Submit'
+                                onPress={async() => {
+                                    await AsyncStorage.setItem('appLaunched', "LAUNCHED!")
+                                    setIsLaunched(true)
+                                    navigation.dispatch({
+                                        ...StackActions.replace('Home')
+                                    })
+                                }}  
+                            /> 
+                        </Stack>
+                    </ScrollView> */}
+                    <View
+                        style={styles.main}
+                    >
+                        <Stack spacing={15} style={styles.wrapper}>
+                            <Stack>
+                                <Text>School Name</Text>
+                                <Picker 
+                                    selectedValue={schoolName}
+                                    onValueChange={(val, i) => {
+                                        setSchoolName(val) 
+                                        setSchoolId(schools[i -1]?.id)
+                                    }}
+                                >
+                                    <Picker.Item label='Select School' value={''} />
+                                    {schools.map(item => (
+                                        <Picker.Item 
+                                            label={item.name} 
+                                            value={item.name}
+                                            key={item.id}
+                                        />
+                                    ))}
+                                </Picker>
+                            </Stack>
+                            <Stack>
+                                <Text>School ID</Text>
+                                {/* <Picker 
+                                    enabled={false}
+                                    // dropdownIconRippleColor={'#ffffff00'}
+                                    // dropdownIconColor={'#ffffff00'}
+                                    dropdownIconColor="#FFFFFF"
+                                    selectedValue={schoolId ? schoolName == "" ? '' : schoolId : ''} 
+                                >
+                                    <Picker.Item label='School ID' value={''} />
+                                    <Picker.Item label={schoolId} value={schoolId} />
+                                </Picker> */}
+                                <Input 
+                                    errorMessage={err &&  err}
+                                    value={inputId}
+                                    keyboardType='number-pad'
+                                    maxLength={6} 
+                                    style={{textAlign: 'center', letterSpacing: Dimensions.get('screen').fontScale = 40}}
+                                    onTouchStart={() => {
+                                        setErr("")
+                                    }}
+                                    onChangeText={(text) => {
+                                        if(/^\d+$/.test(text) || (!text)) {
+                                            setInputId(text)
+                                        }
+                                    }} 
+                                />
+                            </Stack>
+
+                            <Button
+                                title='Submit'
+                                // containerStyle={{paddingHorizontal: 10}}
+                                onPress={async() => {
+                                    setErr('')
+                                    if(inputId !== schoolId){
+                                        return setErr('School ID does not match!')
+                                    }
+                                    console.log()
+                                    await AsyncStorage.setItem('appLaunched', "LAUNCHED!")
+                                    if(!schoolId || !schoolName) {
+                                        alert('Please select a school')
+                                        return
+                                    }
+                                    await AsyncStorage.multiSet([['schoolId', schoolId], ['schoolName', schoolName]])
+                                    setIsLaunched(true)
+                                    // navigation.dispatch({
+                                    //     ...StackActions.replace('Home')
+                                    // })
+                                }}  
+                            /> 
+                        </Stack>
+                    </View>
+                </ImageBackground>
+            </ScrollView>
         </Layout>
     )
 }

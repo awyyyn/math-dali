@@ -20,7 +20,7 @@ export default function AppContext({children}) {
             // await AsyncStorage.multiSet([['role', `${adminData?.role}`], ['schoolId', `${adminData?.school_id}`], ['schoolName', `${adminData?.school_name}`]] )
             setSession(data)
         } 
-        // playSound() 
+        playSound() 
         getSession() 
 
     }, [])
@@ -35,7 +35,7 @@ export default function AppContext({children}) {
     async function playSound (value) {
 
         console.log(value)
-        const { sound } = await Audio.Sound.createAsync(require('../assets/sound/steam-cafe.mp3')) 
+        const { sound } = await Audio.Sound.createAsync(require('../assets/sound/retro.mp3')) 
         setSound(sound) 
 
 

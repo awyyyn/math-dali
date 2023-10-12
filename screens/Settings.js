@@ -46,7 +46,7 @@ export default function Settings() {
                         type='clear'
                         containerStyle={{width: '100%'}}
                         buttonStyle={{backgroundColor: "#004E64"}}  
-                        title={'Reset School Reference'}
+                        title={'Reset School Preference'}
                         titleStyle={{color: "#FFFFFF"}}
                         onPress={async() => {
                             await AsyncStorage.setItem('appLaunched', '');
