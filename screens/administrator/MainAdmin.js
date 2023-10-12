@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { View, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
 import { Dialog, Text } from 'react-native-elements' 
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { supabase } from '../../lib/supabase';
+import { supabase, supabaseAdmin } from '../../lib/supabase';
 import { RefreshControl, ScrollView } from 'react-native-gesture-handler';
 import { ActivityIndicator, Stack, TextInput } from '@react-native-material/core';
 import { Input } from '@rneui/themed';
@@ -21,6 +21,7 @@ export default function MainAdmin() {
     const [filtered, setFiltered] = useState(admins);
     const [initLoading, setInitLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
+    const [deleting, setDeleting] = useState(false)
     const [toDelete, setToDelete] = useState({
         id: '',
         email: ''
@@ -85,15 +86,37 @@ export default function MainAdmin() {
                 <Dialog.Title title='Delete Admin' />
                 {/* <Dialog.Loading /> */}
                 <View style={{marginBottom: 15, marginTop: 10}}>
-                    <Text style={{fontSize: Dimensions.get('screen').fontScale = 16}}>Are you sure you want to delete admin {toDelete.email}?</Text>
+                    <Text style={{fontSize: Dimensions.get('screen').fontScale = 16, textAlign: 'justify', letterSpacing: 2, lineHeight: 20}}>{"\t\t"}Are you sure you want to delete admin {toDelete.email}?</Text>
                 </View>
                 <Dialog.Actions >
                     <Dialog.Button 
+                        loading={deleting}
                         containerStyle={[styles.dialogButton]}
                         title="Confirm"
                         titleStyle={{color: "#FFF"}}
                         buttonStyle={{
                             backgroundColor: 'red',
+                        }}
+                        onPress={async() => {
+                            setDeleting(true)
+                            console.log(toDelete)
+                            const { error } = await supabaseAdmin.deleteUser(toDelete.id)
+                            if(error) {
+                                setDeleting(false)
+                                alert(error.message)
+                                console.log(error.message)
+                                return
+                            }
+                            const { error: adminError } = await supabase.from('administrator').delete().eq('id', toDelete.id)
+                            if(adminError) {
+                                setDeleting(false)
+                                alert(error.message)
+                                console.log(error.message)
+                                return
+                            }
+                            setDeleting(false)
+                            setToDeleteModal(false) 
+                            
                         }}
                         // linearGradientProps={l}
                     />
