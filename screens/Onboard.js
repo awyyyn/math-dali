@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { View, StyleSheet, Dimensions, ImageBackground } from 'react-native'
+import { View, StyleSheet, Dimensions, ImageBackground, BackHandler, Alert } from 'react-native'
 import { Button, Input, Text } from 'react-native-elements'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Layout from './Layout'
@@ -13,7 +13,7 @@ import { supabase } from '../lib/supabase'
 import { Picker } from '@react-native-picker/picker'
 
 export default function Onboard() { 
-    const { setIsLaunched } = useContext(SettingsContext)
+    const { setIsLaunched, isLaunched } = useContext(SettingsContext)
     const navigation = useNavigation() 
     const [schools, setSchools] = useState([])
     const [initLoading, setInitLoading] = useState(false);
@@ -23,7 +23,25 @@ export default function Onboard() {
     const [err, setErr] = useState('');
     const [refresh, setRefresh] = useState(false)
 
-    useEffect(() => {
+     
+
+    useEffect(() => { 
+
+        const backAction = () => { 
+            
+            Alert.alert('Hold on!', 'Are you sure you want to go back?', [
+                {
+                  text: 'Cancel',
+                  onPress: () => null,
+                  style: 'cancel',
+                },
+                {text: 'YES', onPress: () => BackHandler.exitApp()},
+            ]);
+            
+            return true;
+        }; 
+
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
         
         (async () => {
             setInitLoading(true)
@@ -34,25 +52,23 @@ export default function Onboard() {
                 alert(error.message)
                 setInitLoading(false)
                 return
-            }
-            
-            
+            } 
             setSchools(data?.map(item => {
                 return {
                     id: item.school_id,
                     name: item.school_name
                 }
-            }))
-            
-            setInitLoading(false)
+            })) 
+            setInitLoading(false) 
+        })() 
 
-        })()
+        return () => { 
+            backHandler.remove()
+        }
 
-    }, [])
+    }, [isLaunched])
+  
  
-    console.log(schools[2], "SELECTED")
-
-
 
     return (
         <Layout>        
