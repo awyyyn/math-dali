@@ -12,8 +12,7 @@ export default function EditAdmin({route}) {
 
     const { email, school_id, school_name, id } = route.params
     const navigation = useNavigation()
-    console.log(id)
-
+    console.log(id) 
     const [form, setForm] = useState({
         email,
         school_id,
@@ -31,7 +30,7 @@ export default function EditAdmin({route}) {
         school_name: '',
     })
 
-    const validation = () => {
+    const validation = () => { 
         if(editSchoolId == ""){
            setFormErr(err => ({...err, school_id: 'Required School ID'}))
         }else{
@@ -115,12 +114,35 @@ export default function EditAdmin({route}) {
                     <Button
                         onPress={async() => {
                             validation(); 
-
-                            if(formErr.school_id || formErr.email || formErr.school_name || editSchoolId.length < 6 || !editSchoolId || !editEmail || !editSchoolName) {
-                                console.log("ASDASDKASJLJSADKJASLDKJLKJDAKLSJDLK")
+                            
+                            setUpdating(true)
+                            if(editSchoolId != school_id) {
+                                const { data } = await supabase.from('administrator').select('school_id')
+                                console.log(data)
+                                console.log('================================================')
+                                const isExist = data.find(item => item.school_id == editSchoolId)
+                                console.log(isExist)
+                                if(isExist) {
+                                    setFormErr((p) => ({
+                                        ...p,
+                                        school_id: 'School ID is not valid',
+                                    }))
+                                    setUpdating(false)
+                                    return 
+                                }
+                            }
+                    
+                            if(formErr.school_id || 
+                                formErr.email || 
+                                formErr.school_name || 
+                                editSchoolId.length < 6 || 
+                                !editSchoolId || 
+                                !editEmail || 
+                                !editSchoolName) {
+                                    
+                                setUpdating(false)
                                 return
                             }
-                            setUpdating(true)
                             // let userData;
                             // let userError
 

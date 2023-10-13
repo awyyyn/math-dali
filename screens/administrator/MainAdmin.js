@@ -64,7 +64,7 @@ export default function MainAdmin() {
                                     schema: "public",
                                     table: "administrator",
                                 }, async(payload) => {
-                                    const { data, error } = await supabase.from('administrator').select();
+                                    const { data, error } = await supabase.from('administrator').select().eq('role', 'sub_admin');
                                     if(error) {
                                         alert(error.message)
                                         return console.log(error.message)

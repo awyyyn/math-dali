@@ -118,11 +118,26 @@ export default function CreateAdmin() {
                         onPress={async() => {
                             validation(); 
 
+                            setUpdating(true)
+                            if(editSchoolId != school_id) {
+                                const { data } = await supabase.from('administrator').select('school_id')
+                                console.log(data)
+                                console.log('================================================')
+                                const isExist = data.find(item => item.school_id == editSchoolId)
+                                console.log(isExist)
+                                if(isExist) {
+                                    setFormErr((p) => ({
+                                        ...p,
+                                        school_id: 'School ID is not valid',
+                                    }))
+                                    setUpdating(false)
+                                    return 
+                                }
+                            }
                             if(formErr.school_id || formErr.email || formErr.school_name || editSchoolId.length < 6 || !editSchoolId || !editEmail || !editSchoolName || !newPass || newPass.length < 6) {
-                                console.log("ASDASDKASJLJSADKJASLDKJLKJDAKLSJDLK")
+                                setUpdating(false)
                                 return
                             }
-                            setUpdating(true) 
 
                             const { data, error } = await supabaseAdmin.createUser({
                               email: editEmail,
