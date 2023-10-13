@@ -34,7 +34,7 @@ export default function Start({navigation}) {
                             color={colors[i]}
                         />
                     ))}
-                </ScrollView>
+                </ScrollView> 
                 
                 <Button
                     type='clear'

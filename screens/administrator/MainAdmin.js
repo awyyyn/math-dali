@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { View, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
 import { Dialog, Text } from 'react-native-elements' 
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { supabase, supabaseAdmin } from '../../lib/supabase';
-import { RefreshControl, ScrollView } from 'react-native-gesture-handler';
+import { RefreshControl } from 'react-native-gesture-handler';
 import { ActivityIndicator, Stack, TextInput } from '@react-native-material/core';
 import { Input } from '@rneui/themed';
+import {  } from 'react-native-js-tableview'
 import { useNavigation } from '@react-navigation/native';
+import { Cell, Row, Table, TableWrapper } from 'react-native-table-component';
 
-
-
+ 
 
 export default function MainAdmin() {
 
@@ -25,6 +26,7 @@ export default function MainAdmin() {
     const [toDelete, setToDelete] = useState({
         id: '',
         email: ''
+
     });
 
     useEffect(() => { 
@@ -32,7 +34,22 @@ export default function MainAdmin() {
             const { data, error } = await supabase.from('administrator').select().eq('role', 'sub_admin');
             console.log(data)
 
-            setSchools(data?.map(item => item.school_name))
+            if(error) {
+                alert(error.message)
+                return console.log(error.message)
+            }
+
+            setSchools(data?.map(item => item.school_name));
+
+            // const returnData = data.map((item, gggg) => ([ 
+            //     gggg,
+            //     item.email,
+            //     item.school_name,
+            //     item.school_id,
+            //     'Edit',
+            //     'Delete'
+            // ]));
+
             setAdmins(data)
             setFiltered(data)
             setInitLoading(false);
@@ -73,7 +90,39 @@ export default function MainAdmin() {
         )) 
 
     }, [search]) 
- 
+
+
+    const tableHeader = ['#', 'Email', 'School Name', 'School ID', 'Edit', 'Delete']
+
+
+    const EditElement = (id) => (
+        <TouchableOpacity
+            onPress={() => { 
+                navigation.navigate('Edit Admin', id)
+            }}
+        >
+            <Text style={{color: "green"}}>Edit</Text>
+        </TouchableOpacity>
+    )
+
+    const DeleteElement = (id) => (
+        <TouchableOpacity
+            onPress={() => {
+                setToDelete({
+                    email: id.email,
+                    id: id.id
+                })
+                setToDeleteModal(true)
+            }}
+        >
+            <Text style={{color: "red"}}>Delete</Text>
+        </TouchableOpacity>
+    )
+
+    const wid = [30, 250, 200, 100, 80, 80];
+
+    
+    
 
     return (
         
@@ -130,8 +179,7 @@ export default function MainAdmin() {
                         onPress={() => setToDeleteModal(false)}
                     />
                 </Dialog.Actions>
-            </Dialog>
-
+            </Dialog> 
             {/* ==================================== */}
             <Text h3 style={{paddingHorizontal: 20, paddingTop: 10}}>Manage Admins</Text>
             <View style={styles.container}>
@@ -150,22 +198,7 @@ export default function MainAdmin() {
                         />
                         <Text style={styles.text}>Add Admin</Text>
                     </View>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                    style={styles.buttonContainer}
-                    activeOpacity={0.8}
-                >
-                    <View
-                        style={styles.button}
-                    >
-                        <Icon 
-                            name='person-add-alt-1' 
-                            size={Dimensions.get('window').fontScale = 40} 
-                        />
-                        <Text style={styles.text}>Add Admin</Text>
-                    </View>
-                </TouchableOpacity>
-                 
+                </TouchableOpacity> 
             </View>
 
             <Stack
@@ -174,11 +207,7 @@ export default function MainAdmin() {
                     marginHorizontal: 10,
                     marginVertical: 4, 
                 }}
-            >
-                {/* <Text h4 
-                >
-                    Admin List
-                </Text> */}
+            > 
                 <Input  
                     style={{
                         paddingHorizontal: 5,
@@ -190,12 +219,30 @@ export default function MainAdmin() {
                     onChangeText={(text) => setSearch(text)}
                     placeholder='Search'
                 />
-            </Stack>
-            <Stack direction='row' spacing={20} ph={20} >
-                <Text style={{fontSize: Dimensions.get('window').fontScale = 12.5, textAlign: 'center', paddingVertical: 5}}>{"Email \t / \t School Name \t / \t School ID \t / \t Edit \t / \t Delete"}</Text>
-            </Stack>
-            <ScrollView 
-                // horizontal={false} 
+                
+            </Stack>  
+            <ScrollView
+                contentContainerStyle={{
+                    maxHeight: Dimensions.get('screen').scale = 400,
+                    borderRadius: 10,
+                    borderWidth: 1,
+                    borderColor: '#00000020',
+                    overflow: 'hidden',
+                    shadowColor: "#00667E",
+                    shadowOffset: {
+                        width: 0,
+                        height: 3,
+                    },
+                    shadowOpacity: 0.27,
+                    shadowRadius: 4.65,
+
+                    elevation: 6,
+                    margin: 10
+                }}
+                style={{
+                    marginHorizontal: 10,
+                }}
+                horizontal={false}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
@@ -206,91 +253,88 @@ export default function MainAdmin() {
                             setSearch('')
                             setFiltered(data)
                             setAdmins(data)
+                            setInitLoading(false)
                             setRefreshing(false)
                         }}
                     />
                 }
-                contentContainerStyle={styles.scrollContainer} 
             >
                 <ScrollView
                     horizontal 
-                    showsHorizontalScrollIndicator={false}
                     contentContainerStyle={{
-                        display: 'flex',
-                        flexDirection: "column",
-                        width: initLoading ? '100%' : 'auto',
-                        paddingHorizontal: 10,
-                    }}  
-                >  
-                    {initLoading ? 
-                        <>
-                            <View 
-                                style={{   
-                                    height: "100%", 
-                                    width: '100%', 
-                                    display: 'flex', 
-                                    justifyContent: 'center',
-                                    alignItems: 'center'
-                                }}
-                            >
-                                {/* <Text style={{textAlign: 'center'}}> */}
-                                    <ActivityIndicator 
-                                        size={50}
-                                        color='#004777'
-                                        
-                                    />
-                                {/* </Text> */}
-                            </View>
-                        </> :
-                        filtered?.map((admin, i) => (
-                            <View
-                                key={i}
+                        minHeight: Dimensions.get('screen').scale = 400,
+                    }}
+                >
+                    <Table
+                        // borderStyle='' 
+                        style={{
+                            borderRadius: 10,
+                            backgroundColor: "#FFF",
+                            // borderColor: '#000',
+                            // borderWidth: 1,
+                        }}
+                        
+                    >
+                        <TableWrapper
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row'
+                            }}
+                        >
+                            {tableHeader.map((item, i)  => (
+                                <Cell 
+                                    key={i}   
+                                    width={wid[i]}
+                                    data={item}
+                                    textStyle={{
+                                        padding: 10,
+                                        fontWeight: 'bold',
+                                        color: i == 4 ? 'green' : i == 5 ? 'red' : 'black'
+                                    }}
+                                />
+                            ))}
+                        </TableWrapper> 
+                        {initLoading ? 
+                            <Row
+                                data={['Fetching Data...']} 
                                 style={{
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                    padding: 10,
-                                    columnGap: 10
+                                    width: '100%',
+                                    height: '80%',
+                                    paddingLeft: '15%'
                                 }}
-                                > 
-                                    <Text style={styles.minWidthEmail}>
-                                        {admin?.email}
-                                    </Text>
-                                    <Text style={styles.minWidthSchool}>
-                                        {admin?.school_name}
-                                    </Text> 
-                                    <Text style={styles.minWidthID}>
-                                        {admin?.school_id}
-                                    </Text> 
-                                    <TouchableOpacity
-                                        style={{paddingHorizontal: 10}}
-                                        onPress={() => {
-                                            navigation.navigate('Edit Admin', {
-                                                id: admin?.id,
-                                                email: admin?.email,
-                                                school_id: admin?.school_id,
-                                                school_name: admin?.school_name
-                                            })
+                            />
+                        : filtered?.map((iii, adsd) => ({
+                            num: adsd,
+                            email: iii.email,
+                            school_name: iii.school_name,
+                            school_id: iii.school_id,
+                            info: iii,
+                            info2: iii,
+                        })).map((admin, index) => (
+                            <TableWrapper 
+                                key={index} 
+                                style={{display: 'flex', flexDirection: 'row'}}
+                                // borderStyle={{borderWidth: 1, borderColor: '#000'}} 
+                            >
+                                {Object.values(admin).map((item, j) => ( 
+                                    <Cell
+                                        key={j}
+                                        borderStyle={{
+                                            borderBottomWidth: j == admins?.length ? 5 : 0,
+                                            borderBottomColor: '#000'
                                         }}
-                                    >
-                                        <Text>Edit</Text>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity
-                                        style={{paddingHorizontal: 10}}
-                                        // onPress={}
-                                        onPress={() => {
-                                            setToDelete({
-                                                email: admin.email,
-                                                id: admin.id
-                                            })
-                                            setToDeleteModal(true)
+                                        textStyle={{
+                                            textAlign: j == 0 ? "center" : 'auto'
                                         }}
-
-                                    >
-                                        <Text>Delete</Text>
-                                    </TouchableOpacity>
-                            </View>
-                        ))
-                    } 
+                                        style={{padding: 10}}
+                                        data={j === 4 ? EditElement(item) : j == 5 ? DeleteElement(item) : item}
+                                        width={wid[j]}
+                                    /> 
+                                ))
+                                }
+                            </TableWrapper>
+                        ))} 
+                    </Table>
                 </ScrollView>
             </ScrollView>
         </View>
@@ -360,3 +404,5 @@ const styles = StyleSheet.create({
         minWidth: 80
     }
 })
+
+ 

@@ -11,7 +11,7 @@ import { numOfSets } from '../lib/helpers'
 import { Icon, LinearProgress } from 'react-native-elements'
 import { SafeAreaView } from 'react-native-safe-area-context' 
 import { LinearGradient } from 'expo-linear-gradient';
-import { CountdownCircleTimer, useCountdown } from 'react-native-countdown-circle-timer' 
+import { CountdownCircleTimer, useCountdown } from 'react-native-countdown-circle-timer';
 
 
 export default function Quiz({route, navigation}) {

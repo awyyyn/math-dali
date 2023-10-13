@@ -42,7 +42,16 @@ export default function Home({route, navigation}) {
         <Layout>
             <ImageBackground 
                 style={[styles.homeContainer, styles.bgImage]}
-                imageStyle={{opacity: 0.3, objectFit: 'fill'}} 
+                imageStyle={{
+                    opacity: 0.5,  
+                    resizeMode: 'cover', 
+                    // backfaceVisibility: 'visible', 
+                    // overflow: 'visible',
+                    // // objectFit: 'cover'
+                    // backgroundColor: '#FFF',
+                    // width: Dimensions.get('screen').width,
+                    // height: Dimensions.get('screen').height
+                }} 
                 source={require('../assets/bg1.png')} 
             >   
                 <View>
