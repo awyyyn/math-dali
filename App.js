@@ -71,17 +71,11 @@ const Screeens = ({}) => {
   useEffect(() => { 
     (async function () {
       
-      try {
-        // await AsyncStorage.removeItem('appLaunched')
-        const appData = await AsyncStorage.getItem('appLaunched')   
-        console.log(appData, "Asd")
-        if (appData != null) { 
+      try { 
+        const appData = await AsyncStorage.getItem('appLaunched')    
+        if (appData != null || appData != undefined) { 
           setIsLaunched(appData)
-        }
-        // else{
-        //   await AsyncStorage.setItem('appLaunched', "Launched")
-        //   setIsLaunched(true)
-        // } 
+        } 
       } catch (error) {
         alert(error?.message)
       }
