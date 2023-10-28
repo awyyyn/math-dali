@@ -1134,6 +1134,1150 @@ Number of students fluent in the second language = 30 students × 0.20 = 6 stude
 So, there are 6 students in the class who are fluent in a second language.
 `,
 	},
+	{
+		id: "51",
+		level: 1,
+		question:
+			"A restaurant bill is $110, and you want to leave a 10% tip. How much should you leave as a tip?",
+		options: [
+			{ option: "$10" },
+			{ option: "$11" },
+			{ option: "$10.10" },
+			{ option: "$10.5" },
+		],
+		answer: "$11",
+		solution: `
+To calculate a 10% tip on a $110 restaurant bill, you can use the following formula:
+Tip amount = Bill amount × Tip percentage
+Tip amount = $110 × 10% (or 0.10 as a decimal)
+Tip amount = $110 × 0.10 = $11
+You should leave a tip of $11 on a $110 restaurant bill if you want to leave a 10% tip.
+`,
+	},
+	{
+		id: "52",
+		level: 1,
+		question:
+			"You bought a car for $30,000, and its value has depreciated by 10%. What is the current value of the car?",
+		options: [
+			{ option: "$3,000" },
+			{ option: "$6,000" },
+			{ option: "$27,000" },
+			{ option: "none of the above" },
+		],
+		answer: "$27,000",
+		solution: `
+To find the current value of a car that has depreciated by 10%, you can use the following formula:
+Current Value = Original Value - Depreciation
+Depreciation = Original Value × Depreciation Rate
+In this case, the original value is $30,000, and the depreciation rate is 10% (0.10 as a decimal).
+Depreciation = $30,000 × 0.10 = $3,000
+Now, subtract the depreciation amount from the original value to find the current value:
+Current Value = $30,000 - $3,000 = $27,000
+So, the current value of the car is $27,000 after depreciating by 10%
+`,
+	},
+	{
+		id: "53",
+		level: 1,
+		question:
+			"You scored 90% on your math test, which had 50 questions. How many questions did you answer correctly?",
+		options: [
+			{ option: "44" },
+			{ option: "45" },
+			{ option: "46" },
+			{ option: "40" },
+		],
+		answer: "45",
+		solution: `
+To find out how many questions you answered correctly on a math test where you scored 90%, you can use the following formula:
+Number of correct answers = (Percentage score / 100) x Total number of questions
+Number of correct answers = (90% / 100) x 50 questions
+First, convert the percentage to a decimal by dividing by 100:
+90% = 0.90 (as a decimal)
+Now, calculate the number of correct answers:
+Number of correct answers = 0.90 x 50 questions = 45
+So, you answered 45 questions correctly on your math test.
+`,
+	},
+	{
+		id: "54",
+		level: 1,
+		question:
+			"A store initially priced a shirt at $100 but later reduced the price by 25%. What is the new sale price of the shirt?",
+		options: [
+			{ option: "$25" },
+			{ option: "$30" },
+			{ option: "$85" },
+			{ option: "$75" },
+		],
+		answer: "$75",
+		solution: `
+To find the new sale price of the shirt after a 25% reduction, you can use the following formula:
+Sale Price = Original Price - (Original Price × Discount Percentage)
+In this case, the original price of the shirt is $100, and the discount percentage is 25%, or 0.25 as a decimal.
+Sale Price = $100 - ($100 × 0.25)
+Sale Price = $100 - ($25)
+Sale Price = $75
+The new sale price of the shirt is $75 after a 25% reduction.
+`,
+	},
+	{
+		id: "55",
+		level: 1,
+		question:
+			"Your monthly mobile phone bill is $80. If you use a 10% discount code, how much will you save on your bill?",
+		options: [
+			{ option: "$8" },
+			{ option: "$6" },
+			{ option: "$18" },
+			{ option: "$72" },
+		],
+		answer: "$8",
+		solution: `
+To calculate how much you will save on your monthly mobile phone bill with a 10% discount, you can use the following formula:
+Savings = Monthly bill amount × Discount percentage
+Savings = $80 × 10% (or 0.10 as a decimal)
+Savings = $80 × 0.10 = $8
+You will save $8 on your monthly mobile phone bill with a 10% discount.
+`,
+	},
+	{
+		id: "56",
+		level: 1,
+		question:
+			"You save 10% of your monthly income. If your monthly income is $2,000, how much do you save each month?",
+		options: [
+			{ option: "$100" },
+			{ option: "$150" },
+			{ option: "$200" },
+			{ option: "$175" },
+		],
+		answer: "$200",
+		solution: `
+To calculate how much you save each month, given that you save 10% of your monthly income, you can use the following formula:
+Savings = Monthly income × Savings percentage
+Savings = $2,000 × 10% (or 0.10 as a decimal)
+Savings = $2,000 × 0.10 = $200
+You save $200 each month from your $2,000 monthly income, as 10% of $2,000 is $200.
+`,
+	},
+	{
+		id: "57",
+		level: 1,
+		question:
+			"In a classroom, 30% of the students are girls. If there are 40 students in the class, how many are girls?",
+		options: [
+			{ option: "9" },
+			{ option: "12" },
+			{ option: "14" },
+			{ option: "10" },
+		],
+		answer: "12",
+		solution: `
+To find out how many students in the classroom are girls, given that 30% are girls and there are 40 students in total, you can use the following formula:
+Number of girls = Total number of students × Percentage of girls
+Number of girls = 40 students × 30% (or 0.30 as a decimal)
+Number of girls = 40 students × 0.30 = 12 students
+So, there are 12 girls in the classroom out of the 40 students.
+`,
+	},
+	{
+		id: "58",
+		level: 1,
+		question:
+			"You have a 20% off coupon for a $50 restaurant bill. How much money will you save with the coupon?",
+		options: [
+			{ option: "$40" },
+			{ option: "$45" },
+			{ option: "$10" },
+			{ option: "none of the above" },
+		],
+		answer: "$10",
+		solution: `
+To calculate how much money you will save with a 20% off coupon on a $50 restaurant bill, you can use the following formula:
+Savings = Bill amount × Discount percentage
+Savings = $50 × 20% (or 0.20 as a decimal)
+Savings = $50 × 0.20 = $10
+You will save $10 on your $50 restaurant bill with the 20% off coupon.
+`,
+	},
+	{
+		id: "59",
+		level: 1,
+		question:
+			"Sarah scored 85% on her math test, while John scored 92%. What was the difference in their scores?",
+		options: [
+			{ option: "7%" },
+			{ option: "12%" },
+			{ option: "0.7" },
+			{ option: "none of the above" },
+		],
+		answer: "7%",
+		solution: `
+To find the difference in Sarah and John's scores, you can subtract Sarah's score from John's score:
+Difference = John's score - Sarah's score
+Difference = 92% - 85%
+First, convert both percentages to decimals by dividing by 100:
+92% = 0.92
+85% = 0.85
+Now, subtract Sarah's score from John's score:
+Difference = 0.92 - 0.85
+Difference = 0.07
+So, the difference in their scores is 0.07, or 7 percentage points. John scored 7 percentage points higher than Sarah on the math test.
+`,
+	},
+	{
+		id: "60",
+		level: 1,
+		question:
+			"During a sale, a $200 jacket is discounted by 25%. What is the sale price of the jacket?",
+		options: [
+			{ option: "$50" },
+			{ option: "$25" },
+			{ option: "$150" },
+			{ option: "none of the above" },
+		],
+		answer: "$150",
+		solution: `
+To calculate the sale price of the jacket after a 25% discount, you can use the following formula:
+Sale Price = Original Price - (Original Price × Discount Percentage)
+In this case, the original price of the jacket is $200, and the discount percentage is 25%, or 0.25 as a decimal.
+Sale Price = $200 - ($200 × 0.25)
+Sale Price = $200 - ($50)
+Sale Price = $150
+The sale price of the jacket is $150 after a 25% discount.
+`,
+	},
+	{
+		id: "61",
+		level: 1,
+		question:
+			"If a smartphone's price increases from $400 to $480, what is the percentage increase in price?",
+		options: [
+			{ option: "10%" },
+			{ option: "15%" },
+			{ option: "20%" },
+			{ option: "25%" },
+		],
+		answer: "20%",
+		solution: `
+To calculate the percentage increase in price, you can use the following formula:
+Percentage Increase = ((New Price - Old Price) / Old Price) × 100%
+In this case, the old price of the smartphone is $400, and the new price is $480.
+Percentage Increase = (($480 - $400) / $400) × 100%
+Percentage Increase = ($80 / $400) × 100%
+Percentage Increase = (0.2) × 100%
+Percentage Increase = 20%
+The price of the smartphone increased by 20%.
+`,
+	},
+	{
+		id: "62",
+		level: 1,
+		question:
+			"You scored 85% on your math test. If the test was out of 100 points, how many points did you earn?",
+		options: [
+			{ option: "42" },
+			{ option: "43" },
+			{ option: "85" },
+			{ option: "86" },
+		],
+		answer: "85",
+		solution: `
+To find out how many points you earned on the math test, given that you scored 85%, you can use the following formula:
+Points earned = (Percentage score / 100) * Total points
+Points earned = (85% / 100) * 100 points
+First, convert the percentage to a decimal by dividing by 100:
+85% = 0.85 (as a decimal)
+Now, calculate the points earned:
+Points earned = 0.85 * 100 points = 85 points
+So, you earned 85 points on your math test out of a possible 100 points.
+`,
+	},
+	{
+		id: "63",
+		level: 1,
+		question:
+			"Sarah spent 30% of her monthly income on rent, 15% on groceries, and 10% on transportation. What percentage of her income is left?",
+		options: [
+			{ option: "55%" },
+			{ option: "45%" },
+			{ option: "50%" },
+			{ option: "none of the above" },
+		],
+		answer: "45%",
+		solution: `
+To find the percentage of Sarah's monthly income that is left after spending 30% on rent, 15% on groceries, and 10% on transportation, you can subtract the combined percentage spent from 100%. 
+Percentage left = 100% - (Percentage spent on rent + Percentage spent on groceries + Percentage spent on transportation)
+Percentage left = 100% - (30% + 15% + 10%)
+Now, calculate the percentage left:
+Percentage left = 100% - 55%
+Percentage left = 45%
+So, Sarah has 45% of her monthly income left after paying for rent, groceries, and transportation.
+`,
+	},
+	{
+		id: "64",
+		level: 1,
+		question:
+			"In a class of 40 students, 75% passed the final exam. How many students passed the exam?",
+		options: [
+			{ option: "25" },
+			{ option: "30" },
+			{ option: "35" },
+			{ option: "28" },
+		],
+		answer: "30",
+		solution: `
+To find out how many students passed the final exam in a class of 40 students with a pass rate of 75%, you can use the following formula:
+Number of students who passed = Total number of students × Pass percentage
+Number of students who passed = 40 students × 75% (or 0.75 as a decimal)
+Number of students who passed = 40 students × 0.75 = 30 students
+So, 30 students passed the final exam.
+`,
+	},
+	{
+		id: "65",
+		level: 1,
+		question:
+			"If a shirt originally costs $60 but is on sale for 20% off, how much do you save if you buy it during the sale?",
+		options: [
+			{ option: "$48" },
+			{ option: "$46" },
+			{ option: "$50" },
+			{ option: "none of the above" },
+		],
+		answer: "none of the above",
+		solution: `
+To calculate how much you save when a shirt is on sale for 20% off, you can use the following formula:
+Savings = Original Price × Discount Percentage
+Savings = $60 × 20% (or 0.20 as a decimal)
+Savings = $60 × 0.20 = $12
+So, you save $12 if you buy the shirt during the sale where it's 20% off.
+`,
+	},
+	{
+		id: "66",
+		level: 1,
+		question:
+			"Maria bought a pair of shoes for $80, and after wearing them for a year, she sold them for $40. What percentage of the original price did she get for the used shoes?",
+		options: [
+			{ option: "45%" },
+			{ option: "50%" },
+			{ option: "55%" },
+			{ option: "60%" },
+		],
+		answer: "50%",
+		solution: `
+To calculate the percentage of the original price that Maria received for the used shoes, you can use the following formula:
+Percentage = (Selling Price / Original Price) * 100
+In this case, the original price of the shoes is $80, and she sold them for $40.
+Percentage = ($40 / $80) * 100
+Percentage = (0.5) * 100
+Percentage = 50%
+Maria received 50% of the original price when she sold the used shoes.
+`,
+	},
+	{
+		id: "67",
+		level: 1,
+		question: "Add 1/2 and 1/3",
+		options: [
+			{ option: "2/5" },
+			{ option: "2/6" },
+			{ option: "3/5" },
+			{ option: "5/6" },
+		],
+		answer: "5/6",
+		solution: `
+To add 1/2 and 1/3, you need to find a common denominator and then add the fractions together. Here's how to do it step by step:
+Step 1: Find a Common Denominator
+The common denominator is the least common multiple of the two denominators, which in this case is 6. 
+Step 2: Convert the Fractions
+You need to express both fractions with a common denominator of 6:
+1/2 = 3/6 (You multiply both the numerator and denominator of 1/2 by 3 to get the same denominator of 6).
+1/3 = 2/6 (You multiply both the numerator and denominator of 1/3 by 2 to get the same denominator of 6).
+Step 3: Add the Fractions
+Now that both fractions have the same denominator, you can add them:
+(3/6) + (2/6) = 5/6
+So, 1/2 + 1/3 = 5/6.
+The answer is 5/6.
+`,
+	},
+	{
+		id: "68",
+		level: 1,
+		question: "Add 2/3 and 1/3",
+		options: [
+			{ option: "½" },
+			{ option: "2/6" },
+			{ option: "3/6" },
+			{ option: "1" },
+		],
+		answer: "1",
+		solution: `
+To add 2/3 and 1/3, you can do so directly since they already have the same denominator. Here's the addition with an explanation:
+Step 1: Recognize that the two fractions have the same denominator, which is 3.
+Step 2: Add the numerators together while keeping the common denominator:
+(2/3) + (1/3) = (2 + 1)/3
+Step 3: Perform the addition in the numerator:
+(2 + 1) = 3
+So, (2/3) + (1/3) = 3/3Step 4: Simplify if needed. 3/3 is equivalent to 1 because any number divided by itself is 1.
+Therefore, 2/3 + 1/3 = 1.
+`,
+	},
+	{
+		id: "69",
+		level: 1,
+		question: "Add 1/5 and 3/2",
+		options: [
+			{ option: "4/10" },
+			{ option: "2/5" },
+			{ option: "9/10" },
+			{ option: "7/10" },
+		],
+		answer: "7/10",
+		solution: `
+To add 1/5 and 3/2, you need to first find a common denominator. In this case, the common denominator is 10, which is the least common multiple of 5 and 2. Here's the step-by-step explanation:
+Step 1: Find a Common Denominator
+The common denominator for 1/5 and 3/2 is 10.
+Step 2: Convert the Fractions
+You need to express both fractions with a common denominator of 10:
+1/5 can be converted to (2/10) because you multiply both the numerator and denominator of 1/5 by 2.
+3/2 can be converted to (5/10) because you multiply both the numerator and denominator of 3/2 by 5.
+Step 3: Add the Fractions
+Now that both fractions have the same denominator (10), you can add them:
+(2/10) + (5/10) = (2 + 5)/10
+Step 4: Perform the addition in the numerator:
+2 + 5 = 7
+So, (1/5) + (3/2) = (7/10).
+The answer is 7/10.
+`,
+	},
+	{
+		id: "70",
+		level: 1,
+		question: "Add 2/4 and 1/8",
+		options: [
+			{ option: "3/8" },
+			{ option: "2/8" },
+			{ option: "¾" },
+			{ option: "5/8" },
+		],
+		answer: "5/8",
+		solution: `
+To add 2/4 and 1/8, you first need to find a common denominator. In this case, the least common denominator for 4 and 8 is 8. Here's the step-by-step explanation:
+Step 1: Find a Common Denominator
+The common denominator for 2/4 and 1/8 is 8.
+Step 2: Convert the Fractions
+You need to express both fractions with a common denominator of 8:
+2/4 can be converted to (4/8) because you multiply both the numerator and denominator of 2/4 by 2.
+1/8 remains as it is.
+Step 3: Add the Fractions
+Now that both fractions have the same denominator (8), you can add them:
+(4/8) + (1/8) = (4 + 1)/8
+Step 4: Perform the addition in the numerator:
+4 + 1 = 5
+So, (2/4) + (1/8) = (5/8).
+The answer is 5/8.
+`,
+	},
+	{
+		id: "71",
+		level: 1,
+		question: "Add 4/8 and 3/8",
+		options: [
+			{ option: "¾" },
+			{ option: "7/8" },
+			{ option: "7/16" },
+			{ option: "15/16" },
+		],
+		answer: "7/8",
+		solution: `
+To add 4/8 and 3/8, you can do so directly since they already have the same denominator. Here's the addition with an explanation:
+Step 1: Recognize that the two fractions have the same denominator, which is 8.
+Step 2: Add the numerators together while keeping the common denominator:
+(4/8) + (3/8) = (4 + 3)/8
+Step 3: Perform the addition in the numerator:
+4 + 3 = 7
+So, (4/8) + (3/8) = 7/8.
+The answer is 7/8.
+`,
+	},
+	{
+		id: "72",
+		level: 1,
+		question: "Subtract 1/4 from 2/4",
+		options: [
+			{ option: "-1/4" },
+			{ option: "¼" },
+			{ option: "3/4" },
+			{ option: "none of the above" },
+		],
+		answer: "¼",
+		solution: `
+To subtract 1/4 from 2/4, you can follow these steps:
+Step 1: Recognize that the two fractions have the same denominator, which is 4.
+Step 2: Subtract the second fraction from the first while keeping the common denominator:
+(2/4) - (1/4) = (2 - 1)/4
+Step 3: Perform the subtraction in the numerator:
+2 - 1 = 1
+So, (2/4) - (1/4) = (1/4).
+The answer is 1/4.
+`,
+	},
+	{
+		id: "73",
+		level: 1,
+		question: "Subtract 2/5 from 3/5",
+		options: [
+			{ option: "1" },
+			{ option: "2/5" },
+			{ option: "1/3" },
+			{ option: "1/5" },
+		],
+		answer: "1/5",
+		solution: `
+To subtract 2/5 from 3/5, you can follow these steps:
+Step 1: Recognize that the two fractions have the same denominator, which is 5.
+Step 2: Subtract the second fraction from the first while keeping the common denominator:
+(3/5) - (2/5) = (3 - 2)/5
+Step 3: Perform the subtraction in the numerator:
+3 - 2 = 1
+So, (3/5) - (2/5) = (1/5).
+The answer is 1/5.
+`,
+	},
+	{
+		id: "74",
+		level: 1,
+		question: "Subtract 5/7 from 3/7",
+		options: [
+			{ option: "2/7" },
+			{ option: "3/5" },
+			{ option: "1/7" },
+			{ option: "-2/7" },
+		],
+		answer: "-2/7",
+		solution: `
+To subtract 5/7 from 3/7, you can follow these steps:
+Step 1: Recognize that the two fractions have the same denominator, which is 7.
+Step 2: Subtract the second fraction from the first while keeping the common denominator:
+(3/7) - (5/7) = (3 - 5)/7
+Step 3: Perform the subtraction in the numerator:
+3 - 5 = -2
+So, (3/7) - (5/7) = (-2/7).
+The answer is -2/7.
+`,
+	},
+	{
+		id: "75",
+		level: 1,
+		question: "Subtract 8/9 from 5/9",
+		options: [
+			{ option: "3/9" },
+			{ option: "4/9" },
+			{ option: "1/3" },
+			{ option: "-1/3" },
+		],
+		answer: "-1/3",
+		solution: `
+To subtract 8/9 from 5/9, you can follow these steps:
+Step 1: Recognize that the two fractions have the same denominator, which is 9.
+Step 2: Subtract the second fraction from the first while keeping the common denominator:
+(5/9) - (8/9) = (5 - 8)/9
+Step 3: Perform the subtraction in the numerator:
+5 - 8 = -3
+So, (5/9) - (8/9) = (-3/9).
+Step 4: Simplify the result by dividing both the numerator and denominator by their greatest common divisor, which is 3:
+(-3/9) ÷ 3 = (-1/3).
+The answer is -1/3.
+`,
+	},
+	{
+		id: "76",
+		level: 1,
+		question: "Subtract 2/5 from 2/2",
+		options: [
+			{ option: "-2/10" },
+			{ option: "-1/5" },
+			{ option: "3/5" },
+			{ option: "-3/5" },
+		],
+		answer: "3/5",
+		solution: `
+To subtract 2/5 from 2/2, follow these steps:
+Step 1: Recognize that 2/2 can be simplified to 1/1 because both the numerator and denominator have a common factor of 2.
+Step 2: Subtract 2/5 from 1/1:
+(1/1) - (2/5) = (5/5) - (2/5)
+Step 3: Perform the subtraction with the common denominator:
+(5/5) - (2/5) = (5 - 2)/5
+Step 4: Perform the subtraction in the numerator:
+5 - 2 = 3
+So, (2/2) - (2/5) = (3/5).
+The answer is 3/5.
+`,
+	},
+	{
+		id: "77",
+		level: 1,
+		question: "Multiply 3/5 and 1/7",
+		options: [
+			{ option: "3/45" },
+			{ option: "3/35" },
+			{ option: "1/17" },
+			{ option: "1/18" },
+		],
+		answer: "3/35",
+		solution: `
+To multiply 3/5 and 1/7, simply multiply the numerators together and the denominators together.
+Here's how you do it:
+(3/5) * (1/7) = (3 * 1) / (5 * 7) = 3/35
+So, the product of 3/5 and 1/7 is 3/35.
+`,
+	},
+	{
+		id: "78",
+		level: 1,
+		question: "Multiply 3/5 and 2/7",
+		options: [
+			{ option: "6/7" },
+			{ option: "5/7" },
+			{ option: "6/49" },
+			{ option: "2/13" },
+		],
+		answer: "6/49",
+		solution: `
+To multiply 3/7 and 2/7, you simply multiply the numerators together and the denominators together.
+Here's how you do it:
+(3/7) * (2/7) = (3 * 2) / (7 * 7) = 6/49
+So, the product of 3/7 and 2/7 is 6/49.
+`,
+	},
+	{
+		id: "79",
+		level: 1,
+		question: "Multiply 7/9 and 9/7",
+		options: [
+			{ option: "63" },
+			{ option: "1" },
+			{ option: "31/63" },
+			{ option: "none of the above" },
+		],
+		answer: "1",
+		solution: `
+When you multiply a fraction by its reciprocal (flipping the numerator and denominator), the result is always 1. In this case:
+(7/9) * (9/7) = 1
+So, the product of 7/9 and 9/7 is 1.
+`,
+	},
+	{
+		id: "80",
+		level: 1,
+		question: "Multiply 7/15 and 3/2",
+		options: [
+			{ option: "21/30" },
+			{ option: "14/30" },
+			{ option: "7/10" },
+			{ option: "¾" },
+		],
+		answer: "7/10",
+		solution: `
+To multiply 7/15 and 3/2, you can simply multiply the numerators together and the denominators together. Here's how you do it:
+(7/15) * (3/2) = (7 * 3) / (15 * 2) = 21/30
+Now, you can simplify the fraction by dividing both the numerator and denominator by their greatest common divisor, which is 3:
+(21/30) ÷ 3 = 7/10
+So, the product of 7/15 and 3/2 is 7/10.
+`,
+	},
+	{
+		id: "81",
+		level: 1,
+		question: "Multiply 4/12 and 5/2",
+		options: [
+			{ option: "20/24" },
+			{ option: "12/6" },
+			{ option: "10/24" },
+			{ option: "5/6" },
+		],
+		answer: "5/6",
+		solution: `
+To multiply 4/12 and 5/2, you can simplify the fractions and then multiply. Here's how you do it:
+Step 1: Simplify the fractions:
+4/12 can be simplified by dividing both the numerator and denominator by their greatest common divisor, which is 4. This results in 1/3.
+So, 4/12 = 1/3.
+Step 2: Multiply the simplified fractions:
+(1/3) * (5/2) = (1 * 5) / (3 * 2) = 5/6
+So, the product of 4/12 and 5/2 is 5/6.
+`,
+	},
+	{
+		id: "82",
+		level: 1,
+		question: "Divide 4/12 and 5/2",
+		options: [
+			{ option: "5/6" },
+			{ option: "20/24" },
+			{ option: "2/15" },
+			{ option: "8/50" },
+		],
+		answer: "2/15",
+		solution: `
+To divide 4/12 by 5/2, you can use the following steps:
+Step 1: Invert (take the reciprocal of) the second fraction (5/2) to make it 2/5. 
+Step 2: Now, you have the division problem as a multiplication problem:
+(4/12) ÷ (5/2) = (4/12) * (2/5)
+Step 3: Multiply the fractions:
+(4/12) * (2/5) = (4 * 2) / (12 * 5) = 8/60
+Step 4: Simplify the fraction by dividing both the numerator and denominator by their greatest common divisor, which is 4:
+(8/60) ÷ 4 = (2/15)
+So, 4/12 divided by 5/2 is 2/15.
+`,
+	},
+	{
+		id: "83",
+		level: 1,
+		question: "Divide 4/8 and 2/7",
+		options: [
+			{ option: "8/56" },
+			{ option: "1/7" },
+			{ option: "7/4" },
+			{ option: "7/5" },
+		],
+		answer: "7/4",
+		solution: `
+To divide 4/8 by 2/7, you can follow these steps:
+Step 1: Invert (take the reciprocal of) the second fraction (2/7) to make it 7/2.
+Step 2: Now, you have the division problem as a multiplication problem:
+(4/8) ÷ (2/7) = (4/8) * (7/2)
+Step 3: Simplify the fractions:
+4/8 can be simplified to 1/2 by dividing both the numerator and denominator by their greatest common divisor, which is 4.
+So, (1/2) * (7/2) = (1 * 7) / (2 * 2) = 7/4
+So, 4/8 divided by 2/7 is 7/4.
+`,
+	},
+	{
+		id: "84",
+		level: 1,
+		question: "Divide 2/3 and 2/5",
+		options: [
+			{ option: "4/15" },
+			{ option: "10/6" },
+			{ option: "5/3" },
+			{ option: "2/15" },
+		],
+		answer: "5/3",
+		solution: `
+To divide 2/3 by 2/5, you can follow these steps:
+Step 1: Invert (take the reciprocal of) the second fraction (2/5) to make it 5/2.
+Step 2: Now, you have the division problem as a multiplication problem:
+(2/3) ÷ (2/5) = (2/3) * (5/2)
+Step 3: Multiply the fractions:
+(2/3) * (5/2) = (2 * 5) / (3 * 2) = 10/6
+Step 4: Simplify the fraction by dividing both the numerator and denominator by their greatest common divisor, which is 2:
+(10/6) ÷ 2 = 5/3
+So, 2/3 divided by 2/5 is 5/3.
+`,
+	},
+	{
+		id: "85",
+		level: 1,
+		question: "Divide 3/8 and 5/4",
+		options: [
+			{ option: "15/32" },
+			{ option: "12/40" },
+			{ option: "15/40" },
+			{ option: "3/10" },
+		],
+		answer: "3/10",
+		solution: `
+To divide 3/8 by 5/4, you can follow these steps:
+Step 1: Invert (take the reciprocal of) the second fraction (5/4) to make it 4/5.
+Step 2: Now, you have the division problem as a multiplication problem:
+(3/8) ÷ (5/4) = (3/8) * (4/5)
+Step 3: Multiply the fractions:
+(3/8) * (4/5) = (3 * 4) / (8 * 5) = 12/40
+Step 4: Simplify the fraction by dividing both the numerator and denominator by their greatest common divisor, which is 4:
+(12/40) ÷ 4 = 3/10
+So, 3/8 divided by 5/4 is 3/10.
+`,
+	},
+	{
+		id: "86",
+		level: 1,
+		question: "Divide 10/3 and 7/4",
+		options: [
+			{ option: "70/12" },
+			{ option: "35/6" },
+			{ option: "40/21" },
+			{ option: "none of the above" },
+		],
+		answer: "3/10",
+		solution: `
+To divide 10/3 by 7/4, you can follow these steps:
+Step 1: Invert (take the reciprocal of) the second fraction (7/4) to make it 4/7.
+Step 2: Now, you have the division problem as a multiplication problem:
+(10/3) ÷ (7/4) = (10/3) * (4/7)
+Step 3: Multiply the fractions:
+(10/3) * (4/7) = (10 * 4) / (3 * 7) = 40/21
+So, 10/3 divided by 7/4 is 40/21.
+`,
+	},
+	{
+		id: "87",
+		level: 1,
+		question: "Solve for x in the equation: x + 5 = 11",
+		options: [
+			{ option: "16" },
+			{ option: "-6" },
+			{ option: "6" },
+			{ option: "-16" },
+		],
+		answer: "6",
+		solution: `
+To solve for x in the equation x + 5 = 11, you can isolate x by performing the following steps:
+1. Start with the equation:
+	x + 5 = 11
+2. To isolate x, you need to get rid of the 5 on the left side of the equation. You can do this by subtracting 5 from both sides of the equation:
+	x + 5 - 5 = 11 - 5
+3. Simplify both sides:
+	x = 6
+So, the solution to the equation is x = 6.
+`,
+	},
+	{
+		id: "88",
+		level: 1,
+		question: "Solve for x in the equation: x - 3 = 17",
+		options: [
+			{ option: "14" },
+			{ option: "-14" },
+			{ option: "20" },
+			{ option: "-20" },
+		],
+		answer: "20",
+		solution: `
+To solve for x in the equation x - 3 = 17, you can isolate x by following these steps:
+1. Start with the equation:
+	x - 3 = 17
+2. To isolate x, you need to get rid of the -3 on the left side of the equation. You can do this by adding 3 to both sides of the equation:
+	x - 3 + 3 = 17 + 3
+3. Simplify both sides:
+	x = 20
+So, the solution to the equation is x = 20.
+`,
+	},
+	{
+		id: "89",
+		level: 1,
+		question: "Solve for x in the equation: x - 3 = 17 – 4",
+		options: [
+			{ option: "16" },
+			{ option: "13" },
+			{ option: "10" },
+			{ option: "15" },
+		],
+		answer: "16",
+		solution: `
+To solve for x in the equation x - 3 = 17 - 4, you can simplify the right side of the equation first and then isolate x. Here are the steps:
+1. Start with the equation:
+	x - 3 = 17 - 4
+2. Simplify both sides of the equation:
+	x - 3 = 13
+3. To isolate x, add 3 to both sides of the equation:
+	x - 3 + 3 = 13 + 3
+4. Simplify both sides:
+	x = 16
+So, the solution to the equation is x = 16.
+`,
+	},
+	{
+		id: "90",
+		level: 1,
+		question: "Solve for x in the equation: x - 3 = -10",
+		options: [
+			{ option: "7" },
+			{ option: "-7" },
+			{ option: "13" },
+			{ option: "-13" },
+		],
+		answer: "-7",
+		solution: `
+To solve for x in the equation x - 3 = -10, you can isolate x by following these steps:
+1. Start with the equation:
+	x - 3 = -10
+2. To isolate x, you need to get rid of the -3 on the left side of the equation. You can do this by adding 3 to both sides of the equation:
+	x - 3 + 3 = -10 + 3
+3. Simplify both sides:
+	x = -7
+So, the solution to the equation is x = -7.
+`,
+	},
+	{
+		id: "91",
+		level: 1,
+		question: "Solve for x in the equation: x + 4 = -11",
+		options: [
+			{ option: "7" },
+			{ option: "-7" },
+			{ option: "13" },
+			{ option: "-13" },
+		],
+		answer: "-13",
+		solution: `
+To solve for x in the equation x + 4 = -11, you can isolate x by following these steps:
+1. Start with the equation:
+	x + 4 = -11
+2. To isolate x, you need to get rid of the +4 on the left side of the equation. You can do this by subtracting 4 from both sides of the equation:
+	x + 4 - 4 = -11 - 4
+3. Simplify both sides:
+	x = -15
+So, the solution to the equation is x = -15.
+`,
+	},
+	{
+		id: "92",
+		level: 1,
+		question: "Solve for x in the equation: x + 4 - 5 = -17",
+		options: [
+			{ option: "-18" },
+			{ option: "18" },
+			{ option: "-16" },
+			{ option: "-17" },
+		],
+		answer: "-16",
+		solution: `
+To solve for x in the equation x + 4 - 5 = -17, you can follow these steps:
+1. Start with the equation:
+	x + 4 - 5 = -17
+2. First, simplify the left side by combining like terms. In this case, combine 4 and -5:
+	x - 1 = -17
+3. To isolate x, add 1 to both sides of the equation to get rid of the -1 on the left side:
+	x - 1 + 1 = -17 + 1
+4. Simplify both sides:
+	x = -16
+So, the solution to the equation is x = -16.
+`,
+	},
+	{
+		id: "93",
+		level: 1,
+		question: "Solve for x in the equation: x - 4 - 7 = 17",
+		options: [
+			{ option: "6" },
+			{ option: "-6" },
+			{ option: "28" },
+			{ option: "-28" },
+		],
+		answer: "-28",
+		solution: `
+To solve for x in the equation x - 4 - 7 = 17, you can isolate x by following these steps:
+1. Start with the equation:
+	x - 4 - 7 = 17
+2. First, simplify the left side by combining like terms. In this case, combine -4 and -7:
+	x - 11 = 17
+3. To isolate x, add 11 to both sides of the equation to get rid of the -11 on the left side:
+	x - 11 + 11 = 17 + 11
+4. Simplify both sides:
+	x = 28
+So, the solution to the equation is x = 28.
+`,
+	},
+	{
+		id: "94",
+		level: 1,
+		question: "Solve for x in the equation: 6 - x + 5 = 11",
+		options: [
+			{ option: "22" },
+			{ option: "-22" },
+			{ option: "11" },
+			{ option: "0" },
+		],
+		answer: "0",
+		solution: `
+To solve for x in the equation 6 - x + 5 = 11, you can isolate x by following these steps:
+1. Start with the equation:
+	6 - x + 5 = 11
+2. First, simplify the left side by combining like terms. In this case, combine 6 and 5:
+	11 - x = 11
+3. To isolate x, subtract 11 from both sides of the equation to get rid of the 11 on the left side:
+	11 - x - 11 = 11 - 11
+4. Simplify both sides:
+	-x = 0
+5. To solve for x, multiply both sides by -1 to get x by itself:
+	-1 * (-x) = -1 * 0
+	This simplifies to:
+	x = 0
+So, the solution to the equation is x = 0.
+`,
+	},
+	{
+		id: "95",
+		level: 1,
+		question: "Solve for y in the equation: 2 + y - 5 = 8",
+		options: [
+			{ option: "5" },
+			{ option: "-5" },
+			{ option: "11" },
+			{ option: "1" },
+		],
+		answer: "11",
+		solution: `
+To solve for y in the equation 2 + y - 5 = 8, you can isolate y by following these steps:
+1. Start with the equation:
+	2 + y - 5 = 8
+2. First, simplify the left side by combining like terms. In this case, combine 2 and -5:
+	(2 - 5) + y = 8
+3. Continue to simplify the left side:
+	-3 + y = 8
+4. To isolate y, add 3 to both sides of the equation to get rid of the -3 on the left side:
+	-3 + y + 3 = 8 + 3
+5. Simplify both sides:
+	y = 11
+So, the solution to the equation is y = 11.
+`,
+	},
+	{
+		id: "96",
+		level: 1,
+		question: "Solve for y in the equation: y - 5 = -8",
+		options: [
+			{ option: "3" },
+			{ option: "-3" },
+			{ option: "13" },
+			{ option: "-13" },
+		],
+		answer: "-3",
+		solution: `
+To solve for y in the equation y - 5 = -8, you can isolate y by following these steps:
+1. Start with the equation:
+	y - 5 = -8
+2. To isolate y, add 5 to both sides of the equation to get rid of the -5 on the left side:
+	y - 5 + 5 = -8 + 5
+3. Simplify both sides:
+	y = -3
+So, the solution to the equation is y = -3.
+`,
+	},
+	{
+		id: "96",
+		level: 1,
+		question: "Solve for y in the equation: y - 5 = -8",
+		options: [
+			{ option: "3" },
+			{ option: "-3" },
+			{ option: "13" },
+			{ option: "-13" },
+		],
+		answer: "-3",
+		solution: `
+To solve for y in the equation y - 5 = -8, you can isolate y by following these steps:
+1. Start with the equation:
+	y - 5 = -8
+2. To isolate y, add 5 to both sides of the equation to get rid of the -5 on the left side:
+	y - 5 + 5 = -8 + 5
+3. Simplify both sides:
+	y = -3
+So, the solution to the equation is y = -3.
+`,
+	},
+	{
+		id: "97",
+		level: 1,
+		question: "Solve for y in the equation: y + 5 = 2 – 4",
+		options: [
+			{ option: "-7" },
+			{ option: "7" },
+			{ option: "9" },
+			{ option: "-9" },
+		],
+		answer: "-7",
+		solution: `
+To solve for y in the equation y + 5 = 2 - 4, you can isolate y by following these steps:
+1. Start with the equation:
+	y + 5 = 2 - 4
+2. First, simplify the right side by calculating 2 - 4:
+	y + 5 = -2
+3. To isolate y, subtract 5 from both sides of the equation to get rid of the +5 on the left side:
+	y + 5 - 5 = -2 - 5
+4. Simplify both sides:
+	y = -7
+So, the solution to the equation is y = -7.
+`,
+	},
+	{
+		id: "98",
+		level: 1,
+		question: "Solve for y in the equation: 3 - y + 5 = 4",
+		options: [
+			{ option: "4" },
+			{ option: "-4" },
+			{ option: "6" },
+			{ option: "-12" },
+		],
+		answer: "4",
+		solution: `
+To solve for y in the equation 3 - y + 5 = 4, you can isolate y by following these steps:
+1. Start with the equation:
+	3 - y + 5 = 4
+2. First, simplify the left side by combining like terms. In this case, combine 3 and 5:
+	8 - y = 4
+3. To isolate y, subtract 8 from both sides of the equation to get rid of the +8 on the left side:
+	8 - y - 8 = 4 - 8
+4. Simplify both sides:
+	-y = -4
+5. To solve for y, multiply both sides by -1 to get y by itself. When you multiply both sides by -1, you need to change the sign of the right side:
+	-1 * (-y) = -1 * (-4)
+	This simplifies to:
+	y = 4
+So, the solution to the equation is y = 4.
+`,
+	},
+	{
+		id: "99",
+		level: 1,
+		question: "Solve for y in the equation: y + 12 = -6",
+		options: [
+			{ option: "18" },
+			{ option: "-6" },
+			{ option: "-18" },
+			{ option: "6" },
+		],
+		answer: "4",
+		solution: `
+To solve for y in the equation y + 12 = -6, you can isolate y by following these steps:
+1. Start with the equation:
+	y + 12 = -6
+2. To isolate y, subtract 12 from both sides of the equation to get rid of the +12 on the left side:
+	y + 12 - 12 = -6 - 12
+3. Simplify both sides:
+	y = -18
+So, the solution to the equation is y = -18.
+`,
+	},
+	{
+		id: "100",
+		level: 1,
+		question: "Solve for y in the equation: y - 23 = -17",
+		options: [
+			{ option: "40" },
+			{ option: "-40" },
+			{ option: "6" },
+			{ option: "-6" },
+		],
+		answer: "6",
+		solution: `
+To solve for y in the equation y - 23 = -17, you can isolate y by following these steps:
+1. Start with the equation:
+	y - 23 = -17
+2. To isolate y, add 23 to both sides of the equation to get rid of the -23 on the left side:
+	y - 23 + 23 = -17 + 23
+3. Simplify both sides:
+	y = 6
+So, the solution to the equation is y = 6.
+`,
+	},
 ];
 
 /* ========================================================= INTERMEDIATE ============================================================ */
