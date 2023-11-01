@@ -2286,7 +2286,12 @@ export const intermediateLevel1 = [
 		id: "1",
 		level: 1,
 		question: "Solve for x in the equation: 2x + 5 = 11",
-		options: [{ option: "8" }, { option: "1/3" }, { option: "3" }],
+		options: [
+			{ option: "8" },
+			{ option: "1/3" },
+			{ option: "3" },
+			{ option: "6" },
+		],
 		answer: "3",
 		solution: `
 
@@ -2312,7 +2317,12 @@ So, the solution to the equation is x = 3.
 		level: 1,
 		question:
 			"Simplify the expression involving rational numbers: (3/4) + (5/6)?",
-		options: [{ option: "8/12" }, { option: "¾" }, { option: "19/12" }],
+		options: [
+			{ option: "8/12" },
+			{ option: "¾" },
+			{ option: "19/12" },
+			{ option: "2/3" },
+		],
 		answer: "19/12",
 		solution: `
 
@@ -2338,7 +2348,12 @@ So, the simplified result of (3/4) + (5/6) is 19/12.
 		id: "3",
 		level: 1,
 		question: "Solve for x: 3(2x - 1) = 21",
-		options: [{ option: "3" }, { option: "4" }, { option: "7" }],
+		options: [
+			{ option: "3" },
+			{ option: "4" },
+			{ option: "7" },
+			{ option: "5" },
+		],
 		answer: "4",
 		solution: `
 
@@ -2370,7 +2385,12 @@ So, the solution to the equation 3(2x - 1) = 21 is x = 4.
 		id: "4",
 		level: 1,
 		question: "If 2(y - 3) = 10, what is the value of y?",
-		options: [{ option: "8" }, { option: "2" }, { option: "4" }],
+		options: [
+			{ option: "8" },
+			{ option: "2" },
+			{ option: "4" },
+			{ option: "6" },
+		],
 		answer: "8",
 		solution: `
 
@@ -2407,6 +2427,7 @@ So, the solution to the equation 2(y - 3) = 10 is y = 8.
 			{ option: "4 1/3 cups" },
 			{ option: "5 2/3 cups" },
 			{ option: "5 1/3 cups" },
+			{ option: "4 2/3 cups" },
 		],
 		answer: "5 1/3 cups",
 		solution: `
@@ -2427,6 +2448,2359 @@ So, when you use 2 cups of flour in the recipe, you will need 16/3 cups of sugar
 
 So, you will need 5 1/3 cups of sugar when using 2 cups of flour in the recipe.
 
+        `,
+	},
+	{
+		id: "6",
+		level: 1,
+		question: "Evaluate the expression: 22 - (3 * -5) * -3",
+		options: [
+			{ option: "-23" },
+			{ option: "67" },
+			{ option: "7" },
+			{ option: "-67" },
+		],
+		answer: "-23",
+		solution: `
+To evaluate the expression 22 - (3 * -5) * -3, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 3 * -5:
+3 * -5 = -15
+Now the expression becomes: 22 - (-15) * -3
+Next, perform the multiplication: -15 * -3 = 45
+Now the expression becomes: 22 - 45
+Finally, perform the subtraction: 22 - 45 = -23
+So, the final answer is -23.
+In summary, you first calculated the value inside the parentheses, then proceeded with the multiplication and finally the subtraction to get the final result of -23.
+        `,
+	},
+	{
+		id: "7",
+		level: 1,
+		question: "Evaluate the expression: 18 - (3 * -7) * 2",
+		options: [
+			{ option: "90" },
+			{ option: "60" },
+			{ option: "70" },
+			{ option: "-60" },
+		],
+		answer: "60",
+		solution: `
+To evaluate the expression 18 - (3 * -7) * 2, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 3 * -7:
+3 * -7 = -21
+Now the expression becomes: 18 - (-21) * 2
+Next, perform the multiplication: -21 * 2 = -42
+Now the expression becomes: 18 - (-42)
+Finally, perform the subtraction: 18 - (-42) = 18 + 42 = 60
+So, the final answer is 60.
+In summary, you first calculated the value inside the parentheses, then proceeded with the multiplication and finally the addition to get the final result of 60.
+        `,
+	},
+	{
+		id: "8",
+		level: 1,
+		question: "Evaluate the expression: 9- (3 * 3) * -4",
+		options: [
+			{ option: "0" },
+			{ option: "-4" },
+			{ option: "45" },
+			{ option: "-27" },
+		],
+		answer: "45",
+		solution: `
+To evaluate the expression 9 - (3 * 3) * -4, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 3 * 3:
+3 * 3 = 9
+Now the expression becomes: 9 - 9 * -4
+Next, perform the multiplication: 9 * -4 = -36
+Now the expression becomes: 9 - (-36)
+Finally, perform the subtraction: 9 - (-36) = 9 + 36 = 45
+So, the final answer is 45.
+In summary, you first calculated the value inside the parentheses, then proceeded with the multiplication and finally the addition to get the final result of 45.
+        `,
+	},
+	{
+		id: "9",
+		level: 1,
+		question: "Evaluate the expression: 9+(12 / 3) * 4",
+		options: [
+			{ option: "25" },
+			{ option: "21" },
+			{ option: "52" },
+			{ option: "23" },
+		],
+		answer: "25",
+		solution: `
+To evaluate the expression 9 + (12 / 3) * 4, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 12 / 3:
+12 / 3 = 4
+Now the expression becomes: 9 + 4 * 4
+Next, perform the multiplication: 4 * 4 = 16
+Now the expression becomes: 9 + 16
+Finally, perform the addition: 9 + 16 = 25
+So, the final answer is 25.
+In summary, you first calculated the value inside the parentheses, then proceeded with the multiplication and finally the addition to get the final result of 25.
+        `,
+	},
+	{
+		id: "10",
+		level: 1,
+		question: "Evaluate the expression: 7+(18 / -3) * 2",
+		options: [
+			{ option: "19" },
+			{ option: "-19" },
+			{ option: "5" },
+			{ option: "-5" },
+		],
+		answer: "-5",
+		solution: `
+To evaluate the expression 7 + (18 / -3) * 2, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 18 / -3:
+18 / -3 = -6
+Now the expression becomes: 7 + (-6) * 2
+Next, perform the multiplication: -6 * 2 = -12
+Now the expression becomes: 7 + (-12)
+Finally, perform the addition: 7 + (-12) = -5
+So, the final answer is -5.
+In summary, you first calculated the value inside the parentheses, which is -6, then proceeded with the multiplication and finally the addition to get the final result of -5.
+        `,
+	},
+	{
+		id: "11",
+		level: 1,
+		question: "Evaluate the expression: 8 + (2 * -3) / 2",
+		options: [
+			{ option: "11" },
+			{ option: "-11" },
+			{ option: "5" },
+			{ option: "-5" },
+		],
+		answer: "-5",
+		solution: `
+To evaluate the expression 8 + (2 * -3) / 2, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 2 * -3:
+2 * -3 = -6
+Now the expression becomes: 8 + (-6) / 2
+Next, perform the division: -6 / 2 = -3
+Now the expression becomes: 8 + (-3)
+Finally, perform the addition: 8 + (-3) = 5
+So, the final answer is 5.
+In summary, you first calculated the value inside the parentheses, which is -6, then proceeded with the division and finally the addition to get the final result of 5.
+        `,
+	},
+	{
+		id: "12",
+		level: 1,
+		question: "Evaluate the expression: 7 + (5 * -4) / 2",
+		options: [
+			{ option: "17" },
+			{ option: "-17" },
+			{ option: "-3" },
+			{ option: "3" },
+		],
+		answer: "-3",
+		solution: `
+To evaluate the expression 7 + (5 * -4) / 2, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 5 * -4:
+5 * -4 = -20
+Now the expression becomes: 7 + (-20) / 2
+Next, perform the division: -20 / 2 = -10
+Now the expression becomes: 7 + (-10)
+Finally, perform the addition: 7 + (-10) = -3
+So, the final answer is -3.
+In summary, you first calculated the value inside the parentheses, which is -20, then proceeded with the division and finally the addition to get the final result of -3.
+        `,
+	},
+	{
+		id: "13",
+		level: 1,
+		question: "Evaluate the expression: -7 + (5 * 6) / -3",
+		options: [
+			{ option: "10" },
+			{ option: "-10" },
+			{ option: "-17" },
+			{ option: "17" },
+		],
+		answer: "-17",
+		solution: `
+To evaluate the expression -7 + (5 * 6) / -3, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 5 * 6:
+5 * 6 = 30
+Now the expression becomes: -7 + 30 / -3
+Next, perform the division: 30 / -3 = -10
+Now the expression becomes: -7 + (-10)
+Finally, perform the addition: -7 + (-10) = -17
+So, the final answer is -17.
+In summary, you first calculated the value inside the parentheses, which is 30, then proceeded with the division and finally the addition to get the final result of -17.
+        `,
+	},
+	{
+		id: "14",
+		level: 1,
+		question: "Evaluate the expression: -7 + (5 * 3) * -3",
+		options: [
+			{ option: "52" },
+			{ option: "-52" },
+			{ option: "45" },
+			{ option: "-45" },
+		],
+		answer: "-17",
+		solution: `
+To evaluate the expression -7 + (5 * 3) * -3, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 5 * 3:
+5 * 3 = 15
+Now the expression becomes: -7 + 15 * -3
+Next, perform the multiplication: 15 * -3 = -45
+Now the expression becomes: -7 + (-45)
+Finally, perform the addition: -7 + (-45) = -52
+So, the final answer is -52.
+In summary, you first calculated the value inside the parentheses, which is 15, then proceeded with the multiplication and finally the addition to get the final result of -52.
+        `,
+	},
+	{
+		id: "15",
+		level: 1,
+		question: "Evaluate the expression: -17 + (5 * 2) * 4",
+		options: [
+			{ option: "57" },
+			{ option: "-57" },
+			{ option: "-23" },
+			{ option: "23" },
+		],
+		answer: "23",
+		solution: `
+To evaluate the expression -17 + (5 * 2) * 4, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 5 * 2:
+5 * 2 = 10
+Now the expression becomes: -17 + 10 * 4
+Next, perform the multiplication: 10 * 4 = 40
+Now the expression becomes: -17 + 40
+Finally, perform the addition: -17 + 40 = 23
+So, the final answer is 23.
+In summary, you first calculated the value inside the parentheses, which is 10, then proceeded with the multiplication and finally the addition to get the final result of 23.
+        `,
+	},
+	{
+		id: "16",
+		level: 1,
+		question: "Evaluate the expression: -8 / 2 + (7 * 3)",
+		options: [
+			{ option: "-25" },
+			{ option: "17" },
+			{ option: "-17" },
+			{ option: "none of the above" },
+		],
+		answer: "17",
+		solution: `
+To evaluate the expression -8 / 2 + (7 * 3), you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+First, perform the division: -8 / 2 = -4
+Now the expression becomes: -4 + (7 * 3)
+Inside the parentheses, evaluate 7 * 3: 
+7 * 3 = 21
+Now the expression becomes: -4 + 21
+Finally, perform the addition: -4 + 21 = 17
+So, the final answer is 17.
+In summary, you first calculated the value of the division, which is -4, and then proceeded with the multiplication and finally the addition to get the final result of 17.
+        `,
+	},
+	{
+		id: "17",
+		level: 1,
+		question: "Evaluate the expression: -24 / 3 - (2 * 9)",
+		options: [
+			{ option: "-26" },
+			{ option: "26" },
+			{ option: "10" },
+			{ option: "-10" },
+		],
+		answer: "-26",
+		solution: `
+To evaluate the expression -24 / 3 - (2 * 9), you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+First, perform the division: -24 / 3 = -8
+Now the expression becomes: -8 - (2 * 9)
+Inside the parentheses, evaluate 2 * 9:
+2 * 9 = 18
+Now the expression becomes: -8 - 18
+Finally, perform the subtraction: -8 - 18 = -26
+So, the final answer is -26.
+In summary, you first calculated the value of the division, which is -8, and then proceeded with the multiplication and finally the subtraction to get the final result of -26.
+        `,
+	},
+	{
+		id: "18",
+		level: 1,
+		question: "Evaluate the expression: -16 / 2 - (-3 * 6)",
+		options: [
+			{ option: "10" },
+			{ option: "-10" },
+			{ option: "-26" },
+			{ option: "26" },
+		],
+		answer: "10",
+		solution: `
+To evaluate the expression -16 / 2 - (-3 * 6), you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+First, perform the division: -16 / 2 = -8
+Now the expression becomes: -8 - (-3 * 6)
+Inside the second set of parentheses, evaluate -3 * 6:
+-3 * 6 = -18
+Now the expression becomes: -8 - (-18)
+To subtract a negative number, you can treat it as adding the positive of that number:
+-8 + 18 = 10
+So, the final answer is 10.
+In summary, you first calculated the value of the division, which is -8, and then proceeded with the multiplication and the subtraction (which is equivalent to addition) to get the final result of 10.
+        `,
+	},
+	{
+		id: "19",
+		level: 1,
+		question: "Evaluate the expression: (-3 * 6) -3 * 2",
+		options: [
+			{ option: "12" },
+			{ option: "-12" },
+			{ option: "-24" },
+			{ option: "24" },
+		],
+		answer: "-12",
+		solution: `
+To evaluate the expression (-3 * 6) - 3 * 2, you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate -3 * 6:
+-3 * 6 = -18
+Now the expression becomes: -18 - 3 * 2
+Next, perform the multiplication: -3 * 2 = -6
+Now the expression becomes: -18 - (-6)
+To subtract a negative number, you can treat it as adding the positive of that number:
+-18 + 6 = -12
+So, the final answer is -12.
+In summary, you first calculated the value inside the first set of parentheses, which is -18, then proceeded with the multiplication and the subtraction (which is equivalent to addition) to get the final result of -12.
+        `,
+	},
+	{
+		id: "20",
+		level: 1,
+		question: "Evaluate the expression: (-3 * 6) - (3 * 2)",
+		options: [
+			{ option: "24" },
+			{ option: "12" },
+			{ option: "-24" },
+			{ option: "12" },
+		],
+		answer: "-24",
+		solution: `
+To evaluate the expression (-3 * 6) - (3 * 2), you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate -3 * 6:
+-3 * 6 = -18
+Now the expression becomes: -18 - (3 * 2)
+Next, inside the second set of parentheses, evaluate 3 * 2:
+3 * 2 = 6
+Now the expression becomes: -18 - 6
+Finally, perform the subtraction: -18 - 6 = -24
+So, the final answer is -24.
+In summary, you first calculated the values inside each set of parentheses, and then proceeded with the subtraction to get the final result of -24.
+        `,
+	},
+	{
+		id: "21",
+		level: 1,
+		question: "Evaluate the expression: (-3 * 6) + (12 / -2)",
+		options: [
+			{ option: "24" },
+			{ option: "12" },
+			{ option: "-24" },
+			{ option: "12" },
+		],
+		answer: "-24",
+		solution: `
+To evaluate the expression (-3 * 6) + (12 / -2), you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate -3 * 6:
+-3 * 6 = -18
+Now the expression becomes: -18 + (12 / -2)
+Inside the second set of parentheses, evaluate 12 / -2:
+12 / -2 = -6
+Now the expression becomes: -18 + (-6)
+Finally, perform the addition: -18 + (-6) = -18 - 6 = -24
+So, the final answer is -24.
+In summary, you first calculated the value inside each set of parentheses, and then proceeded with the addition (which is equivalent to subtraction when adding a negative number) to get the final result of -24.
+        `,
+	},
+	{
+		id: "22",
+		level: 1,
+		question: "Evaluate the expression: (-6 * 2) - (28 / -7)",
+		options: [
+			{ option: "-8" },
+			{ option: "-16" },
+			{ option: "8" },
+			{ option: "16" },
+		],
+		answer: "-8",
+		solution: `
+To evaluate the expression (-6 * 2) - (28 / -7), you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate -6 * 2:
+-6 * 2 = -12
+Now the expression becomes: -12 - (28 / -7)
+Inside the second set of parentheses, evaluate 28 / -7:
+28 / -7 = -4
+Now the expression becomes: -12 - (-4)
+To subtract a negative number, you can treat it as adding the positive of that number:
+-12 + 4 = -8
+So, the final answer is -8.
+In summary, you first calculated the value inside each set of parentheses, and then proceeded with the addition (which is equivalent to subtraction when adding a positive number) to get the final result of -8.
+        `,
+	},
+	{
+		id: "23",
+		level: 1,
+		question: "Evaluate the expression: (4 * 7) + (28 / -7)",
+		options: [
+			{ option: "0" },
+			{ option: "-24" },
+			{ option: "32" },
+			{ option: "none of the above" },
+		],
+		answer: "-8",
+		solution: `
+To evaluate the expression (4 * 7) + (28 / -7), you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 4 * 7:
+4 * 7 = 28
+Now the expression becomes: 28 + (28 / -7)
+Inside the second set of parentheses, evaluate 28 / -7:
+28 / -7 = -4
+Now the expression becomes: 28 + (-4)
+Finally, perform the addition: 28 + (-4) = 28 - 4 = 24
+So, the final answer is 24.
+In summary, you first calculated the value inside each set of parentheses, and then proceeded with the addition (which is equivalent to subtraction when adding a negative number) to get the final result of 24.
+        `,
+	},
+	{
+		id: "24",
+		level: 1,
+		question: "Evaluate the expression: (2 * 6) + 4 * 3",
+		options: [
+			{ option: "12" },
+			{ option: "24" },
+			{ option: "42" },
+			{ option: "34" },
+		],
+		answer: "-8",
+		solution: `
+To evaluate the expression (2 * 6) + (4 * 3), you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 2 * 6:
+2 * 6 = 12
+Now the expression becomes: 12 + (4 * 3)
+Inside the second set of parentheses, evaluate 4 * 3:
+4 * 3 = 12
+Now the expression becomes: 12 + 12
+Finally, perform the addition: 12 + 12 = 24
+So, the final answer is 24.
+In summary, you first calculated the value inside each set of parentheses, and then proceeded with the addition to get the final result of 24.
+        `,
+	},
+	{
+		id: "25",
+		level: 1,
+		question: "Evaluate the expression: (2 * 7) + 6 * -3",
+		options: [
+			{ option: "-4" },
+			{ option: "-60" },
+			{ option: "60" },
+			{ option: "none of the above" },
+		],
+		answer: "-4",
+		solution: `
+To evaluate the expression (2 * 7) + (6 * -3), you should follow the order of operations (PEMDAS), which stands for Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+Let's break it down step by step:
+Inside the first set of parentheses, evaluate 2 * 7:
+2 * 7 = 14
+Now the expression becomes: 14 + (6 * -3)
+Inside the second set of parentheses, evaluate 6 * -3:
+6 * -3 = -18
+Now the expression becomes: 14 + (-18)
+Finally, perform the addition: 14 + (-18) = -4
+So, the final answer is -4.
+In summary, you first calculated the value inside each set of parentheses, and then proceeded with the addition to get the final result of -4.
+        `,
+	},
+	{
+		id: "26",
+		level: 1,
+		question: "What is the slope of the equation: 2y = -2x - 4",
+		options: [
+			{ option: "-2" },
+			{ option: "-4" },
+			{ option: "1" },
+			{ option: "-1" },
+		],
+		answer: "-1",
+		solution: `
+To find the slope of the equation 2y = -2x - 4, you need to rearrange it into slope-intercept form (y = mx + b), where "m" represents the slope.
+First, divide both sides of the equation by 2 to isolate y:
+2y = -2x - 4
+Dividing by 2:
+y = (-2x - 4) / 2
+Now, simplify the right-hand side of the equation: 
+y = -x – 2
+Now, the equation is in slope-intercept form, where the coefficient of x (-1 in this case) is the slope.
+So, the slope of the equation 2y = -2x - 4 is -1. This means that for every one-unit increase in the x-coordinate, the y-coordinate decreases by 1 unit, and for every one-unit decrease in the x-coordinate, the y-coordinate increases by 1 unit. The negative sign indicates that the line has a negative slope, meaning it slants downward from left to right on a graph.
+        `,
+	},
+	{
+		id: "27",
+		level: 1,
+		question: "What is the slope of the equation: -3y = 12x + 4",
+		options: [
+			{ option: "12" },
+			{ option: "4" },
+			{ option: "-3" },
+			{ option: "-4" },
+		],
+		answer: "-4",
+		solution: `
+To find the slope of the equation -3y = 12x + 4, you need to rearrange it into slope-intercept form (y = mx + b), where "m" represents the slope.
+First, divide both sides of the equation by -3 to isolate y:
+-3y = 12x + 4
+Dividing by -3: 
+y = (12x + 4) / -3
+Now, simplify the right-hand side of the equation: 
+y = -4x - 4/3
+Now, the equation is in slope-intercept form, where the coefficient of x (-4 in this case) is the slope.
+So, the slope of the equation -3y = 12x + 4 is -4. This means that for every one-unit increase in the x-coordinate, the y-coordinate decreases by 4 units, and for every one-unit decrease in the x-coordinate, the y-coordinate increases by 4 units.
+        `,
+	},
+	{
+		id: "28",
+		level: 1,
+		question: "What is the slope of the equation: -y = 2x - ¼",
+		options: [
+			{ option: "2" },
+			{ option: "1/4" },
+			{ option: "-1/4" },
+			{ option: "-2" },
+		],
+		answer: "-2",
+		solution: `
+To find the slope of the equation -y = 2x - 1/4, you need to rearrange it into slope-intercept form (y = mx + b), where "m" represents the slope.
+First, multiply both sides of the equation by -1 to isolate y:
+-y = 2x - 1/4
+Multiplying by -1:
+y = -2x + 1/4
+Now, the equation is in slope-intercept form, where the coefficient of x (-2 in this case) is the slope.
+So, the slope of the equation -y = 2x - 1/4 is -2. This means that for every one-unit increase in the x-coordinate, the y-coordinate decreases by 2 units, and for every one-unit decrease in the x-coordinate, the y-coordinate increases by 2 units. The negative sign indicates that the line has a negative slope, meaning it slants downward from left to right on a graph.
+        `,
+	},
+	{
+		id: "29",
+		level: 1,
+		question: "What is the slope of the equation: -2y = -x - 1/8",
+		options: [
+			{ option: "-1" },
+			{ option: "1" },
+			{ option: "-1/8" },
+			{ option: "½" },
+		],
+		answer: "½",
+		solution: `
+To find the slope of the equation -2y = -x - 1/8, you need to rearrange it into slope-intercept form (y = mx + b), where "m" represents the slope.
+First, divide both sides of the equation by -2 to isolate y:
+-2y = -x - 1/8
+Dividing by -2:
+y = (x + 1/8) / 2
+Now, simplify the right-hand side of the equation:
+y = (1/2)x + 1/16
+Now, the equation is in slope-intercept form, where the coefficient of x (1/2 in this case) is the slope.
+So, the slope of the equation -2y = -x - 1/8 is 1/2. This means that for every one-unit increase in the x-coordinate, the y-coordinate increases by 1/2 unit, and for every one-unit decrease in the x-coordinate, the y-coordinate decreases by 1/2 unit.
+        `,
+	},
+	{
+		id: "30",
+		level: 1,
+		question: "What is the slope of the equation: -2y = x - 1/8",
+		options: [
+			{ option: "1" },
+			{ option: "½" },
+			{ option: "1/8" },
+			{ option: "none of the above" },
+		],
+		answer: "none of the above",
+		solution: `
+To find the slope of the equation -2y = x - 1/8, you need to rearrange it into slope-intercept form (y = mx + b), where "m" represents the slope.
+First, divide both sides of the equation by -2 to isolate y:
+-2y = x - 1/8
+Dividing by -2:
+y = -1/2x + 1/16
+Now, the equation is in slope-intercept form, where the coefficient of x (-1/2 in this case) is the slope.
+So, the slope of the equation -2y = x - 1/8 is -1/2. This means that for every one-unit increase in the x-coordinate, the y-coordinate decreases by 1/2 unit, and for every one-unit decrease in the x-coordinate, the y-coordinate increases by 1/2 unit.
+        `,
+	},
+	{
+		id: "31",
+		level: 1,
+		question: "What is the slope of the equation: -y = 1/2x – 9",
+		options: [
+			{ option: "-1/2" },
+			{ option: "-9" },
+			{ option: "1" },
+			{ option: "none of the above" },
+		],
+		answer: "-1/2",
+		solution: `
+To find the slope of the equation -y = 1/2x - 9, you need to rearrange it into slope-intercept form (y = mx + b), where "m" represents the slope.
+First, multiply both sides of the equation by -1 to isolate y:
+-y = 1/2x - 9
+Multiplying by -1:
+y = -1/2x + 9
+Now, the equation is in slope-intercept form, where the coefficient of x (-1/2 in this case) is the slope.
+So, the slope of the equation -y = 1/2x - 9 is -1/2. This means that for every one-unit increase in the x-coordinate, the y-coordinate decreases by 1/2 unit, and for every one-unit decrease in the x-coordinate, the y-coordinate increases by 1/2 unit. The negative sign indicates that the line has a negative slope, meaning it slants downward from left to right on a graph.
+        `,
+	},
+	{
+		id: "32",
+		level: 1,
+		question: "What is the y intercept of the equation: -y = 1/2x – 9",
+		options: [
+			{ option: "½" },
+			{ option: "-1/2" },
+			{ option: "9" },
+			{ option: "1" },
+		],
+		answer: "9",
+		solution: `
+To find the y-intercept of the equation -y = 1/2x - 9, you need to isolate the y-intercept term, which is the constant term on the right side of the equation when x is set to 0.
+In this equation, you have:
+-y = 1/2x - 9
+Now, let's set x to 0 and solve for y:
+-y = 1/2(0) - 9
+This simplifies to:
+-y = 0 - 9
+Now, multiply both sides by -1 to isolate y:
+y = 9
+So, the y-intercept of the equation -y = 1/2x - 9 is 9. This means that the graph of this equation intersects the y-axis at the point (0, 9).
+        `,
+	},
+	{
+		id: "33",
+		level: 1,
+		question: "What is the y intercept of the equation: -2y = 1/2x + 9",
+		options: [
+			{ option: "½" },
+			{ option: "-9" },
+			{ option: "-9/2" },
+			{ option: "9/2" },
+		],
+		answer: "-9/2",
+		solution: `
+To find the y-intercept of the equation -2y = 1/2x + 9, you need to isolate the y-intercept term, which is the constant term on the right side of the equation when x is set to 0.
+In this equation, you have:
+-2y = 1/2x + 9
+Now, let's set x to 0 and solve for y:
+-2y = 1/2(0) + 9
+This simplifies to:
+-2y = 0 + 9
+Now, divide both sides by -2 to isolate y:
+y = 9 / (-2)
+y = -9/2
+So, the y-intercept of the equation -2y = 1/2x + 9 is -9/2. This means that the graph of this equation intersects the y-axis at the point (0, -9/2) or (-4.5, 0).
+        `,
+	},
+	{
+		id: "34",
+		level: 1,
+		question: "What is the y intercept of the equation: -y = 3x + 9",
+		options: [
+			{ option: "3" },
+			{ option: "-9" },
+			{ option: "9" },
+			{ option: "none of the above" },
+		],
+		answer: "-9",
+		solution: `
+To find the y-intercept of the equation -y = 3x + 9, you need to isolate the y-intercept term, which is the constant term on the right side of the equation when x is set to 0.
+In this equation, you have:
+-y = 3x + 9
+Now, let's set x to 0 and solve for y:
+-y = 3(0) + 9
+This simplifies to:
+-y = 0 + 9
+Now, multiply both sides by -1 to isolate y:
+y = -9
+So, the y-intercept of the equation -y = 3x + 9 is -9. This means that the graph of this equation intersects the y-axis at the point (0, -9).
+        `,
+	},
+	{
+		id: "35",
+		level: 1,
+		question: "What is the y intercept of the equation: -6y = 12x + 9",
+		options: [
+			{ option: "-12" },
+			{ option: "-6" },
+			{ option: "-3/2" },
+			{ option: "9" },
+		],
+		answer: "-3/2",
+		solution: `
+To find the y-intercept of the equation -6y = 12x + 9, you need to isolate the y-intercept term, which is the constant term on the right side of the equation when x is set to 0.
+In this equation, you have:
+-6y = 12x + 9
+Now, let's set x to 0 and solve for y:
+-6y = 12(0) + 9
+This simplifies to:
+-6y = 0 + 9
+Now, divide both sides by -6 to isolate y:
+y = 9 / (-6)
+y = -3/2
+So, the y-intercept of the equation -6y = 12x + 9 is -3/2. This means that the graph of this equation intersects the y-axis at the point (0, -3/2) or (-1.5, 0).
+        `,
+	},
+	{
+		id: "36",
+		level: 1,
+		question: "What is the y intercept of the equation: 3y = -x + 21",
+		options: [
+			{ option: "21" },
+			{ option: "8" },
+			{ option: "7" },
+			{ option: "-1" },
+		],
+		answer: "7",
+		solution: `
+To find the y-intercept of the equation 3y = -x + 21, you need to isolate the y-intercept term, which is the constant term on the right side of the equation when x is set to 0.
+In this equation, you have:
+3y = -x + 21
+Now, let's set x to 0 and solve for y:
+3y = -(0) + 21
+This simplifies to:
+3y = 0 + 21
+Now, divide both sides by 3 to isolate y:
+y = 21 / 3
+y = 7
+So, the y-intercept of the equation 3y = -x + 21 is 7. This means that the graph of this equation intersects the y-axis at the point (0, 7).
+        `,
+	},
+	{
+		id: "37",
+		level: 1,
+		question: "What is the y intercept of the equation: -3y = -3x + 27",
+		options: [
+			{ option: "-3" },
+			{ option: "27" },
+			{ option: "-9" },
+			{ option: "1" },
+		],
+		answer: "7",
+		solution: `
+To find the y-intercept of the equation -3y = -3x + 27, you need to isolate the y-intercept term, which is the constant term on the right side of the equation when x is set to 0.
+In this equation, you have:
+-3y = -3x + 27
+Now, let's set x to 0 and solve for y:
+-3y = -3(0) + 27
+This simplifies to:
+-3y = 0 + 27
+Now, divide both sides by -3 to isolate y:
+y = 27 / (-3)
+y = -9
+So, the y-intercept of the equation -3y = -3x + 27 is -9. This means that the graph of this equation intersects the y-axis at the point (0, -9).
+        `,
+	},
+	{
+		id: "38",
+		level: 1,
+		question: "What is the y intercept of the equation: 7y = -21x + 7",
+		options: [
+			{ option: "-21" },
+			{ option: "-3" },
+			{ option: "1" },
+			{ option: "7" },
+		],
+		answer: "1",
+		solution: `
+To find the y-intercept of the equation 7y = -21x + 7, you need to isolate the y-intercept term, which is the constant term on the right side of the equation when x is set to 0.
+In this equation, you have:
+7y = -21x + 7
+Now, let's set x to 0 and solve for y:
+7y = -21(0) + 7
+This simplifies to:
+7y = 0 + 7
+Now, divide both sides by 7 to isolate y:
+y = 7 / 7
+y = 1
+So, the y-intercept of the equation 7y = -21x + 7 is 1. This means that the graph of this equation intersects the y-axis at the point (0, 1).
+        `,
+	},
+	{
+		id: "39",
+		level: 1,
+		question: "What is the y intercept of the equation: 1y = -11x + 7",
+		options: [
+			{ option: "-11" },
+			{ option: "-7" },
+			{ option: "7" },
+			{ option: "11x" },
+		],
+		answer: "7",
+		solution: `
+To find the y-intercept of the equation 1y = -11x + 7, you need to isolate the y-intercept term, which is the constant term on the right side of the equation when x is set to 0.
+In this equation, you have:
+1y = -11x + 7
+Now, let's set x to 0 and solve for y:
+1y = -11(0) + 7
+This simplifies to:
+1y = 0 + 7
+Now, divide both sides by 1 (which is not typically shown in equations, but it's implied) to isolate y:
+y = 7
+So, the y-intercept of the equation 1y = -11x + 7 is 7. This means that the graph of this equation intersects the y-axis at the point (0, 7).
+        `,
+	},
+	{
+		id: "40",
+		level: 1,
+		question: "What is the y intercept of the equation: -2y = -21x + 16",
+		options: [
+			{ option: "-21" },
+			{ option: "2/21" },
+			{ option: "-8" },
+			{ option: "none of the above" },
+		],
+		answer: "-8",
+		solution: `
+To find the y-intercept of the equation -2y = -21x + 16, you need to isolate the y-intercept term, which is the constant term on the right side of the equation when x is set to 0.
+In this equation, you have:
+-2y = -21x + 16
+Now, let's set x to 0 and solve for y:
+-2y = -21(0) + 16
+This simplifies to:
+-2y = 0 + 16
+Now, divide both sides by -2 to isolate y:
+y = 16 / (-2)
+y = -8
+So, the y-intercept of the equation -2y = -21x + 16 is -8. This means that the graph of this equation intersects the y-axis at the point (0, -8).
+        `,
+	},
+	{
+		id: "41",
+		level: 1,
+		question:
+			"You invested $5,000 in a savings account with an annual interest rate of 4%. How much interest will you earn after one year?",
+		options: [
+			{ option: "$40" },
+			{ option: "$160" },
+			{ option: "$200" },
+			{ option: "$250" },
+		],
+		answer: "$200",
+		solution: `
+To calculate the interest earned on a $5,000 investment with an annual interest rate of 4%, you can use the following formula:
+Interest = Principal (initial amount) x Rate
+Interest = $5,000 x 4% (or 0.04 as a decimal)
+Interest = $5,000 x 0.04 = $200
+You will earn $200 in interest after one year on your $5,000 investment at a 4% annual interest rate.
+        `,
+	},
+	{
+		id: "42",
+		level: 1,
+		question:
+			"You receive a 15% raise in your annual salary. If your current salary is $50,000, how much will your new salary be?",
+		options: [
+			{ option: "$57,000" },
+			{ option: "$57,500" },
+			{ option: "$58,000" },
+			{ option: "$58,500" },
+		],
+		answer: "$200",
+		solution: `
+To calculate your new salary after a 15% raise, you can follow these steps:
+Step 1: Calculate the raise amount.
+Raise amount = Current salary * Raise percentage
+Raise amount = $50,000 * 15% = $50,000 * 0.15 = $7,500
+Step 2: Add the raise amount to your current salary to find the new salary.
+New salary = Current salary + Raise amount
+New salary = $50,000 + $7,500 = $57,500
+So, with a 15% raise, your new salary will be $57,500.
+        `,
+	},
+	{
+		id: "43",
+		level: 1,
+		question:
+			"In a class of 40 students, 25% are fluent in a second language. How many students are not fluent in the second language?",
+		options: [
+			{ option: "10" },
+			{ option: "15" },
+			{ option: "20" },
+			{ option: "none of the above" },
+		],
+		answer: "none of the above",
+		solution: `
+To find out how many students in a class of 40 are not fluent in a second language, you can use the following formula:
+Number of students not fluent in the second language = Total number of students × (100% - Percentage who are fluent)
+Number of students not fluent in the second language = 40 students × (100% - 25%) = 40 students × 75%
+First, calculate 75% of 40 students:
+0.75 (75%) × 40 = 30 students
+So, 30 students in the class are not fluent in a second language.
+        `,
+	},
+	{
+		id: "44",
+		level: 1,
+		question:
+			"A restaurant bill is $80, and you want to leave a 15% tip. How much should you leave as a tip?",
+		options: [
+			{ option: "$12" },
+			{ option: "$14" },
+			{ option: "$16" },
+			{ option: "$10" },
+		],
+		answer: "$12",
+		solution: `
+To calculate a 15% tip on an $80 restaurant bill, you can use the following formula:
+Tip amount = Bill amount × Tip percentage
+Tip amount = $80 × 15% (or 0.15 as a decimal)
+Tip amount = $80 × 0.15 = $12
+You should leave a tip of $12 on an $80 restaurant bill if you want to leave a 15% tip.
+        `,
+	},
+	{
+		id: "45",
+		level: 1,
+		question:
+			"You bought a car for $20,000, and its value has depreciated by 30%. What is the current value of the car?",
+		options: [
+			{ option: "$6,000" },
+			{ option: "$12,000" },
+			{ option: "$14,000" },
+			{ option: "$10,000" },
+		],
+		answer: "$14,000",
+		solution: `
+To find the current value of a car that has depreciated by 30%, you can use the following formula:
+Current Value = Original Value - Depreciation
+Depreciation = Original Value × Depreciation Rate
+In this case, the original value is $20,000, and the depreciation rate is 30% (0.30 as a decimal).
+Depreciation = $20,000 × 0.30 = $6,000
+Now, subtract the depreciation amount from the original value to find the current value:
+Current Value = $20,000 - $6,000 = $14,000
+So, the current value of the car is $14,000 after depreciating by 30%.
+        `,
+	},
+	{
+		id: "46",
+		level: 1,
+		question:
+			"You scored 85% on your math test, which had 50 questions. How many questions did you answer correctly?",
+		options: [
+			{ option: "42" },
+			{ option: "43.5" },
+			{ option: "44.5" },
+			{ option: "none of the above" },
+		],
+		answer: "none of the above",
+		solution: `
+To find out how many questions you answered correctly on a math test where you scored 85%, you can use the following formula:
+Number of correct answers = (Percentage score / 100) x Total number of questions
+Number of correct answers = (85% / 100) x 50 questions
+First, convert the percentage to a decimal by dividing by 100:
+85% = 0.85 (as a decimal)
+Now, calculate the number of correct answers:
+Number of correct answers = 0.85 x 50 questions = 42.5
+Since you can't have half a question, we round down to the nearest whole number. So, you answered 42 questions correctly on your math test.
+        `,
+	},
+	{
+		id: "47",
+		level: 1,
+		question:
+			"A store initially priced a shirt at $60 but later reduced the price by 20%. What is the new sale price of the shirt?",
+		options: [
+			{ option: "$12" },
+			{ option: "$38" },
+			{ option: "$48" },
+			{ option: "$58" },
+		],
+		answer: "$48",
+		solution: `
+To find the new sale price of the shirt after a 20% reduction, you can use the following formula:
+Sale Price = Original Price - (Original Price × Discount Percentage)
+In this case, the original price of the shirt is $60, and the discount percentage is 20%, or 0.20 as a decimal.
+Sale Price = $60 - ($60 × 0.20)
+Sale Price = $60 - ($12)
+Sale Price = $48
+The new sale price of the shirt is $48 after a 20% reduction.
+        `,
+	},
+	{
+		id: "48",
+		level: 1,
+		question:
+			"Your monthly mobile phone bill is $80. If you use a 15% discount code, how much will you save on your bill?",
+		options: [
+			{ option: "$14" },
+			{ option: "$12" },
+			{ option: "$16" },
+			{ option: "$10" },
+		],
+		answer: "$12",
+		solution: `
+To calculate how much you will save on your monthly mobile phone bill with a 15% discount, you can use the following formula:
+Savings = Monthly bill amount × Discount percentage
+Savings = $80 × 15% (or 0.15 as a decimal)
+Savings = $80 × 0.15 = $12
+You will save $12 on your monthly mobile phone bill with a 15% discount.
+        `,
+	},
+	{
+		id: "49",
+		level: 1,
+		question:
+			"You save 15% of your monthly income. If your monthly income is $2,000, how much do you save each month?",
+		options: [
+			{ option: "$150" },
+			{ option: "$300" },
+			{ option: "$450" },
+			{ option: "$200" },
+		],
+		answer: "$300",
+		solution: `
+To find out how much you save each month, given that you save 15% of your monthly income, you can use the following formula:
+Savings = Monthly income × Savings percentage
+Savings = $2,000 × 15% (or 0.15 as a decimal)
+Savings = $2,000 × 0.15 = $300
+You save $300 each month from your $2,000 monthly income, as 15% of $2,000 is $300.
+        `,
+	},
+	{
+		id: "50",
+		level: 1,
+		question:
+			"A company's profits increased by 15% this year. If their profits were $60,000 last year, what are their profits this year?",
+		options: [
+			{ option: "$66,000" },
+			{ option: "$69,000" },
+			{ option: "$72,000" },
+			{ option: "$63,000" },
+		],
+		answer: "$69,000",
+		solution: `
+To calculate the company's profits this year after a 15% increase, you can use the following formula:
+Profits this year = Profits last year + (Profits last year × Profit increase percentage)
+Profits this year = $60,000 + ($60,000 × 15% or 0.15 as a decimal)
+Profits this year = $60,000 + ($9,000)
+Profits this year = $69,000
+So, the company's profits this year are $69,000 after a 15% increase from the previous year's profits of $60,000.
+        `,
+	},
+	{
+		id: "51",
+		level: 1,
+		question:
+			"A company offers its employees a 5% raise. If your current salary is $40,000, how much will your new salary be after the raise?",
+		options: [
+			{ option: "$44,000" },
+			{ option: "$42,500" },
+			{ option: "$42,000" },
+			{ option: "$43,000" },
+		],
+		answer: "$42,000",
+		solution: `
+To calculate your new salary after a 5% raise, you can use the following formula:
+New Salary = Current Salary + (Current Salary * Raise Percentage)
+New Salary = $40,000 + ($40,000 * 5% or 0.05 as a decimal)
+New Salary = $40,000 + ($2,000)
+New Salary = $42,000
+So, with a 5% raise, your new salary will be $42,000.
+        `,
+	},
+	{
+		id: "52",
+		level: 1,
+		question:
+			"You invest $5,000 in a savings account with a 3% annual interest rate. How much will you have in the account after one year?",
+		options: [
+			{ option: "$5,300" },
+			{ option: "$5,030" },
+			{ option: "$5,030" },
+			{ option: "$5,050" },
+		],
+		answer: "$5,030",
+		solution: `
+To calculate the amount you will have in the savings account after one year with a 3% annual interest rate, you can use the following formula for simple interest:
+Future Value = Initial Principal × (1 + (Annual Interest Rate/100))
+Future Value = $5,000 × (1 + (3/100))
+Future Value = $5,000 × (1 + 0.03)
+Future Value = $5,000 × 1.03
+Future Value = $5,150
+So, after one year, you will have $5,150 in the savings account with a 3% annual interest rate.
+        `,
+	},
+	{
+		id: "53",
+		level: 1,
+		question:
+			"You invest $10,000 in a stock that increases in value by 8%. How much is your investment worth after the increase?",
+		options: [
+			{ option: "$18,000" },
+			{ option: "$10,800" },
+			{ option: "$10,400" },
+			{ option: "$10,200" },
+		],
+		answer: "$10,800",
+		solution: `
+To calculate the value of your investment after it increases by 8%, you can use the following formula:
+New Value = Initial Value × (1 + Percentage Increase/100)
+New Value = $10,000 × (1 + 8/100)
+New Value = $10,000 × (1 + 0.08)
+New Value = $10,000 × 1.08
+New Value = $10,800
+So, your investment will be worth $10,800 after it increases in value by 8%.
+        `,
+	},
+	{
+		id: "54",
+		level: 1,
+		question:
+			"A store initially marks up a product by 50% and then offers a 20% discount. If the product's original cost was $100, what is the final sale price after the discount?",
+		options: [
+			{ option: "$130" },
+			{ option: "$120" },
+			{ option: "$125" },
+			{ option: "$127" },
+		],
+		answer: "$120",
+		solution: `
+To find the final sale price after a 50% markup and a 20% discount, you can follow these steps:
+1. Calculate the price after the 50% markup:  
+	Markup Price = Original Cost + (Original Cost × Markup Percentage)
+	Markup Price = $100 + ($100 × 50% or 0.50 as a decimal)
+	Markup Price = $100 + ($50)
+	Markup Price = $150
+2. Calculate the price after the 20% discount from the markup price:
+	Discounted Price = Markup Price - (Markup Price × Discount Percentage)
+	Discounted Price = $150 - ($150 × 20% or 0.20 as a decimal)
+	Discounted Price = $150 - ($30)
+	Discounted Price = $120
+So, the final sale price after the 50% markup and 20% discount is $120.
+        `,
+	},
+	{
+		id: "55",
+		level: 1,
+		question:
+			"You have a pizza, and you eat 40% of it. If the remaining pizza is divided equally between you and a friend, what percentage of the original pizza does each of you get?",
+		options: [
+			{ option: "50%" },
+			{ option: "40%" },
+			{ option: "30%" },
+			{ option: "20%" },
+		],
+		answer: "30%",
+		solution: `
+To find out what percentage of the original pizza each of you gets, you can follow these steps:
+1. First, calculate how much of the pizza remains after you've eaten 40% of it:
+Remaining pizza = 100% - 40% = 60%
+2. Now, divide the remaining pizza equally between you and your friend. Each of you gets half of the remaining pizza, which is 60% / 2:
+Each of you gets 60% / 2 = 30%
+So, you and your friend each get 30% of the original pizza.
+        `,
+	},
+	{
+		id: "56",
+		level: 1,
+		question: "Solve for x in the equation: 2x + 8 = 18",
+		options: [
+			{ option: "13" },
+			{ option: "5" },
+			{ option: "-5" },
+			{ option: "-13" },
+		],
+		answer: "5",
+		solution: `
+		To solve for x in the equation 2x + 8 = 18, follow these steps:
+		1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 2x.
+		2. Subtract 8 from both sides of the equation to get rid of the constant term on the left side:
+		   2x + 8 - 8 = 18 - 8
+		   This simplifies to:
+		   2x = 10
+		3. Now, to solve for x, divide both sides of the equation by 2:
+		   (2x) / 2 = 10 / 2
+		   This simplifies to:
+		   x = 5
+		So, the solution to the equation 2x + 8 = 18 is x = 5.
+        `,
+	},
+	{
+		id: "57",
+		level: 1,
+		question: "Solve for x in the equation: 3x - 5 = 28",
+		options: [
+			{ option: "23/5" },
+			{ option: "23/3" },
+			{ option: "-11" },
+			{ option: "11" },
+		],
+		answer: "11",
+		solution: `
+To solve for x in the equation 3x - 5 = 28, follow these steps:
+1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 3x.
+2. Add 5 to both sides of the equation to get rid of the constant term on the left side:
+   3x - 5 + 5 = 28 + 5
+   This simplifies to:
+   3x = 33
+3. Now, to solve for x, divide both sides of the equation by 3:
+   (3x) / 3 = 33 / 3
+   This simplifies to:
+   x = 11
+So, the solution to the equation 3x - 5 = 28 is x = 11.
+        `,
+	},
+	{
+		id: "58",
+		level: 1,
+		question: "Solve for x in the equation: 3x - 3 = 21",
+		options: [
+			{ option: "5" },
+			{ option: "6" },
+			{ option: "7" },
+			{ option: "8" },
+		],
+		answer: "8",
+		solution: ` 
+To solve for x in the equation 3x - 3 = 21, follow these steps:
+1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 3x.
+2. Add 3 to both sides of the equation to get rid of the constant term on the left side:
+	3x - 3 + 3 = 21 + 3
+	This simplifies to:
+	3x = 24
+3. Now, to solve for x, divide both sides of the equation by 3:
+	(3x) / 3 = 24 / 3
+	This simplifies to:
+	x = 8
+So, the solution to the equation 3x - 3 = 21 is x = 8.
+        `,
+	},
+	{
+		id: "59",
+		level: 1,
+		question: "Solve for x in the equation: 3x - 3 = -27",
+		options: [
+			{ option: "-10" },
+			{ option: "10" },
+			{ option: "-8" },
+			{ option: "8" },
+		],
+		answer: "-8",
+		solution: ` 
+To solve for x in the equation 3x - 3 = -27, follow these steps:
+1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 3x.
+2. Add 3 to both sides of the equation to get rid of the constant term on the left side:
+	3x - 3 + 3 = -27 + 3
+	This simplifies to:
+	3x = -24
+3. Now, to solve for x, divide both sides of the equation by 3:
+	(3x) / 3 = (-24) / 3
+	This simplifies to:
+	x = -8
+So, the solution to the equation 3x - 3 = -27 is x = -8.
+        `,
+	},
+	{
+		id: "60",
+		level: 1,
+		question: "Solve for x in the equation: 3x + 7 = -29",
+		options: [
+			{ option: "-22/7" },
+			{ option: "22/7" },
+			{ option: "-12" },
+			{ option: "12" },
+		],
+		answer: "-12",
+		solution: ` 
+To solve for x in the equation 3x + 7 = -29, follow these steps:
+1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 3x.
+2. Subtract 7 from both sides of the equation to get rid of the constant term on the left side:
+	3x + 7 - 7 = -29 - 7
+	This simplifies to:
+	3x = -36
+3. Now, to solve for x, divide both sides of the equation by 3:
+	(3x) / 3 = (-36) / 3
+	This simplifies to:
+	x = -12
+So, the solution to the equation 3x + 7 = -29 is x = -12.
+        `,
+	},
+	{
+		id: "61",
+		level: 1,
+		question: "Solve for x in the equation: 3x - 12 = -33",
+		options: [
+			{ option: "15" },
+			{ option: "-15" },
+			{ option: "-7" },
+			{ option: "7" },
+		],
+		answer: "-7",
+		solution: ` 
+To solve for x in the equation 3x - 12 = -33, follow these steps:
+1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 3x.
+2. Add 12 to both sides of the equation to get rid of the constant term on the left side:
+	3x - 12 + 12 = -33 + 12
+	This simplifies to:
+	3x = -21
+3. Now, to solve for x, divide both sides of the equation by 3:
+	(3x) / 3 = (-21) / 3
+	This simplifies to:
+	x = -7
+So, the solution to the equation 3x - 12 = -33 is x = -7.
+        `,
+	},
+	{
+		id: "62",
+		level: 1,
+		question: "Solve for x in the equation: 7x - 2 = -33",
+		options: [
+			{ option: "-10" },
+			{ option: "-31/2" },
+			{ option: "-31/7" },
+			{ option: "none of the above" },
+		],
+		answer: "-31/7",
+		solution: ` 
+To solve for x in the equation 7x - 2 = -33, follow these steps:
+1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 7x.
+2. Add 2 to both sides of the equation to get rid of the constant term on the left side:
+	7x - 2 + 2 = -33 + 2
+	This simplifies to:
+	7x = -31
+3. Now, to solve for x, divide both sides of the equation by 7:
+	(7x) / 7 = (-31) / 7
+	This simplifies to:
+	x = -31/7
+So, the solution to the equation 7x - 2 = -33 is x = -31/7.
+        `,
+	},
+	{
+		id: "63",
+		level: 1,
+		question: "Solve for x in the equation: 5x - 3 = -38",
+		options: [
+			{ option: "-41/5" },
+			{ option: "-7" },
+			{ option: "-9" },
+			{ option: "-41/3" },
+		],
+		answer: "-7",
+		solution: ` 
+To solve for x in the equation 5x - 3 = -38, follow these steps:
+1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 5x.
+2. Add 3 to both sides of the equation to get rid of the constant term on the left side:
+	5x - 3 + 3 = -38 + 3
+	This simplifies to:
+	5x = -35
+3. Now, to solve for x, divide both sides of the equation by 5:
+	(5x) / 5 = (-35) / 5
+	This simplifies to:
+	x = -7
+So, the solution to the equation 5x - 3 = -38 is x = -7.
+        `,
+	},
+	{
+		id: "64",
+		level: 1,
+		question: "Solve for x in the equation: 6x - 6 = 6",
+		options: [
+			{ option: "0" },
+			{ option: "1" },
+			{ option: "2" },
+			{ option: "-1" },
+		],
+		answer: "2",
+		solution: ` 
+To solve for x in the equation 6x - 6 = 6, follow these steps:
+1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 6x.
+2. Add 6 to both sides of the equation to get rid of the constant term on the left side:
+	6x - 6 + 6 = 6 + 6
+	This simplifies to:
+	6x = 12
+3. Now, to solve for x, divide both sides of the equation by 6:
+	(6x) / 6 = 12 / 6
+	This simplifies to:
+	x = 2
+So, the solution to the equation 6x - 6 = 6 is x = 2.
+        `,
+	},
+	{
+		id: "65",
+		level: 1,
+		question: "Solve for x in the equation: 8x - 6 = 58",
+		options: [
+			{ option: "8" },
+			{ option: "-8" },
+			{ option: "52/8" },
+			{ option: "-52/8" },
+		],
+		answer: "8",
+		solution: ` 
+To solve for x in the equation 8x - 6 = 58, follow these steps:
+1. Start by isolating the term with x on one side of the equation. In this case, you want to isolate 8x.
+2. Add 6 to both sides of the equation to get rid of the constant term on the left side:
+	8x - 6 + 6 = 58 + 6
+	This simplifies to:
+	8x = 64
+3. Now, to solve for x, divide both sides of the equation by 8:
+	(8x) / 8 = 64 / 8
+	This simplifies to:
+	x = 8
+So, the solution to the equation 8x - 6 = 58 is x = 8.
+        `,
+	},
+	{
+		id: "66",
+		level: 1,
+		question: "Solve for y in the equation: 7y - 7 = 49",
+		options: [
+			{ option: "7" },
+			{ option: "-7" },
+			{ option: "8" },
+			{ option: "-8" },
+		],
+		answer: "8",
+		solution: ` 
+To solve for y in the equation 7y - 7 = 49, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate 7y.
+2. Add 7 to both sides of the equation to get rid of the constant term on the left side:
+	7y - 7 + 7 = 49 + 7
+	This simplifies to:
+	7y = 56
+3. Now, to solve for y, divide both sides of the equation by 7:
+	(7y) / 7 = 56 / 7
+	This simplifies to:
+	y = 8
+So, the solution to the equation 7y - 7 = 49 is y = 8.
+        `,
+	},
+	{
+		id: "67",
+		level: 1,
+		question: "Solve for y in the equation: 6y - 6 = -42",
+		options: [
+			{ option: "-6" },
+			{ option: "6" },
+			{ option: "-7" },
+			{ option: "7" },
+		],
+		answer: "8",
+		solution: ` 
+To solve for y in the equation 6y - 6 = -42, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate 6y.
+2. Add 6 to both sides of the equation to get rid of the constant term on the left side:
+	6y - 6 + 6 = -42 + 6
+	This simplifies to:
+	6y = -36
+3. Now, to solve for y, divide both sides of the equation by 6:
+	(6y) / 6 = (-36) / 6
+	This simplifies to:
+	y = -6
+So, the solution to the equation 6y - 6 = -42 is y = -6.
+        `,
+	},
+	{
+		id: "68",
+		level: 1,
+		question: "Solve for y in the equation: 6y - 5 = -49",
+		options: [
+			{ option: "9" },
+			{ option: "-9" },
+			{ option: "-44/5" },
+			{ option: "-22/3" },
+		],
+		answer: "-22/3",
+		solution: ` 
+To solve for y in the equation 6y - 5 = -49, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate 6y.
+2. Add 5 to both sides of the equation to get rid of the constant term on the left side:
+	6y - 5 + 5 = -49 + 5
+	This simplifies to:
+	6y = -44
+3. Now, to solve for y, divide both sides of the equation by 6:
+	(6y) / 6 = (-44) / 6
+	This simplifies to:
+	y = -44 / 6
+	You can simplify -44/6 to -22/3, so:
+	y = -22/3
+So, the solution to the equation 6y - 5 = -49 is y = -22/3.
+        `,
+	},
+	{
+		id: "69",
+		level: 1,
+		question: "Solve for y in the equation: 9y - 9 = 81",
+		options: [
+			{ option: "9" },
+			{ option: "-9" },
+			{ option: "10" },
+			{ option: "-10" },
+		],
+		answer: "10",
+		solution: ` 
+To solve for y in the equation 9y - 9 = 81, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate 9y.
+2. Add 9 to both sides of the equation to get rid of the constant term on the left side:
+	9y - 9 + 9 = 81 + 9
+	This simplifies to:
+	9y = 90
+3. Now, to solve for y, divide both sides of the equation by 9:
+	(9y) / 9 = 90 / 9
+	This simplifies to:
+	y = 10
+So, the solution to the equation 9y - 9 = 81 is y = 10.
+        `,
+	},
+	{
+		id: "70",
+		level: 1,
+		question: "Solve for y in the equation: 11y - 12 = 109",
+		options: [
+			{ option: "11" },
+			{ option: "12" },
+			{ option: "13" },
+			{ option: "-12" },
+		],
+		answer: "11",
+		solution: ` 
+To solve for y in the equation 11y - 12 = 109, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate 11y.
+2. Add 12 to both sides of the equation to get rid of the constant term on the left side:
+	11y - 12 + 12 = 109 + 12
+	This simplifies to:
+	11y = 121
+3. Now, to solve for y, divide both sides of the equation by 11:
+	(11y) / 11 = 121 / 11
+	This simplifies to:
+	y = 11
+So, the solution to the equation 11y - 12 = 109 is y = 11.
+        `,
+	},
+	{
+		id: "71",
+		level: 1,
+		question: "Solve for y in the equation: 15y - 22 = 143",
+		options: [
+			{ option: "10" },
+			{ option: "-10" },
+			{ option: "11" },
+			{ option: "12" },
+		],
+		answer: "11",
+		solution: ` 
+To solve for y in the equation 15y - 22 = 143, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate 15y.
+2. Add 22 to both sides of the equation to get rid of the constant term on the left side:
+	15y - 22 + 22 = 143 + 22
+	This simplifies to:
+	15y = 165
+3. Now, to solve for y, divide both sides of the equation by 15:
+	(15y) / 15 = 165 / 15
+	This simplifies to:
+	y = 11
+So, the solution to the equation 15y - 22 = 143 is y = 11.
+        `,
+	},
+	{
+		id: "72",
+		level: 1,
+		question: "Solve for y in the equation: -5y - 15 = 120",
+		options: [
+			{ option: "26" },
+			{ option: "17" },
+			{ option: "-27" },
+			{ option: "38" },
+		],
+		answer: "-27",
+		solution: ` 
+To solve for y in the equation -5y - 15 = 120, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate -5y.
+2. Add 15 to both sides of the equation to get rid of the constant term on the left side:
+	-5y - 15 + 15 = 120 + 15
+	This simplifies to:
+	-5y = 135
+3. Now, to solve for y, divide both sides of the equation by -5. Remember that when you divide by a negative number, the inequality sign flips:
+	(-5y) / -5 = 135 / -5
+	This simplifies to:
+	y = -27
+So, the solution to the equation -5y - 15 = 120 is y = -27.
+        `,
+	},
+	{
+		id: "73",
+		level: 1,
+		question: "Solve for y in the equation: -8y + 12 = -36",
+		options: [
+			{ option: "-6" },
+			{ option: "4" },
+			{ option: "-3" },
+			{ option: "6" },
+		],
+		answer: "6",
+		solution: ` 
+To solve for y in the equation -8y + 12 = -36, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate -8y.
+2. Subtract 12 from both sides of the equation to get rid of the constant term on the left side:
+	-8y + 12 - 12 = -36 - 12
+	This simplifies to:
+	-8y = -48
+3. Now, to solve for y, divide both sides of the equation by -8:
+	(-8y) / -8 = (-48) / -8
+	This simplifies to:
+	y = 6
+So, the solution to the equation -8y + 12 = -36 is y = 6.
+        `,
+	},
+	{
+		id: "74",
+		level: 1,
+		question: "Solve for y in the equation: -7y - 10 = -36",
+		options: [
+			{ option: "8" },
+			{ option: "46/7" },
+			{ option: "26/7" },
+			{ option: "none of the above" },
+		],
+		answer: "26/6",
+		solution: ` 
+To solve for y in the equation -7y - 10 = -36, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate -7y.
+2. Add 10 to both sides of the equation to get rid of the constant term on the left side:
+	-7y - 10 + 10 = -36 + 10
+	This simplifies to:
+	-7y = -26
+3. Now, to solve for y, divide both sides of the equation by -7:
+	(-7y) / -7 = (-26) / -7
+	This simplifies to:
+	y = 26/7
+So, the solution to the equation -7y - 10 = -36 is y = 26/7.
+        `,
+	},
+	{
+		id: "75",
+		level: 1,
+		question: "Solve for y in the equation: -6y + 10 = -34",
+		options: [
+			{ option: "-4" },
+			{ option: "4" },
+			{ option: "7" },
+			{ option: "none of the above" },
+		],
+		answer: "none of the above",
+		solution: ` 
+To solve for y in the equation -6y + 10 = -34, follow these steps:
+1. Start by isolating the term with y on one side of the equation. In this case, you want to isolate -6y.
+2. Subtract 10 from both sides of the equation to get rid of the constant term on the left side:
+	-6y + 10 - 10 = -34 - 10
+	This simplifies to:
+	-6y = -44
+3. Now, to solve for y, divide both sides of the equation by -6:
+	(-6y) / -6 = (-44) / -6
+	This simplifies to:
+	y = 44 / 6
+	You can simplify 44/6 by dividing both the numerator and denominator by their greatest common divisor, which is 2:
+	y = (44 / 2) / (6 / 2)
+	y = 22 / 3
+So, the solution to the equation -6y + 10 = -34 is y = 22/3.
+        `,
+	},
+	{
+		id: "76",
+		level: 1,
+		question: "Solve for x: 3(x - 4) = 21",
+		options: [
+			{ option: "10" },
+			{ option: "11" },
+			{ option: "12" },
+			{ option: "3" },
+		],
+		answer: "11",
+		solution: ` 
+To solve for x in the equation 3(x - 4) = 21, you'll need to apply the distributive property to simplify the equation:
+1. Distribute the 3 on the left side of the equation:
+	3(x - 4) = 3 * x - 3 * 4 = 3x - 12
+2. Now, the equation is simplified to:
+	3x - 12 = 21
+3. Add 12 to both sides of the equation to isolate the term with x:
+	3x - 12 + 12 = 21 + 12
+	This simplifies to:
+	3x = 33
+4. Finally, divide both sides of the equation by 3 to solve for x:
+	(3x) / 3 = 33 / 3
+	This simplifies to:
+	x = 11
+So, the solution to the equation 3(x - 4) = 21 is x = 11.
+        `,
+	},
+	{
+		id: "77",
+		level: 1,
+		question: "Solve for x: 5(3x - 2) = 45",
+		options: [
+			{ option: "3" },
+			{ option: "4" },
+			{ option: "11/3" },
+			{ option: "9/2" },
+		],
+		answer: "11/3",
+		solution: ` 
+To solve for x in the equation 5(3x - 2) = 45, you'll need to apply the distributive property to simplify the equation:
+1. Distribute the 5 on the left side of the equation:
+	5(3x - 2) = 5 * 3x - 5 * 2 = 15x - 10
+2. Now, the equation is simplified to:
+	15x - 10 = 45
+3. Add 10 to both sides of the equation to isolate the term with x:
+	15x - 10 + 10 = 45 + 10
+	This simplifies to:
+	15x = 55
+4. Finally, divide both sides of the equation by 15 to solve for x:
+	(15x) / 15 = 55 / 15
+	This simplifies to:
+	x = 11/3
+So, the solution to the equation 5(3x - 2) = 45 is x = 11/3.
+        `,
+	},
+	{
+		id: "78",
+		level: 1,
+		question: "Solve for x: 5(3x - 3) = 75",
+		options: [
+			{ option: "6" },
+			{ option: "7" },
+			{ option: "16/3" },
+			{ option: "-7" },
+		],
+		answer: "6",
+		solution: ` 
+To solve for x in the equation 5(3x - 3) = 75, you'll need to apply the distributive property to simplify the equation:
+1. Distribute the 5 on the left side of the equation:
+	5(3x - 3) = 5 * 3x - 5 * 3 = 15x - 15
+2. Now, the equation is simplified to:
+	15x - 15 = 75
+3. Add 15 to both sides of the equation to isolate the term with x:
+	15x - 15 + 15 = 75 + 15
+	This simplifies to:
+	15x = 90
+4. Finally, divide both sides of the equation by 15 to solve for x:
+	(15x) / 15 = 90 / 15
+	This simplifies to:   x = 6
+So, the solution to the equation 5(3x - 3) = 75 is x = 6.
+        `,
+	},
+	{
+		id: "79",
+		level: 1,
+		question: "Solve for x: -4(2x - 5) = 22",
+		options: [
+			{ option: "-1/4" },
+			{ option: "½" },
+			{ option: "2" },
+			{ option: "4" },
+		],
+		answer: "-1/4",
+		solution: ` 
+To solve for x in the equation -4(2x - 5) = 22, you'll need to apply the distributive property to simplify the equation:
+1. Distribute the -4 on the left side of the equation:
+	-4(2x - 5) = -4 * 2x + (-4) * (-5) = -8x + 20
+2. Now, the equation is simplified to:
+	-8x + 20 = 22
+3. Subtract 20 from both sides of the equation to isolate the term with x:
+	-8x + 20 - 20 = 22 - 20
+	This simplifies to:
+	-8x = 2
+4. Finally, divide both sides of the equation by -8 to solve for x:
+	(-8x) / -8 = 2 / -8
+	This simplifies to:
+	x = -1/4
+So, the solution to the equation -4(2x - 5) = 22 is x = -1/4.
+        `,
+	},
+	{
+		id: "80",
+		level: 1,
+		question: "Solve for x: -2(4x - 3) = 16",
+		options: [
+			{ option: "-5/4" },
+			{ option: "22/8" },
+			{ option: "-11/4" },
+			{ option: "none of the above" },
+		],
+		answer: "-1/4",
+		solution: ` 
+To solve for x in the equation -2(4x - 3) = 16, follow these steps:
+1. Distribute the -2 on the left side of the equation:
+	-2(4x - 3) = -2 * 4x + (-2) * (-3) = -8x + 6
+2. Now, the equation is simplified to:
+	-8x + 6 = 16
+3. Subtract 6 from both sides of the equation to isolate the term with x:
+	-8x + 6 - 6 = 16 - 6
+	This simplifies to:
+	-8x = 10
+4. Finally, divide both sides of the equation by -8 to solve for x:
+	(-8x) / -8 = 10 / -8
+	This simplifies to:
+	x = -5/4
+So, the solution to the equation -2(4x - 3) = 16 is x = -5/4.
+        `,
+	},
+	{
+		id: "81",
+		level: 1,
+		question: "Solve for x: -7(3x + 2) = 28",
+		options: [
+			{ option: "2" },
+			{ option: "-2" },
+			{ option: "-2/3" },
+			{ option: "none of the above" },
+		],
+		answer: "-2",
+		solution: ` 
+To solve for x in the equation -7(3x + 2) = 28, you can follow these steps:
+1. Distribute the -7 on the left side of the equation:
+	-7(3x + 2) = -7 * 3x - 7 * 2 = -21x - 14
+2. Now, the equation is simplified to:
+	-21x - 14 = 28
+3. Add 14 to both sides of the equation to isolate the term with x:
+	-21x - 14 + 14 = 28 + 14
+	This simplifies to:
+	-21x = 42
+4. Finally, divide both sides of the equation by -21 to solve for x:
+	(-21x) / -21 = 42 / -21
+	This simplifies to:
+	x = -2
+So, the solution to the equation -7(3x + 2) = 28 is x = -2.
+        `,
+	},
+	{
+		id: "82",
+		level: 1,
+		question: "Solve for x: -7(2x + 2) = 50",
+		options: [
+			{ option: "-32/7" },
+			{ option: "64/7" },
+			{ option: "8/7" },
+			{ option: "32/7" },
+		],
+		answer: "-32/7",
+		solution: ` 
+To solve for x in the equation -7(2x + 2) = 50, you can follow these steps:
+1. Distribute the -7 on the left side of the equation:
+	-7(2x + 2) = -7 * 2x - (-7) * 2 = -14x - 14
+2. Now, the equation is simplified to:
+	-14x - 14 = 50
+3. Add 14 to both sides of the equation to isolate the term with x:
+	-14x - 14 + 14 = 50 + 14
+	This simplifies to:
+	-14x = 64
+4. Finally, divide both sides of the equation by -14 to solve for x:
+	(-14x) / -14 = 64 / -14
+	This simplifies to:
+	x = -64/14
+You can simplify -64/14 by dividing both the numerator and denominator by their greatest common divisor, which is 2:
+	x = (-64/2) / (14/2)
+	x = -32/7
+So, the solution to the equation -7(2x + 2) = 50 is x = -32/7.
+        `,
+	},
+	{
+		id: "83",
+		level: 1,
+		question: "Solve for x: 4(2x - 3) = 20",
+		options: [
+			{ option: "4" },
+			{ option: "8" },
+			{ option: "2" },
+			{ option: "3" },
+		],
+		answer: "4",
+		solution: ` 
+To solve for x in the equation 4(2x - 3) = 20, follow these steps:
+1. Distribute the 4 on the left side of the equation:
+	4(2x - 3) = 4 * 2x - 4 * 3 = 8x - 12
+2. Now, the equation is simplified to:
+	8x - 12 = 20
+3. Add 12 to both sides of the equation to isolate the term with x:
+	8x - 12 + 12 = 20 + 12
+	This simplifies to:
+	8x = 32
+4. Finally, divide both sides of the equation by 8 to solve for x:
+	(8x) / 8 = 32 / 8
+	This simplifies to:
+	x = 4
+So, the solution to the equation 4(2x - 3) = 20 is x = 4.
+        `,
+	},
+	{
+		id: "84",
+		level: 1,
+		question: "Solve for x: 8(4x + 1) = 64",
+		options: [
+			{ option: "3" },
+			{ option: "2" },
+			{ option: "4/3" },
+			{ option: "7/4" },
+		],
+		answer: "7/4",
+		solution: ` 
+To solve for x in the equation 8(4x + 1) = 64, follow these steps:
+1. Distribute the 8 on the left side of the equation:
+	8(4x + 1) = 8 * 4x + 8 * 1 = 32x + 8
+2. Now, the equation is simplified to:
+	32x + 8 = 64
+3. Subtract 8 from both sides of the equation to isolate the term with x:
+	32x + 8 - 8 = 64 - 8
+	This simplifies to:   32x = 56
+4. Finally, divide both sides of the equation by 32 to solve for x:
+	(32x) / 32 = 56 / 32
+	This simplifies to:
+	x = 7/4
+So, the solution to the equation 8(4x + 1) = 64 is x = 7/4.
+        `,
+	},
+	{
+		id: "85",
+		level: 1,
+		question: "Solve for x: 9(2x - 4) = 81",
+		options: [
+			{ option: "13/2" },
+			{ option: "11/2" },
+			{ option: "13/3" },
+			{ option: "11/3" },
+		],
+		answer: "13/2",
+		solution: ` 
+To solve for x in the equation 9(2x - 4) = 81, follow these steps:
+1. Distribute the 9 on the left side of the equation:
+	9(2x - 4) = 9 * 2x - 9 * 4 = 18x - 36
+2. Now, the equation is simplified to:
+	18x - 36 = 81
+3. Add 36 to both sides of the equation to isolate the term with x:
+	18x - 36 + 36 = 81 + 36
+	This simplifies to:
+	18x = 117
+4. Finally, divide both sides of the equation by 18 to solve for x:
+	(18x) / 18 = 117 / 18
+	This simplifies to:
+	x = 13/2
+So, the solution to the equation 9(2x - 4) = 81 is x = 13/2.
+        `,
+	},
+	{
+		id: "86",
+		level: 1,
+		question: "If 3(2y + 1) = 21, what is the value of y?",
+		options: [
+			{ option: "3" },
+			{ option: "7" },
+			{ option: "6" },
+			{ option: "2" },
+		],
+		answer: "3",
+		solution: ` 
+To find the value of y in the equation 3(2y + 1) = 21, follow these steps:
+1. Start by distributing the 3 on the left side of the equation:
+	3(2y + 1) = 3 * 2y + 3 * 1 = 6y + 3
+2. Now, the equation is simplified to:
+	6y + 3 = 21
+3. Subtract 3 from both sides of the equation to isolate the term with y:
+	6y + 3 - 3 = 21 - 3
+	This simplifies to:
+	6y = 18
+4. Finally, divide both sides of the equation by 6 to solve for y:
+	(6y) / 6 = 18 / 6
+	This simplifies to:
+	y = 3
+So, the value of y in the equation 3(2y + 1) = 21 is y = 3.
+        `,
+	},
+	{
+		id: "87",
+		level: 1,
+		question: "If 4(y - 2) = 12, what is the value of y?",
+		options: [
+			{ option: "1" },
+			{ option: "5" },
+			{ option: "-1" },
+			{ option: "3" },
+		],
+		answer: "5",
+		solution: ` 
+To find the value of y in the equation 4(y - 2) = 12, follow these steps:
+1. Start by distributing the 4 on the left side of the equation:
+	4(y - 2) = 4 * y - 4 * 2 = 4y - 8
+2. Now, the equation is simplified to:
+	4y - 8 = 12
+3. Add 8 to both sides of the equation to isolate the term with y:
+	4y - 8 + 8 = 12 + 8
+	This simplifies to:
+	4y = 20
+4. Finally, divide both sides of the equation by 4 to solve for y:
+	(4y) / 4 = 20 / 4
+	This simplifies to:
+	y = 5
+So, the value of y in the equation 4(y - 2) = 12 is y = 5.
+        `,
+	},
+	{
+		id: "88",
+		level: 1,
+		question: "If 2(3y - 4) = 14, what is the value of y?",
+		options: [
+			{ option: "3" },
+			{ option: "11/3" },
+			{ option: "9/2" },
+			{ option: "-11/3" },
+		],
+		answer: "11/3",
+		solution: ` 
+To find the value of y in the equation 2(3y - 4) = 14, follow these steps:
+1. Start by distributing the 2 on the left side of the equation:
+	2(3y - 4) = 2 * 3y - 2 * 4 = 6y - 8
+2. Now, the equation is simplified to:
+	6y - 8 = 14
+3. Add 8 to both sides of the equation to isolate the term with y:
+	6y - 8 + 8 = 14 + 8
+	This simplifies to:
+	6y = 22
+4. Finally, divide both sides of the equation by 6 to solve for y:
+	(6y) / 6 = 22 / 6
+	This simplifies to:
+	y = 22 / 6
+You can simplify 22/6 by dividing both the numerator and denominator by their greatest common divisor, which is 2:
+	y = (22 / 2) / (6 / 2)
+	y = 11 / 3
+So, the value of y in the equation 2(3y - 4) = 14 is y = 11/3.
+        `,
+	},
+	{
+		id: "89",
+		level: 1,
+		question: "If 5(2y + 5) = 35, what is the value of y?",
+		options: [
+			{ option: "1" },
+			{ option: "6" },
+			{ option: "5" },
+			{ option: "-1" },
+		],
+		answer: "1",
+		solution: ` 
+To find the value of y in the equation 5(2y + 5) = 35, follow these steps:
+1. Start by distributing the 5 on the left side of the equation:
+	5(2y + 5) = 5 * 2y + 5 * 5 = 10y + 25
+2. Now, the equation is simplified to:
+	10y + 25 = 35
+3. Subtract 25 from both sides of the equation to isolate the term with y:
+	10y + 25 - 25 = 35 - 25
+	This simplifies to:
+	10y = 10
+4. Finally, divide both sides of the equation by 10 to solve for y:
+	(10y) / 10 = 10 / 10
+	This simplifies to:
+	y = 1
+So, the value of y in the equation 5(2y + 5) = 35 is y = 1.
+        `,
+	},
+	{
+		id: "90",
+		level: 1,
+		question: "If 6(y - 3) = 30, what is the value of y?",
+		options: [
+			{ option: "3" },
+			{ option: "-3" },
+			{ option: "8" },
+			{ option: "-8" },
+		],
+		answer: "8",
+		solution: ` 
+To find the value of y in the equation 6(y - 3) = 30, follow these steps:
+1. Start by distributing the 6 on the left side of the equation:
+	6(y - 3) = 6 * y - 6 * 3 = 6y - 18
+2. Now, the equation is simplified to:
+	6y - 18 = 30
+3. Add 18 to both sides of the equation to isolate the term with y:
+	6y - 18 + 18 = 30 + 18
+	This simplifies to:
+	6y = 48
+4. Finally, divide both sides of the equation by 6 to solve for y:
+	(6y) / 6 = 48 / 6
+	This simplifies to:
+	y = 8
+So, the value of y in the equation 6(y - 3) = 30 is y = 8.
+        `,
+	},
+	{
+		id: "91",
+		level: 1,
+		question: "If 3(4y + 2) = 24, what is the value of y?",
+		options: [
+			{ option: "3" },
+			{ option: "2" },
+			{ option: "1" },
+			{ option: "none of the above" },
+		],
+		answer: "none of the above",
+		solution: ` 
+To find the value of y in the equation 3(4y + 2) = 24, follow these steps:
+1. Start by distributing the 3 on the left side of the equation:
+	3(4y + 2) = 3 * 4y + 3 * 2 = 12y + 6
+2. Now, the equation is simplified to:
+	12y + 6 = 24
+3. Subtract 6 from both sides of the equation to isolate the term with y:
+	12y + 6 - 6 = 24 - 6
+	This simplifies to:
+	12y = 18
+4. Finally, divide both sides of the equation by 12 to solve for y:
+	(12y) / 12 = 18 / 12
+	This simplifies to:
+	y = 3/2
+So, the value of y in the equation 3(4y + 2) = 24 is y = 3/2.
+        `,
+	},
+	{
+		id: "92",
+		level: 1,
+		question: "If 2(5y - 1) = 16, what is the value of y?",
+		options: [
+			{ option: "-18/10" },
+			{ option: "-9/5" },
+			{ option: "9/5" },
+			{ option: "none of the above" },
+		],
+		answer: "9/5",
+		solution: ` 
+To find the value of y in the equation 2(5y - 1) = 16, follow these steps:
+1. Start by distributing the 2 on the left side of the equation:
+	2(5y - 1) = 2 * 5y - 2 * 1 = 10y - 2
+2. Now, the equation is simplified to:
+	10y - 2 = 16
+3. Add 2 to both sides of the equation to isolate the term with y:
+	10y - 2 + 2 = 16 + 2
+	This simplifies to:
+	10y = 18
+4. Finally, divide both sides of the equation by 10 to solve for y:
+	(10y) / 10 = 18 / 10
+	This simplifies to:
+	y = 9/5
+So, the value of y in the equation 2(5y - 1) = 16 is y = 9/5.
+        `,
+	},
+	{
+		id: "93",
+		level: 1,
+		question: "If 7(2y - 3) = 56, what is the value of y?",
+		options: [
+			{ option: "11/2" },
+			{ option: "9/3" },
+			{ option: "-11/3" },
+			{ option: "13/3" },
+		],
+		answer: "11/2",
+		solution: ` 
+To find the value of y in the equation 7(2y - 3) = 56, follow these steps:
+1. Start by distributing the 7 on the left side of the equation:
+	7(2y - 3) = 7 * 2y - 7 * 3 = 14y - 21
+2. Now, the equation is simplified to:
+	14y - 21 = 56
+3. Add 21 to both sides of the equation to isolate the term with y:
+	14y - 21 + 21 = 56 + 21
+	This simplifies to:
+	14y = 77
+4. Finally, divide both sides of the equation by 14 to solve for y:
+	(14y) / 14 = 77 / 14
+	This simplifies to:
+	y = 77/14
+You can simplify 77/14 by dividing both the numerator and denominator by their greatest common divisor, which is 7:
+	y = (77 / 7) / (14 / 7)
+	y = 11/2
+So, the value of y in the equation 7(2y - 3) = 56 is y = 11/2.
+        `,
+	},
+	{
+		id: "94",
+		level: 1,
+		question: "If 4(3y + 4) = 32, what is the value of y?",
+		options: [
+			{ option: "4/3" },
+			{ option: "8/6" },
+			{ option: "-3/2" },
+			{ option: "both b & c" },
+		],
+		answer: "4/3",
+		solution: ` 
+To find the value of y in the equation 4(3y + 4) = 32, follow these steps:
+1. Start by distributing the 4 on the left side of the equation:
+	4(3y + 4) = 4 * 3y + 4 * 4 = 12y + 16
+2. Now, the equation is simplified to:
+	12y + 16 = 32
+3. Subtract 16 from both sides of the equation to isolate the term with y:
+	12y + 16 - 16 = 32 - 16
+	This simplifies to:
+	12y = 16
+4. Finally, divide both sides of the equation by 12 to solve for y:
+	(12y) / 12 = 16 / 12
+	This simplifies to:
+	y = 4/3
+So, the value of y in the equation 4(3y + 4) = 32 is y = 4/3.
+        `,
+	},
+	{
+		id: "95",
+		level: 1,
+		question: "If 8(y - 2) = 48, what is the value of y?",
+		options: [
+			{ option: "8" },
+			{ option: "-8" },
+			{ option: "4" },
+			{ option: "-4" },
+		],
+		answer: "8",
+		solution: ` 
+To find the value of y in the equation 8(y - 2) = 48, follow these steps:
+1. Start by distributing the 8 on the left side of the equation:
+	8(y - 2) = 8 * y - 8 * 2 = 8y - 16
+2. Now, the equation is simplified to:
+	8y - 16 = 48
+3. Add 16 to both sides of the equation to isolate the term with y:
+	8y - 16 + 16 = 48 + 16
+	This simplifies to:   8y = 64
+4. Finally, divide both sides of the equation by 8 to solve for y:
+	(8y) / 8 = 64 / 8
+	This simplifies to:
+	y = 8
+So, the value of y in the equation 8(y - 2) = 48 is y = 8.
+        `,
+	},
+	{
+		id: "96",
+		level: 1,
+		question: "Add 4/7 and 5/4",
+		options: [
+			{ option: "51/28" },
+			{ option: "41/28" },
+			{ option: "21/14" },
+			{ option: "none of the above" },
+		],
+		answer: "51/28",
+		solution: ` 
+To add the fractions 4/7 and 5/4, you need to find a common denominator. The least common denominator for 7 and 4 is 28. 
+1. Rewrite both fractions with a common denominator:
+	- 4/7 becomes 16/28 by multiplying both the numerator and denominator by 4.
+	- 5/4 becomes 35/28 by multiplying both the numerator and denominator by 7.
+2. Now, add the fractions:
+	- 16/28 + 35/28 = (16 + 35)/28 = 51/28
+So, 4/7 + 5/4 = 51/28.
+        `,
+	},
+	{
+		id: "97",
+		level: 1,
+		question: "Subtract 4/7 and 5/4",
+		options: [
+			{ option: "19/28" },
+			{ option: "2/3" },
+			{ option: "-2/3" },
+			{ option: "none of the above" },
+		],
+		answer: "none of the above",
+		solution: ` 
+To subtract the fractions 4/7 and 5/4, you need to find a common denominator. The least common denominator for 7 and 4 is 28. 
+1. Rewrite both fractions with a common denominator:
+	- 4/7 becomes 16/28 by multiplying both the numerator and denominator by 4.
+	- 5/4 becomes 35/28 by multiplying both the numerator and denominator by 7.
+2. Now, subtract the fractions:
+	- 16/28 - 35/28 = (16 - 35)/28 = -19/28
+So, 4/7 - 5/4 = -19/28.
+        `,
+	},
+	{
+		id: "98",
+		level: 1,
+		question: "Add 2/4 and 3/9",
+		options: [
+			{ option: "5/6" },
+			{ option: "2/3" },
+			{ option: "¼" },
+			{ option: "1" },
+		],
+		answer: "5/6",
+		solution: ` 
+To add the fractions 2/4 and 3/9, you first need to find a common denominator. The least common denominator for 4 and 9 is 36. 
+1. Rewrite both fractions with a common denominator:
+	- 2/4 becomes 18/36 by multiplying both the numerator and denominator by 9.
+	- 3/9 becomes 12/36 by multiplying both the numerator and denominator by 4.
+2. Now, add the fractions:
+	- 18/36 + 12/36 = (18 + 12)/36 = 30/36
+3. Simplify the fraction by dividing both the numerator and denominator by their greatest common divisor, which is 6:
+	- (30 ÷ 6) / (36 ÷ 6) = 5/6
+So, 2/4 + 3/9 = 5/6.
+        `,
+	},
+	{
+		id: "99",
+		level: 1,
+		question: "Add 9/7 and 3/5",
+		options: [
+			{ option: "66/25" },
+			{ option: "66/35" },
+			{ option: "33/35" },
+			{ option: "33/25" },
+		],
+		answer: "66/35",
+		solution: ` 
+To add the fractions 9/7 and 3/5, you need to find a common denominator. The least common denominator for 7 and 5 is 35.
+1. Rewrite both fractions with a common denominator:
+	- 9/7 becomes 45/35 by multiplying both the numerator and denominator by 5.
+	- 3/5 becomes 21/35 by multiplying both the numerator and denominator by 7.
+2. Now, add the fractions:
+	- 45/35 + 21/35 = (45 + 21)/35 = 66/35
+3. Simplify the fraction by dividing both the numerator and denominator by their greatest common divisor, which is 1:
+	- 66/35
+So, 9/7 + 3/5 = 66/35.
+        `,
+	},
+	{
+		id: "100",
+		level: 1,
+		question: "Add 7/4 and 9/8",
+		options: [
+			{ option: "22/8" },
+			{ option: "23/8" },
+			{ option: "21/8" },
+			{ option: "24/8" },
+		],
+		answer: "23/8",
+		solution: ` 
+To add the fractions 7/4 and 9/8, you need to find a common denominator. The least common denominator for 4 and 8 is 8.
+1. Rewrite both fractions with a common denominator:
+	- 7/4 remains the same because the denominator is already 4.
+	- 9/8 becomes 9/8 by keeping the denominator as 8.
+2. Now, add the fractions:
+	- 7/4 + 9/8
+3. To add fractions with different denominators, find a common denominator, which is 8 in this case:
+	- 7/4 + 9/8 = (7/4) * (2/2) + 9/8 = 14/8 + 9/8
+4. Add the fractions with the same denominator:
+	- 14/8 + 9/8 = (14 + 9)/8 = 23/8
+So, 7/4 + 9/8 = 23/8.
         `,
 	},
 ];
