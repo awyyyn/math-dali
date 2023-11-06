@@ -41,8 +41,8 @@ export default function Settings() {
 					},
 					styles.homeContainer,
 				]}
-				imageStyle={{ opacity: 0.3, objectFit: "fill" }}
-				source={require("../assets/bg1.png")}>
+				imageStyle={{ objectFit: "fill" }}
+				source={require("../assets/screens.png")}>
 				<Text h3 style={{ color: "#004E64" }}>
 					Volume {mute ? "Off" : "On"}
 				</Text>

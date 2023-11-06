@@ -25,6 +25,7 @@ export default function Levels({ route, navigation }) {
 	const [levels, setLevels] = useState([level1]);
 	const [loading, setLoading] = useState(false);
 	const [refresh, setRefresh] = useState(false);
+	const [c, setC] = useState(0);
 	const seconds =
 		category == "Beginner" ? 15 : category == "Intermediate" ? 30 : 45;
 
@@ -42,11 +43,11 @@ export default function Levels({ route, navigation }) {
 			.select(`*, questions( *, options(*) )`)
 			.match({ category, school_id: code });
 
-		console.log(data);
+		// console.log(data, "DASDAS");
 
 		// eq("category", category);
 		if (error) {
-			alert(error.message);
+			alert(error.message, "asd");
 			setRefresh(false);
 			setLoading(false);
 			return;
@@ -111,15 +112,15 @@ export default function Levels({ route, navigation }) {
 
 	useEffect(() => {
 		getData("");
-	}, []);
+	}, [c]);
 
 	// console.log(levels.length);
 
 	return (
 		<ImageBackground
 			style={[styles.bgImage]}
-			source={require("../assets/bg1.png")}
-			imageStyle={{ opacity: 0.3, objectFit: "fill" }}>
+			source={require("../assets/screens.png")}
+			imageStyle={{ /* opacity: 0.3, */ objectFit: "fill" }}>
 			{/* <ScrollView contentContainerStyle={{}}> */}
 			<Text
 				h3
@@ -173,6 +174,7 @@ export default function Levels({ route, navigation }) {
 											data: level.sort((a, b) => 0.5 - Math.random()),
 											seconds: level[0].level > 1 ? level[0].time : seconds,
 										});
+										setC((p) => p + 1);
 									}}
 									title={`Set ${
 										i == 0 ? "A" : numOfSets[levels[i - 1][0]?.level]

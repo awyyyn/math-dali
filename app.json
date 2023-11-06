@@ -1,33 +1,31 @@
 {
-  "expo": {
-    "name": "Math Dali",
-    "slug": "math-dali",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon1.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/icon1.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.awyyn.mathdaliv1"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "3d792277-5aee-4458-89e5-0ffeaa43acf2"
-      }
-    }
-  }
+	"expo": {
+		"name": "Math Dali",
+		"slug": "math-dali",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/icon1.png",
+		"userInterfaceStyle": "light",
+		"splash": {
+			"image": "./assets/splash-screen.png",
+			"resizeMode": "cover",
+			"backgroundColor": "#ffffff"
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/icon1.png",
+				"backgroundColor": "#ffffff"
+			},
+			"package": "com.awyyn.mathdaliv1"
+		},
+		"extra": {
+			"eas": {
+				"projectId": "3d792277-5aee-4458-89e5-0ffeaa43acf2"
+			}
+		}
+	}
 }

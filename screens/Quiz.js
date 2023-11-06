@@ -87,8 +87,8 @@ export default function Quiz({ route, navigation }) {
 		return (
 			<Layout>
 				<ImageBackground
-					imageStyle={{ opacity: 0.2, objectFit: "fill" }}
-					source={require("../assets/bg1.png")}
+					imageStyle={{ /* opacity: 0.2, */ objectFit: "fill" }}
+					source={require("../assets/screens.png")}
 					style={{
 						height: "100%",
 						alignItems: "center",

@@ -35,8 +35,8 @@ export default function Home({ route, navigation }) {
 			<ImageBackground
 				style={[styles.homeContainer, styles.bgImage]}
 				imageStyle={{
-					opacity: 0.5,
-					resizeMode: "cover",
+					// opacity: 0.5,
+					resizeMode: "stretch",
 					// backfaceVisibility: 'visible',
 					// overflow: 'visible',
 					// // objectFit: 'cover'
@@ -44,11 +44,18 @@ export default function Home({ route, navigation }) {
 					// width: Dimensions.get('screen').width,
 					// height: Dimensions.get('screen').height
 				}}
-				source={require("../assets/bg1.png")}>
+				source={require("../assets/screens.png")}>
 				<View>
 					<Image
 						source={require("../assets/math-dali.png")}
-						style={{ objectFit: "contain", width: 300, height: 100 }}
+						style={{
+							objectFit: "contain",
+							width: 300,
+							height: 100,
+							alignSelf: "center",
+							justifyContent: "center",
+							marginLeft: 10,
+						}}
 					/>
 					<TouchableOpacity
 						onPress={async () => {
@@ -61,7 +68,9 @@ export default function Home({ route, navigation }) {
 							console.log(data[0][1]);
 							console.log(data[1][1]);
 						}}>
-						<Text style={{ textAlign: "center" }}>{schoolName}</Text>
+						<Text style={{ textAlign: "center", fontWeight: "bold" }}>
+							{schoolName}
+						</Text>
 					</TouchableOpacity>
 				</View>
 

@@ -53,7 +53,7 @@ export default function Signin() {
 			</Animated.View>
 
 			<ImageBackground
-				source={require("../../assets/bg.jpg")}
+				source={require("../../assets/screens.png")}
 				imageStyle={{ opacity: 0.05 }}>
 				<View style={styles.container}>
 					<View style={styles.center}>
