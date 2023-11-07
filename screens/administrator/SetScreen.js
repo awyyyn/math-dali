@@ -112,7 +112,7 @@ export default function SetScreen({ route, navigation }) {
 				return timestampA - timestampB;
 			})
 		);
-		console.log(data);
+		// console.log(data);
 		// setQuestions()
 
 		setActiveQuestions(
@@ -180,9 +180,11 @@ export default function SetScreen({ route, navigation }) {
 		setRefresh(false);
 	};
 
-	const handleSwitch = async (id, value) => {
-		console.log(value);
-		if (activeQuestions < 6 && value !== "") {
+	const handleSwitch = async (e, id, value) => {
+		// console.log(value);
+		console.log(value, "VALUE");
+		// console.log(e);
+		if (activeQuestions == 5 && value == true) {
 			setNotif("Minimum Active Question is 5!");
 			setTimeout(() => {
 				setNotif("");
@@ -351,9 +353,9 @@ export default function SetScreen({ route, navigation }) {
 													<Text>On/Off</Text>
 													<Switch
 														value={question.is_active}
-														onChange={() =>
-															handleSwitch(question.id, question.is_active)
-														}
+														onChange={(e) => {
+															handleSwitch(e, question.id, question.is_active);
+														}}
 													/>
 												</View>
 												<TouchableOpacity

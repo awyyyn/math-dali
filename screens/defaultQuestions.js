@@ -4817,6 +4817,7 @@ export const expertLevel1 = [
 			{ option: "y=x^2 - 6" },
 			{ option: "y=2x + 6" },
 			{ option: "y=2x – 6" },
+			{ option: "y=2 – 6x" },
 		],
 		answer: "y=2x – 6",
 		solution: `
@@ -4838,6 +4839,7 @@ So, in this equation, "y" is expressed as a function of "x," and it is equal to 
 			{ option: "x = 4" },
 			{ option: "x = y + 36 / 9" },
 			{ option: "x = y - 36 / 9" },
+			{ option: "x = 9 / y - 36" },
 		],
 		answer: "x = y - 36 / 9",
 		solution: `
@@ -4873,6 +4875,7 @@ x = y - 36 / 9
 			{ option: "y = 3x + 5" },
 			{ option: "y = -3x + 5" },
 			{ option: "y = -3x – 5" },
+			{ option: "y = 3x - 5" },
 		],
 		answer: "y = -3x – 5",
 		solution: `
@@ -4912,6 +4915,7 @@ So, the equation of the line with a slope of -3 and a y-intercept of (0, -5) is 
 			{ option: "8x^2 + 2x - 15" },
 			{ option: "8x^2 + 2x + 15" },
 			{ option: "8x^2 - 2x - 15" },
+			{ option: "8x^2 - 2x + 15" },
 		],
 		answer: "8x^2 - 2x - 15",
 		solution: `
@@ -4937,7 +4941,12 @@ So, the expanded and simplified expression is 8x^2 - 2x - 15.
 		level: 1,
 		question:
 			"Find the slope of the line perpendicular to the line y = (1/3)x – 7",
-		options: [{ option: "1/3" }, { option: "3" }, { option: "-3" }],
+		options: [
+			{ option: "1/3" },
+			{ option: "3" },
+			{ option: "-3" },
+			{ option: "-1/3" },
+		],
 		answer: "-3",
 		solution: `
 
@@ -4950,6 +4959,120 @@ Step 2: To find the slope of a line perpendicular to this, you can use the fact 
 Step 3: The negative reciprocal of (1/3) is -3. This means that the slope of a line perpendicular to y = (1/3)x - 7 is -3.
 
 So, the slope of the line perpendicular to y = (1/3)x - 7 is -3.
+`,
+	},
+	{
+		id: "6",
+		level: 1,
+		question:
+			"An investment grows by 10% annually. If you invest $5,000 today, how much will it be worth in 5 years?",
+		options: [
+			{ option: "$5,500" },
+			{ option: "$6,250.5" },
+			{ option: "$8,090.21" },
+			{ option: "none of the above" },
+		],
+		answer: "none of the above",
+		solution: `
+To calculate the future value of an investment that grows by 10% annually, you can use the compound interest formula:
+Future Value = Present Value × (1 + Annual Growth Rate)^Number of Years
+In this case, the present value (initial investment) is $5,000, the annual growth rate is 10% (0.10 as a decimal), and the number of years is 5.
+Future Value = $5,000 × (1 + 0.10)^5
+Future Value = $5,000 × (1.10)^5
+Future Value = $5,000 × 1.61051 (rounded to five decimal places)
+Future Value ≈ $8,052.56
+So, if you invest $5,000 today and it grows by 10% annually, it will be worth approximately $8,052.56 in 5 years.
+`,
+	},
+	{
+		id: "7",
+		level: 1,
+		question:
+			'A store is offering a "Buy 2, Get 1 Free" promotion. If you buy three items each priced at $30, what is the total cost?',
+		options: [
+			{ option: "$30" },
+			{ option: "$90" },
+			{ option: "$75" },
+			{ option: "$60" },
+		],
+		answer: "$60",
+		solution: `
+In a "Buy 2, Get 1 Free" promotion, you pay for the two most expensive items, and the least expensive item is free. In this case, each item is priced at $30, so you are essentially buying two items at full price, and the third item is free.
+So, the total cost for three items in this promotion would be:
+Total cost = (Price of 2 items) + (Price of 1 item)
+`,
+	},
+	{
+		id: "8",
+		level: 1,
+		question:
+			"In a basket of fruit, 40% are apples, 30% are oranges, and the rest are bananas. If there are 20 pieces of fruit in the basket, how many are bananas?",
+		options: [
+			{ option: "3" },
+			{ option: "4" },
+			{ option: "6" },
+			{ option: "8" },
+		],
+		answer: "6",
+		solution: `  
+To find out how many of the fruits in the basket are bananas, you can first calculate the percentage of apples and oranges in the basket, and then subtract that from 100% to find the percentage of bananas. Then, you can use that percentage to find the number of bananas.
+Percentage of apples = 40%
+Percentage of oranges = 30%
+Now, subtract the percentages of apples and oranges from 100% to find the percentage of bananas:
+Percentage of bananas = 100% - (Percentage of apples + Percentage of oranges)
+Percentage of bananas = 100% - (40% + 30%)
+Percentage of bananas = 100% - 70%
+Percentage of bananas = 30%
+So, 30% of the fruits in the basket are bananas.
+If there are 20 pieces of fruit in the basket, you can find the number of bananas by calculating 30% of 20:
+Number of bananas = (30/100) * 20
+Number of bananas = 0.30 * 20
+Number of bananas = 6
+So, there are 6 bananas in the basket.
+`,
+	},
+	{
+		id: "9",
+		level: 1,
+		question:
+			"A car's value depreciates by 12% each year. If it was worth $20,000 when first purchased, what will be its value after 3 years?",
+		options: [
+			{ option: "$12,729.34" },
+			{ option: "$13,629.44" },
+			{ option: "$12,629.34" },
+			{ option: "$14,839.44" },
+		],
+		answer: "$13,629.44",
+		solution: `  
+To calculate the car's value after 3 years of depreciation, where it loses 12% of its value each year, you can use the following formula:
+Value after depreciation = Initial value × (1 - Depreciation rate)^Number of years
+In this case, the initial value is $20,000, the depreciation rate is 12% (or 0.12 as a decimal), and the number of years is 3.
+Value after depreciation = $20,000 × (1 - 0.12)^3
+Value after depreciation = $20,000 × (0.88)^3
+Value after depreciation = $20,000 × 0.681472
+Value after depreciation ≈ $13,629.44
+So, the car's value after 3 years of depreciation will be approximately $13,629.44.
+`,
+	},
+	{
+		id: "10",
+		level: 1,
+		question:
+			"If 'z' is 5 less than twice 'w,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "z = 2 – 5w" },
+			{ option: "z = 2w + 5" },
+			{ option: "z = 2w – 5" },
+			{ option: "z = 2² – 5" },
+		],
+		answer: "z = 2w – 5",
+		solution: `  
+The right equation to represent the relationship between 'z' and 'w' where 'z' is 5 less than twice 'w' can be written as:
+z = 2w - 5
+Here's an explanation:
+- "Twice 'w'" is represented by 2w, which means you're taking two times the value of 'w.'
+- "5 less than twice 'w'" means you subtract 5 from the result of 2w.
+So, you are taking twice the value of 'w' and then subtracting 5 from it to get 'z'. This relationship is accurately represented by the equation z = 2w - 5.
 `,
 	},
 ];
