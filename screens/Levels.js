@@ -91,8 +91,8 @@ export default function Levels({ route, navigation }) {
 
 		// const shuffuleItems = newSet.
 		const newArrShuffledItems = newSet.map((i) => {
-			const shuffle = i.sort(() => Math.random() - 0.5);
-			return shuffle.slice(0, 5);
+			const shuffle = i?.sort(() => Math.random() - 0.5);
+			return shuffle?.slice(0, 5);
 		});
 
 		// console.log("NEWW", newArrShuffledItems[);
@@ -148,7 +148,7 @@ export default function Levels({ route, navigation }) {
 					{loading ? (
 						<>
 							<Stack spacing={20} mt={7} w={Dimensions.get("window").width}>
-								{["1", "2", "3", "4", "5"].map((i) => (
+								{["1", "2", "3", "4", "5"]?.map((i) => (
 									<Skeleton
 										key={i}
 										height={40}
@@ -171,8 +171,8 @@ export default function Levels({ route, navigation }) {
 									buttonStyle={{ backgroundColor: color }}
 									onPress={() => {
 										navigation.navigate("Quiz", {
-											data: level.sort((a, b) => 0.5 - Math.random()),
-											seconds: level[0].level > 1 ? level[0].time : seconds,
+											data: level?.sort((a, b) => 0.5 - Math.random()),
+											seconds: level[0]?.level > 1 ? level[0]?.time : seconds,
 										});
 										setC((p) => p + 1);
 									}}
