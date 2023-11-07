@@ -18,6 +18,7 @@ import EditData from "./screens/administrator/EditData";
 import AddQuestion from "./screens/administrator/AddQuestion";
 import { Provider } from "@react-native-material/core";
 import Quiz from "./screens/Quiz";
+import Quiz2 from "./screens/Quiz2";
 import Levels from "./screens/Levels";
 import { StatusBar } from "expo-status-bar";
 import ForgotPassword from "./screens/auth/ForgotPassword";
@@ -104,6 +105,7 @@ const Screeens = ({}) => {
       <Stack.Screen name='ExpertLevel' component={ExpertLevel}   /> */}
 			<Stack.Screen name="Levels" component={Levels} />
 			<Stack.Screen name="Quiz" component={Quiz} />
+			<Stack.Screen name="Quiz2" component={Quiz2} />
 			{!session?.session && <Stack.Screen name="Sign in" component={Signin} />}
 			<Stack.Screen name="forgotPassword" component={ForgotPassword} />
 			<Stack.Screen

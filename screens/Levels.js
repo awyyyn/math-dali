@@ -43,11 +43,17 @@ export default function Levels({ route, navigation }) {
 			.select(`*, questions( *, options(*) )`)
 			.match({ category, school_id: code });
 
+		console.log(data, "category");
+
 		// console.log(data, "DASDAS");
+
+		const shuffledArray = level1.sort(() => Math.random() - 0.5);
+		const level1RandomFiveItems = shuffledArray.slice(0, 5);
 
 		// eq("category", category);
 		if (error) {
-			alert(error.message, "asd");
+			setLevels([level1RandomFiveItems]);
+			alert(error.message);
 			setRefresh(false);
 			setLoading(false);
 			return;
@@ -86,13 +92,11 @@ export default function Levels({ route, navigation }) {
 		//     return item.sort((a, b) => 0.5 - Math.random())
 		// });
 
-		const shuffledArray = level1.sort(() => Math.random() - 0.5);
-		const level1RandomFiveItems = shuffledArray.slice(0, 5);
-
 		// const shuffuleItems = newSet.
 		const newArrShuffledItems = newSet.map((i) => {
 			const shuffle = i?.sort(() => Math.random() - 0.5);
-			return shuffle?.slice(0, 5);
+			// return shuffle?.slice(0, 5);
+			return shuffle;
 		});
 
 		// console.log("NEWW", newArrShuffledItems[);
@@ -160,18 +164,19 @@ export default function Levels({ route, navigation }) {
 						</>
 					) : (
 						levels?.map((level, i) => {
+							console.log(level, "LEVEL");
 							return (
 								<Button
 									key={i}
 									containerStyle={{
 										width: (Dimensions.get("window").width = 250),
 										marginVertical: 10,
-										display: level?.length == 5 ? "flex" : "none",
+										display: level?.length >= 5 ? "flex" : "none",
 									}}
 									buttonStyle={{ backgroundColor: color }}
 									onPress={() => {
-										navigation.navigate("Quiz", {
-											data: level?.sort((a, b) => 0.5 - Math.random()),
+										navigation.navigate("Quiz2", {
+											data: level,
 											seconds: level[0]?.level > 1 ? level[0]?.time : seconds,
 										});
 										setC((p) => p + 1);
