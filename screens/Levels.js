@@ -53,7 +53,7 @@ export default function Levels({ route, navigation }) {
 		// eq("category", category);
 		if (error) {
 			setLevels([level1RandomFiveItems]);
-			alert(error.message);
+			// alert(error.message);
 			setRefresh(false);
 			setLoading(false);
 			return;

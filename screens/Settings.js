@@ -1,18 +1,9 @@
-import {
-	View,
-	Pressable,
-	TouchableOpacity,
-	ImageBackground,
-	Dimensions,
-} from "react-native";
-import { useContext, useEffect, useState } from "react";
+import { View, ImageBackground, Dimensions } from "react-native";
+import { useContext, useState } from "react";
 import Layout from "./Layout";
 import styles from "./styles";
 import { SettingsContext } from "../context/AppContext";
 import { Button, Icon, Text } from "@rneui/themed";
-import { NavButton } from "../components";
-import { TouchableHighlight } from "react-native-gesture-handler";
-import { supabase } from "../lib/supabase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation, StackActions } from "@react-navigation/native";
 
@@ -82,6 +73,7 @@ export default function Settings() {
 								"schoolName",
 								"role",
 							]);
+							logout();
 							setIsLaunched("");
 							navigation.dispatch({
 								...StackActions.replace("Onboarding"),

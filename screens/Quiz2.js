@@ -15,8 +15,7 @@ import styles from "./styles";
 import { Stack } from "@react-native-material/core";
 import { BlurView } from "expo-blur";
 import { numOfSets } from "../lib/helpers";
-import { Icon, LinearProgress } from "react-native-elements";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Icon } from "react-native-elements";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function Quiz({ route, navigation }) {

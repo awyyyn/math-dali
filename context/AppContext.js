@@ -12,6 +12,7 @@ export default function AppContext({ children }) {
 	const [session, setSession] = useState({ session: null });
 	const [isLaunched, setIsLaunched] = useState("");
 	const [mute, setMute] = useState(false);
+	const [logoutState, setLogoutState] = useState(false);
 
 	useEffect(() => {
 		async function getSession() {
@@ -19,7 +20,7 @@ export default function AppContext({ children }) {
 			// await AsyncStorage.multiSet([['role', `${adminData?.role}`], ['schoolId', `${adminData?.school_id}`], ['schoolName', `${adminData?.school_name}`]] )
 			setSession(data);
 		}
-		// playSound()
+		playSound();
 		getSession();
 	}, []);
 
@@ -72,6 +73,8 @@ export default function AppContext({ children }) {
 				mute,
 				isLaunched,
 				setIsLaunched,
+				logoutState,
+				setLogoutState,
 			}}>
 			{children}
 		</SettingsContext.Provider>
