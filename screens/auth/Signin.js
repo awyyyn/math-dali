@@ -115,6 +115,10 @@ export default function Signin() {
 							disabled={!email || !password ? true : false}
 							onPress={async () => {
 								setLoading(true);
+								console.log(
+									await AsyncStorage.multiGet(["schoolId", "schoolName"]),
+									"asd"
+								);
 								const { data, error } = await supabase.auth.signInWithPassword({
 									email,
 									password,
@@ -164,11 +168,15 @@ export default function Signin() {
 								// console.log()
 
 								// console.log(data)
-								await AsyncStorage.multiSet([
-									["role", `${adminData?.role}`],
-									["schoolId", `${adminData?.school_id}`],
-									["schoolName", `${adminData?.school_name}`],
-								]);
+								if (adminData.role != "admin") {
+									await AsyncStorage.multiSet([
+										["role", `${adminData?.role}`],
+										["schoolId", `${adminData?.school_id}`],
+										["schoolName", `${adminData?.school_name}`],
+									]);
+								} else {
+									await AsyncStorage.setItem("role", adminData?.role);
+								}
 								// await AsyncStorage.multiSet([['role', `${adminData?.role}`], ['schoolId', `${adminData?.school_id}`], ['schoolName', `${adminData?.school_name}`]] )
 
 								// await AsyncStorage.multiGet(['schoolId', 'schoolName', 'role'])

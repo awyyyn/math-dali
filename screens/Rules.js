@@ -22,42 +22,41 @@ export default function Rules({ navigation }) {
 						<Text style={[styles.title, { color: "#335C67" }]}>
 							Rules & Mechanics
 						</Text>
-						{!next ? (
-							<View style={{ gap: 20, marginTop: 20 }}>
-								<Text style={[styles.rulesParagraph]}>
-									To understand how to play the game and earn points. It is
-									important to thoroughly read the rules and instructions before
-									starting.
-								</Text>
-								<Text style={[styles.rulesParagraph]}>
-									{`1. THE GAME WILL LET THE PLAYER RESPOND TO BASIC ALGEBRA QUESTIONS AT VARIOUS LEVEL OF DIFFICULTY TO SCORE POINTS. EACH LEVEL OF DIFFICULTY HAS A VARIOUS NUMBER OF SETS, AND EACH SET ARE COMPOSED OF FIVE (5) ALGEBRA
-PROBLEMS.`}
-								</Text>
-							</View>
-						) : (
-							<Text style={[styles.rulesParagraph, { marginTop: 20 }]}>
-								{`2.  Each level of the game has a different time limit according to the level of difficulties. 
-
-- Beginner - 15 seconds 
-- Intermediate - 30 seconds
-- Expert - 45 seconds 
-
-In order to earn points the player must complete solving the problem within the alloted time. The total score can be only be reveal after answering all the problems as well as the solution for every questions.
-                                `}
+						<View style={{ gap: 20, marginTop: 20 }}>
+							<Text style={[styles.rulesParagraph]}>
+								To understand how to play the game and earn points. It is
+								important to thoroughly read the rules and instructions before
+								starting.
 							</Text>
-						)}
+							<Text style={[styles.rulesParagraph]}>
+								The game will let the player respond to basic algebra questions
+								at various level of difficulty to score points. Each level of
+								difficulty has a various number of sets.The difficulty level of
+								the game has a different time limit that the teachers has the
+								access to set.
+							</Text>
+							<Text style={[styles.rulesParagraph]}>
+								In order to earn points, the player must complete solving the
+								problem within the alloted time. The total score can be only be
+								reveal after answering all the problems as well as the solution
+								for every questions.
+							</Text>
+							<Text style={[styles.rulesParagraph]}>
+								Every questions in the Seat A per difficulty can be played by
+								the player through offline mode with the time limit of 15
+								seconds for the beginner level , 30 seconds for the intermediate
+								level and 45 seconds for the expert level. The succeeding Sets
+								that the teacher will add can only be played through online mode
+								and the time limit will depend by the teachers' time preference.
+							</Text>
+						</View>
 					</View>
 					<Button
-						title={next ? "Home" : "Next"}
-						color={next ? "" : ""}
+						title={"Home"}
 						size="lg"
 						buttonStyle={{ backgroundColor: "#335C67", marginBottom: 50 }}
 						onPress={() => {
-							if (next) {
-								navigation.navigate("Home");
-							} else {
-								setNext(true);
-							}
+							navigation.navigate("Home");
 						}}
 					/>
 				</ScrollView>

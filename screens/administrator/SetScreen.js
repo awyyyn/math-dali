@@ -305,7 +305,7 @@ export default function SetScreen({ route, navigation }) {
 										console.log("update time");
 										setTimeModal(true);
 									}}>
-									<Text style={{ fontSize: 20 }}>
+									<Text style={{ fontSize: 20, color: "#00667E" }}>
 										{toUpdateCategory.seconds}`s
 									</Text>
 								</TouchableOpacity>

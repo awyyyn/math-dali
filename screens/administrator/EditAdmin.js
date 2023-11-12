@@ -7,6 +7,8 @@ import { useNavigation } from "@react-navigation/native";
 import { Input, Button } from "@rneui/themed";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
+import { TouchableOpacity } from "react-native";
 
 export default function EditAdmin({ route }) {
 	const { email, school_id, school_name, id } = route.params;
@@ -17,6 +19,7 @@ export default function EditAdmin({ route }) {
 		school_id,
 		school_name,
 	});
+	const [showPass, setShowPass] = useState(false);
 	const [editEmail, setEditEmail] = useState(email);
 	const [editSchoolId, setEditSchoolId] = useState(school_id);
 	const [editSchoolName, setEditSchoolName] = useState(school_name);
@@ -59,30 +62,61 @@ export default function EditAdmin({ route }) {
 
 	return (
 		<SafeAreaView>
-			<View
-				style={{
+			<ScrollView
+				contentContainerStyle={{
 					padding: 30,
 					justifyContent: "center",
 					alignItems: "center",
 				}}>
 				<Stack spacing={50} direction="column" minW={"100%"}>
-					<TextInput
+					<View>
+						<Input
+							label="Email"
+							errorMessage={formErr.email && formErr.email}
+							value={editEmail}
+							onChangeText={(text) => setEditEmail(text)}
+						/>
+					</View>
+					{/* <TextInput
 						label="Email"
 						value={editEmail}
 						onChangeText={(text) => setEditEmail(text)}
 						variant="standard"
 						color="#00667E"
 						helperText={formErr.email && formErr.email}
-					/>
-					<TextInput
+					/> */}
+					<View>
+						<Input
+							label="School Name"
+							value={editSchoolName}
+							onChangeText={(text) => setEditSchoolName(text)}
+							errorMessage={formErr.school_name && formErr.school_name}
+						/>
+					</View>
+					{/* <TextInput
 						label="School Name"
 						value={editSchoolName}
 						onChangeText={(text) => setEditSchoolName(text)}
 						variant="standard"
 						color="#00667E"
 						helperText={formErr.school_name && formErr.school_name}
-					/>
-					<TextInput
+					/> */}
+
+					<View>
+						<Input
+							label="School ID"
+							errorMessage={formErr.school_id && formErr.school_id}
+							onChangeText={(text) => {
+								if (/^\d+$/.test(text) || !text) {
+									setEditSchoolId(text);
+								}
+							}}
+							keyboardType="decimal-pad"
+							maxLength={6}
+							value={editSchoolId}
+						/>
+					</View>
+					{/* <TextInput
 						label="School ID"
 						color="#00667E"
 						value={editSchoolId}
@@ -96,17 +130,28 @@ export default function EditAdmin({ route }) {
 						}}
 						variant="standard"
 						keyboardType="decimal-pad"
-					/>
+					/> */}
 
-					<TextInput
-						label="Password"
-						helperText="Leave blank if do not want to update password"
-						secureTextEntry
-						color="#00667E"
-						value={newPass}
-						onChangeText={(text) => setNewPass(text)}
-						variant="standard"
-					/>
+					<View>
+						<Input
+							// style={{ width: "100%", backgroundColor: "red" }}
+							inputContainerStyle={{ width: "100%" }}
+							onChangeText={(text) => setNewPass(text)}
+							errorMessage={formErr.password && formErr.password}
+							value={newPass}
+							label="Password"
+							secureTextEntry={!showPass}
+							rightIcon={() => (
+								<TouchableOpacity onPress={() => setShowPass((p) => !p)}>
+									<FontAwesome5Icon
+										name={!showPass ? "eye-slash" : "eye"}
+										size={20}
+										color="#344E41"
+									/>
+								</TouchableOpacity>
+							)}
+						/>
+					</View>
 
 					<Button
 						onPress={async () => {
@@ -209,7 +254,7 @@ export default function EditAdmin({ route }) {
 						title={updating ? "Updating" : "Update"}
 					/>
 				</Stack>
-			</View>
+			</ScrollView>
 		</SafeAreaView>
 	);
 }

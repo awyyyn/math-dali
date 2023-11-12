@@ -65,8 +65,8 @@ export default function Home({ route, navigation }) {
 								"schoolName",
 							]);
 							await AsyncStorage.setItem("appLaunched", "");
-							console.log(data[0][1]);
-							console.log(data[1][1]);
+							// console.log(data[0][1]);
+							// console.log(data[1][1]);
 						}}>
 						<Text style={{ textAlign: "center", fontWeight: "bold" }}>
 							{schoolName}

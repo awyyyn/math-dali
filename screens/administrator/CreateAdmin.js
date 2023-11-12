@@ -1,16 +1,18 @@
 import { Stack, TextInput } from "@react-native-material/core";
 import React, { useState } from "react";
-import { Dimensions, View } from "react-native";
+import { Dimensions, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { supabase, supabaseAdmin } from "../../lib/supabase";
 import { useNavigation } from "@react-navigation/native";
 import { Input, Button } from "@rneui/themed";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
 
 export default function CreateAdmin() {
 	const navigation = useNavigation();
 
+	const [showPass, setShowPass] = useState(false);
 	const [editEmail, setEditEmail] = useState("");
 	const [editSchoolId, setEditSchoolId] = useState("");
 	const [editSchoolName, setEditSchoolName] = useState("");
@@ -63,30 +65,61 @@ export default function CreateAdmin() {
 
 	return (
 		<SafeAreaView>
-			<View
-				style={{
+			<ScrollView
+				contentContainerStyle={{
 					padding: 30,
 					justifyContent: "center",
 					alignItems: "center",
 				}}>
 				<Stack spacing={50} direction="column" minW={"100%"}>
-					<TextInput
+					<View>
+						<Input
+							label="Email"
+							errorMessage={formErr.email && formErr.email}
+							value={editEmail}
+							onChangeText={(text) => setEditEmail(text)}
+						/>
+					</View>
+					{/* <TextInput
 						label="Email"
 						value={editEmail}
 						onChangeText={(text) => setEditEmail(text)}
 						variant="standard"
 						color="#00667E"
 						helperText={formErr.email && formErr.email}
-					/>
-					<TextInput
+					/> */}
+					<View>
+						<Input
+							label="School Name"
+							value={editSchoolName}
+							onChangeText={(text) => setEditSchoolName(text)}
+							errorMessage={formErr.school_name && formErr.school_name}
+						/>
+					</View>
+					{/* <TextInput
 						label="School Name"
 						value={editSchoolName}
 						onChangeText={(text) => setEditSchoolName(text)}
 						variant="standard"
 						color="#00667E"
 						helperText={formErr.school_name && formErr.school_name}
-					/>
-					<TextInput
+					/> */}
+
+					<View>
+						<Input
+							label="School ID"
+							errorMessage={formErr.school_id && formErr.school_id}
+							onChangeText={(text) => {
+								if (/^\d+$/.test(text) || !text) {
+									setEditSchoolId(text);
+								}
+							}}
+							keyboardType="decimal-pad"
+							maxLength={6}
+							value={editSchoolId}
+						/>
+					</View>
+					{/* <TextInput
 						label="School ID"
 						color="#00667E"
 						value={editSchoolId}
@@ -100,8 +133,29 @@ export default function CreateAdmin() {
 						}}
 						variant="standard"
 						keyboardType="decimal-pad"
-					/>
+					/> */}
 
+					<View>
+						<Input
+							// style={{ width: "100%", backgroundColor: "red" }}
+							inputContainerStyle={{ width: "100%" }}
+							onChangeText={(text) => setNewPass(text)}
+							errorMessage={formErr.password && formErr.password}
+							value={newPass}
+							label="Password"
+							secureTextEntry={!showPass}
+							rightIcon={() => (
+								<TouchableOpacity onPress={() => setShowPass((p) => !p)}>
+									<FontAwesome5Icon
+										name={!showPass ? "eye-slash" : "eye"}
+										size={20}
+										color="#344E41"
+									/>
+								</TouchableOpacity>
+							)}
+						/>
+					</View>
+					{/* 
 					<TextInput
 						label="Password"
 						helperText={formErr.password && formErr.password}
@@ -110,7 +164,7 @@ export default function CreateAdmin() {
 						value={newPass}
 						onChangeText={(text) => setNewPass(text)}
 						variant="standard"
-					/>
+					/> */}
 
 					<Button
 						onPress={async () => {
@@ -201,7 +255,7 @@ export default function CreateAdmin() {
 						title={updating ? "Creating..." : "Create"}
 					/>
 				</Stack>
-			</View>
+			</ScrollView>
 		</SafeAreaView>
 	);
 }

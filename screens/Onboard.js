@@ -55,9 +55,9 @@ export default function Onboard() {
 				.from("administrator")
 				.select()
 				.neq("school_id", null);
-			console.log(data);
+			// console.log(data);
 			if (error) {
-				console.log(error.message.split(":")[1].trimStart());
+				// console.log(error.message.split(":")[1].trimStart());
 				alert(error.message.split(":")[1].trimStart());
 				setInitLoading(false);
 				return;
@@ -89,9 +89,9 @@ export default function Onboard() {
 							const { data, error } = await supabase
 								.from("administrator")
 								.select();
-							console.log(data);
+							// console.log(data);
 							if (error) {
-								console.log(error.message);
+								// console.log(error.message);
 								alert(error.message);
 								setRefresh(false);
 								return;
@@ -223,7 +223,7 @@ export default function Onboard() {
 									if (inputId !== schoolId) {
 										return setErr("School ID does not match!");
 									}
-									console.log();
+									// console.log();
 									await AsyncStorage.setItem("appLaunched", "LAUNCHED!");
 									if (!schoolId || !schoolName) {
 										alert("Please select a school");
