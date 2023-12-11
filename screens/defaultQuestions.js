@@ -5075,4 +5075,221 @@ Here's an explanation:
 So, you are taking twice the value of 'w' and then subtracting 5 from it to get 'z'. This relationship is accurately represented by the equation z = 2w - 5.
 `,
 	},
+	{
+		id: "11",
+		level: 1,
+		question:
+			"If 'b' is 7 more than half of 'a,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "b = 7a + ½" },
+			{ option: "b = 7 + a + ½" },
+			{ option: "b = 7 + (1/2)a" },
+			{ option: "b = 7 + a1/2" },
+		],
+		answer: "b = 7 + (1/2)a",
+		solution: `  
+The right equation to represent the relationship between 'b' and 'a' where 'b' is 7 more than half of 'a' can be written as:
+b = (1/2)a + 7
+Here's an explanation:
+- "Half of 'a'" is represented by (1/2)a, which means you're taking half of the value of 'a.'
+- "7 more than half of 'a'" means you add 7 to the result of (1/2)a.
+So, you are taking half of the value of 'a' and then adding 7 to it to get 'b'. This relationship is accurately represented by the equation b = (1/2)a + 7.
+		`,
+	},
+	{
+		id: "12",
+		level: 1,
+		question:
+			"If 'm' is 3 less than four times 'n,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "m = 4 – 3n" },
+			{ option: "m = 4n – 3" },
+			{ option: "m = 3 – 4n" },
+			{ option: "m = 4 – 3n" },
+		],
+		answer: "m = 4n – 3",
+		solution: `  
+The right equation to represent the relationship between 'm' and 'n' where 'm' is 3 less than four times 'n' can be written as:
+m = 4n - 3
+Here's an explanation:
+- "Four times 'n'" is represented by 4n, which means you're taking four times the value of 'n.'
+- "3 less than four times 'n'" means you subtract 3 from the result of 4n.
+So, you are taking four times the value of 'n' and then subtracting 3 from it to get 'm'. This relationship is accurately represented by the equation m = 4n - 3.
+
+		`,
+	},
+	{
+		id: "13",
+		level: 1,
+		question:
+			"If 'p' is 2 more than twice 'q,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "p = 2p + 2" },
+			{ option: "p = 2p - 2" },
+			{ option: "p = 2p + 2" },
+			{ option: "p = 2q + 2" },
+		],
+		answer: "p = 2q + 2",
+		solution: `  
+The right equation to represent the relationship between 'p' and 'q' where 'p' is 2 more than twice 'q' can be written as:
+p = 2q + 2
+Here's an explanation:
+- "Twice 'q'" is represented by 2q, which means you're taking two times the value of 'q.'
+- "2 more than twice 'q'" means you add 2 to the result of 2q.
+So, you are taking twice the value of 'q' and then adding 2 to it to get 'p'. This relationship is accurately represented by the equation p = 2q + 2.
+
+		`,
+	},
+	{
+		id: "14",
+		level: 1,
+		question:
+			"If 'c' is 8 less than three times 'd,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "c = 3 + 8d" },
+			{ option: "c = 3d + 8" },
+			{ option: "c = 8d - 3" },
+			{ option: "c = 3d – 8" },
+		],
+		answer: "c = 3d – 8",
+		solution: `  
+The right equation to represent the relationship between 'c' and 'd' where 'c' is 8 less than three times 'd' can be written as:
+c = 3d – 8
+Here's an explanation:
+- "Three times 'd'" is represented by 3d, which means you're taking three times the value of 'd.'- "8 less than three times 'd'" means you subtract 8 from the result of 3d.
+So, you are taking three times the value of 'd' and then subtracting 8 from it to get 'c'. This relationship is accurately represented by the equation c = 3d - 8.
+		
+		`,
+	},
+	{
+		id: "15",
+		level: 1,
+		question:
+			"If 'e' is 10 more than half of 'f,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "e = 10 > (½)f" },
+			{ option: "e = (1/2)f + 10" },
+			{ option: "e = (1/2)f > 10" },
+			{ option: "e = (1/2)f + 10" },
+		],
+		answer: "e = (1/2)f + 10",
+		solution: `   
+The right equation to represent the relationship between 'e' and 'f' where 'e' is 10 more than half of 'f' can be written as:
+e = (1/2)f + 10
+Here's an explanation:
+- "Half of 'f'" is represented by (1/2)f, which means you're taking half of the value of 'f.'
+- "10 more than half of 'f'" means you add 10 to the result of (1/2)f.
+So, you are taking half of the value of 'f' and then adding 10 to it to get 'e'. This relationship is accurately represented by the equation e = (1/2)f + 10.
+
+		`,
+	},
+	{
+		id: "16",
+		level: 1,
+		question:
+			"If 'k' is 9 less than twice 'l,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "k = 9 < 2l" },
+			{ option: "k = 9 – 2l" },
+			{ option: "k = 2l - 9" },
+			{ option: "k = 2l + 9" },
+		],
+		answer: "k = 2l - 9",
+		solution: `   
+The right equation to represent the relationship between 'k' and 'l' where 'k' is 9 less than twice 'l' can be written as:
+k = 2l - 9
+Here's an explanation:
+- "Twice 'l'" is represented by 2l, which means you're taking two times the value of 'l.'
+- "9 less than twice 'l'" means you subtract 9 from the result of 2l.
+So, you are taking twice the value of 'l' and then subtracting 9 from it to get 'k'. This relationship is accurately represented by the equation k = 2l - 9.
+		
+		`,
+	},
+	{
+		id: "17",
+		level: 1,
+		question:
+			"If 'r' is 6 more than three times 's,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "r = 6 > 3s" },
+			{ option: "r = 3s – 6" },
+			{ option: "r = 3s + 6" },
+			{ option: "none of the above" },
+		],
+		answer: "r = 3s + 6",
+		solution: `   
+The right equation to represent the relationship between 'r' and 's' where 'r' is 6 more than three times 's' can be written as:
+r = 3s + 6
+Here's an explanation:
+- "Three times 's'" is represented by 3s, which means you're taking three times the value of 's.'
+- "6 more than three times 's'" means you add 6 to the result of 3s.
+So, you are taking three times the value of 's' and then adding 6 to it to get 'r'. This relationship is accurately represented by the equation r = 3s + 6.	
+		`,
+	},
+	{
+		id: "18",
+		level: 1,
+		question:
+			"If 'u' is 7 less than twice 'v,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "u = 7 – 2v" },
+			{ option: "u = 7 < 2v" },
+			{ option: "u = 2v - 7" },
+			{ option: "u = 7 + 2v" },
+		],
+		answer: "u = 2v - 7",
+		solution: `   
+The right equation to represent the relationship between 'u' and 'v' where 'u' is 7 less than twice 'v' can be written as:
+u = 2v - 7
+Here's an explanation:
+- "Twice 'v'" is represented by 2v, which means you're taking two times the value of 'v.'
+- "7 less than twice 'v'" means you subtract 7 from the result of 2v.
+So, you are taking twice the value of 'v' and then subtracting 7 from it to get 'u'. This relationship is accurately represented by the equation u = 2v - 7.
+		
+		`,
+	},
+	{
+		id: "19",
+		level: 1,
+		question:
+			"If 'h' is 11 more than half of 'g,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "h = 11 > 2g" },
+			{ option: "h = 11 > (1/2)g" },
+			{ option: "h = (1/2)g + 11" },
+			{ option: "none of the above" },
+		],
+		answer: "h = (1/2)g + 11",
+		solution: `   
+The right equation to represent the relationship between 'h' and 'g' where 'h' is 11 more than half of 'g' can be written as:
+h = (1/2)g + 11
+Here's an explanation:
+- "Half of 'g'" is represented by (1/2)g, which means you're taking half of the value of 'g.'
+- "11 more than half of 'g'" means you add 11 to the result of (1/2)g.
+So, you are taking half of the value of 'g' and then adding 11 to it to get 'h'. This relationship is accurately represented by the equation h = (1/2)g + 11.
+
+		`,
+	},
+	{
+		id: "20",
+		level: 1,
+		question:
+			"If 'j' is 4 less than four times 'i,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "j = 4 – 4j" },
+			{ option: "j = 4 – 4i" },
+			{ option: "j = 4i – 4" },
+			{ option: "both b & c" },
+		],
+		answer: "h = (1/2)g + 11",
+		solution: `   
+The right equation to represent the relationship between 'j' and 'i' where 'j' is 4 less than four times 'i' can be written as:
+j = 4i - 4
+Here's an explanation:
+- "Four times 'i'" is represented by 4i, which means you're taking four times the value of 'i.'
+- "4 less than four times 'i'" means you subtract 4 from the result of 4i.
+So, you are taking four times the value of 'i' and then subtracting 4 from it to get 'j'. This relationship is accurately represented by the equation j = 4i - 4.
+
+		`,
+	},
 ];

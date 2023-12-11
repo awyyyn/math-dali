@@ -175,11 +175,19 @@ export default function Levels({ route, navigation }) {
 									}}
 									buttonStyle={{ backgroundColor: color }}
 									onPress={() => {
-										navigation.navigate("Quiz2", {
-											data: level,
-											seconds: level[0]?.level > 1 ? level[0]?.time : seconds,
-										});
-										setC((p) => p + 1);
+										if (i == 0) {
+											navigation.navigate("Quiz", {
+												data: level,
+												seconds: seconds,
+											});
+											setC((p) => p + 1);
+										} else {
+											navigation.navigate("Quiz2", {
+												data: level,
+												seconds: level[0]?.level > 1 ? level[0]?.time : seconds,
+											});
+											setC((p) => p + 1);
+										}
 									}}
 									title={`Set ${
 										i == 0 ? "A" : numOfSets[levels[i - 1][0]?.level]
