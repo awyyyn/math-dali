@@ -5292,4 +5292,1601 @@ So, you are taking four times the value of 'i' and then subtracting 4 from it to
 
 		`,
 	},
+	{
+		id: "21",
+		level: 1,
+		question:
+			"If 'n' is 5 more than twice 'm,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "n = 5 > 2m" },
+			{ option: "n = 5 + 2n" },
+			{ option: "n = 2m + 5" },
+			{ option: "none of the above" },
+		],
+		answer: "n = 2m + 5",
+		solution: `   
+The right equation to represent the relationship between 'n' and 'm' where 'n' is 5 more than twice 'm' can be written as:
+**n = 2m + 5**
+Here's an explanation:
+- "Twice 'm'" is represented by 2m, which means you're taking two times the value of 'm.'
+- "5 more than twice 'm'" means you add 5 to the result of 2m.
+So, you are taking twice the value of 'm' and then adding 5 to it to get 'n'. This relationship is accurately represented by the equation n = 2m + 5.
+
+		`,
+	},
+	{
+		id: "22",
+		level: 1,
+		question:
+			"If 't' is 6 less than three times 'w,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "t = 6 – 3w" },
+			{ option: "t = 3w – 6" },
+			{ option: "t = 6w – 3" },
+			{ option: "both b & c" },
+		],
+		answer: "t = 3w – 6",
+		solution: `   
+The right equation to represent the relationship between 't' and 'w' where 't' is 6 less than three times 'w' can be written as:
+t = 3w - 6
+Here's an explanation:
+- "Three times 'w'" is represented by 3w, which means you're taking three times the value of 'w.'
+- "6 less than three times 'w'" means you subtract 6 from the result of 3w.
+So, you are taking three times the value of 'w' and then subtracting 6 from it to get 't'. This relationship is accurately represented by the equation t = 3w - 6.
+
+		`,
+	},
+	{
+		id: "23",
+		level: 1,
+		question:
+			"If 'z' is 9 more than half of 'y,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "z = (1/2)y + 9" },
+			{ option: "z = 9 > (1/2)y" },
+			{ option: "z = 9y + (1/2)" },
+			{ option: "none of the above" },
+		],
+		answer: "z = (1/2)y + 9",
+		solution: `   
+The right equation to represent the relationship between 'z' and 'y' where 'z' is 9 more than half of 'y' can be written as:
+z = (1/2)y + 9
+Here's an explanation:
+- "Half of 'y'" is represented by (1/2)y, which means you're taking half of the value of 'y.'
+- "9 more than half of 'y'" means you add 9 to the result of (1/2)y.
+So, you are taking half of the value of 'y' and then adding 9 to it to get 'z'. This relationship is accurately represented by the equation z = (1/2)y + 9.
+		`,
+	},
+	{
+		id: "24",
+		level: 1,
+		question:
+			"If 'x' is 8 less than twice 'v,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "x = 8 – 2w" },
+			{ option: "x = 8 – 2v" },
+			{ option: "x = 2v – 8" },
+			{ option: "x = 2 – 8v" },
+		],
+		answer: "x = 2v – 8",
+		solution: `   
+The right equation to represent the relationship between 'x' and 'v' where 'x' is 8 less than twice 'v' can be written as:
+x = 2v - 8
+Here's an explanation:
+- "Twice 'v'" is represented by 2v, which means you're taking two times the value of 'v.'- "8 less than twice 'v'" means you subtract 8 from the result of 2v.
+So, you are taking twice the value of 'v' and then subtracting 8 from it to get 'x'. This relationship is accurately represented by the equation x = 2v - 8.
+
+		`,
+	},
+	{
+		id: "25",
+		level: 1,
+		question:
+			"If 'r' is 10 more than three times 'q,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "r = 10 > 3p" },
+			{ option: "r = 10 - 3q" },
+			{ option: "r = 3q + 10" },
+			{ option: "r = 3p + 10" },
+		],
+		answer: "r = 3q + 10",
+		solution: `   
+The right equation to represent the relationship between 'r' and 'q' where 'r' is 10 more than three times 'q' can be written as:
+r = 3q + 10
+Here's an explanation:
+- "Three times 'q'" is represented by 3q, which means you're taking three times the value of 'q.'
+- "10 more than three times 'q'" means you add 10 to the result of 3q.
+So, you are taking three times the value of 'q' and then adding 10 to it to get 'r'. This relationship is accurately represented by the equation r = 3q + 10.
+		
+		`,
+	},
+	{
+		id: "26",
+		level: 1,
+		question:
+			"If 'p' is 7 less than twice 'n,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "p = 7 – 2n" },
+			{ option: "p = 2n – 7" },
+			{ option: "p = 2n + 7" },
+			{ option: "p = 7 + 2n" },
+		],
+		answer: "p = 2n – 7",
+		solution: `   
+The right equation to represent the relationship between 'p' and 'n' where 'p' is 7 less than twice 'n' can be written as:
+p = 2n - 7
+Here's an explanation:
+- "Twice 'n'" is represented by 2n, which means you're taking two times the value of 'n.'
+- "7 less than twice 'n'" means you subtract 7 from the result of 2n.
+So, you are taking twice the value of 'n' and then subtracting 7 from it to get 'p'. This relationship is accurately represented by the equation p = 2n - 7.
+
+		`,
+	},
+	{
+		id: "27",
+		level: 1,
+		question:
+			"If 'g' is 6 more than half of 'h,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "g = 6 > (1/2)h" },
+			{ option: "g = (1/2)h + 6" },
+			{ option: "g = 0.5 + 6h" },
+			{ option: "both b & c" },
+		],
+		answer: "g = (1/2)h + 6",
+		solution: `   
+The right equation to represent the relationship between 'g' and 'h' where 'g' is 6 more than half of 'h' can be written as:
+g = (1/2)h + 6
+Here's an explanation:
+- "Half of 'h'" is represented by (1/2)h, which means you're taking half of the value of 'h.'
+- "6 more than half of 'h'" means you add 6 to the result of (1/2)h.
+So, you are taking half of the value of 'h' and then adding 6 to it to get 'g'. This relationship is accurately represented by the equation g = (1/2)h + 6.
+		`,
+	},
+	{
+		id: "28",
+		level: 1,
+		question:
+			"If 'd' is 4 less than four times 'c,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "d = 4 – 4c" },
+			{ option: "d = 4c – 4" },
+			{ option: "d = 4c + 4" },
+			{ option: "both b & c" },
+		],
+		answer: "d = 4c – 4",
+		solution: `   
+The right equation to represent the relationship between 'd' and 'c' where 'd' is 4 less than four times 'c' can be written as:
+d = 4c - 4
+Here's an explanation:
+- "Four times 'c'" is represented by 4c, which means you're taking four times the value of 'c.'
+- "4 less than four times 'c'" means you subtract 4 from the result of 4c.
+So, you are taking four times the value of 'c' and then subtracting 4 from it to get 'd'. This relationship is accurately represented by the equation d = 4c - 4.
+		`,
+	},
+	{
+		id: "29",
+		level: 1,
+		question:
+			"If 'y' is 4 more than three times 'x,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "y = 4x + 3" },
+			{ option: "y = 3x + 4" },
+			{ option: "y = 3x + 3" },
+			{ option: "y = 3x - 4" },
+		],
+		answer: "y = 3x + 4",
+		solution: `   
+The equation to represent the relationship between 'y' and 'x' where 'y' is 4 more than three times 'x' can be written as:
+y = 3x + 4
+Here's an explanation:
+- "3 times 'x'" is represented by 3x.
+- "4 more than three times 'x'" means you add 4 to the result of 3x.
+So, you are taking three times the value of 'x' and then adding 4 to it to get 'y'. This relationship is accurately represented by the equation y = 3x + 4.
+		`,
+	},
+	{
+		id: "30",
+		level: 1,
+		question:
+			"If 'y' is 9 more than four times 'x,' what is the right equation to represent this relationship?",
+		options: [
+			{ option: "y = 9 + 4x" },
+			{ option: "y = 4x + 9" },
+			{ option: "y = 4x – 9" },
+			{ option: "both a & b" },
+		],
+		answer: "both a & b",
+		solution: `   
+The right equation to represent the relationship between 'y' and 'x' where 'y' is 9 more than four times 'x' can be written as:
+y = 4x + 9
+Here's an explanation:
+- "Four times 'x'" is represented by 4x, which means you're taking four times the value of 'x.'
+- "9 more than four times 'x'" means you add 9 to the result of 4x.
+So, you are taking four times the value of 'x' and then adding 9 to it to get 'y'. This relationship is accurately represented by the equation y = 4x + 9.
+		`,
+	},
+	{
+		id: "31",
+		level: 1,
+		question: "Evaluate the expression: -24 / 3 - (2 * 3)^2",
+		options: [
+			{ option: "-28" },
+			{ option: "-44" },
+			{ option: "56" },
+			{ option: "4" },
+		],
+		answer: "-44",
+		solution: `   
+To evaluate the expression:
+-24 / 3 - (2 * 3)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expression inside the parentheses:
+2 * 3 = 6
+2. Then, square the result:
+6^2 = 36
+3. Now, the expression becomes:
+-24 / 3 - 36
+4. Next, perform the division:
+-24 / 3 = -8
+5. Finally, subtract 36 from -8:
+-8 - 36 = -44
+So, the value of the expression is -44.
+		`,
+	},
+	{
+		id: "32",
+		level: 1,
+		question: "Evaluate the expression: -35 / 7 - (4 * 2)^2",
+		options: [
+			{ option: "-69" },
+			{ option: "-21" },
+			{ option: "21" },
+			{ option: "-69" },
+		],
+		answer: "-69",
+		solution: `   
+To evaluate the expression:
+-35 / 7 - (4 * 2)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expression inside the parentheses:
+4 * 2 = 8
+2. Then, square the result:
+8^2 = 64
+3. Now, the expression becomes:
+-35 / 7 - 64
+4. Next, perform the division:
+-35 / 7 = -5
+5. Finally, subtract 64 from -5:
+-5 - 64 = -69
+So, the value of the expression is -69.
+		`,
+	},
+	{
+		id: "33",
+		level: 1,
+		question: "Evaluate the expression: -15 /-5 - (2 * 6)^2",
+		options: [
+			{ option: "-141" },
+			{ option: "-41" },
+			{ option: "14" },
+			{ option: "-114" },
+		],
+		answer: "-141",
+		solution: `   
+To evaluate the expression:
+-15 / -5 - (2 * 6)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expression inside the parentheses:
+2 * 6 = 12
+2. Then, square the result:
+12^2 = 144
+3. Now, the expression becomes:
+-15 / -5 - 144
+4. Next, perform the division:
+-15 / -5 = 3
+5. Finally, subtract 144 from 3:
+3 - 144 = -141
+So, the value of the expression is -141.
+		`,
+	},
+	{
+		id: "34",
+		level: 1,
+		question: "Evaluate the expression: 81 /-9 + (3 * 7)^2",
+		options: [
+			{ option: "234" },
+			{ option: "432" },
+			{ option: "432" },
+			{ option: "-432" },
+		],
+		answer: "432",
+		solution: `   
+To evaluate the expression:
+81 / -9 + (3 * 7)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expression inside the parentheses:
+3 * 7 = 21
+2. Then, square the result:
+21^2 = 441
+3. Now, the expression becomes:
+81 / -9 + 441
+4. Next, perform the division:
+81 / -9 = -9
+5. Finally, add -9 and 441:
+-9 + 441 = 432
+So, the value of the expression is 432.
+`,
+	},
+	{
+		id: "35",
+		level: 1,
+		question: "Evaluate the expression: 144 / 12 + (-3 * 3)^2",
+		options: [
+			{ option: "93" },
+			{ option: "-69" },
+			{ option: "-6" },
+			{ option: "6" },
+		],
+		answer: "93",
+		solution: `   
+To evaluate the expression:
+144 / 12 + (-3 * 3)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expression inside the parentheses:
+-3 * 3 = -9
+2. Then, square the result:
+(-9)^2 = 81
+3. Now, the expression becomes:
+144 / 12 + 81
+4. Next, perform the division:
+144 / 12 = 12
+5. Finally, add 12 and 81:
+12 + 81 = 93
+So, the value of the expression is 93.
+`,
+	},
+	{
+		id: "36",
+		level: 1,
+		question: "Evaluate the expression: -7 + (2^2 * 6) / -3",
+		options: [
+			{ option: "-15" },
+			{ option: "-14" },
+			{ option: "-1" },
+			{ option: "0" },
+		],
+		answer: "-15",
+		solution: `    
+To evaluate the expression:
+-7 + (2^2 * 6) / -3
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expression inside the parentheses:
+2^2 = 4
+2. Then, multiply the result by 6:
+4 * 6 = 24
+3. Next, divide 24 by -3:
+24 / -3 = -8
+4. Finally, add -7 and -8:
+-7 + (-8) = -15
+So, the value of the expression is -15.
+`,
+	},
+	{
+		id: "37",
+		level: 1,
+		question: "Evaluate the expression: -7 - (2 * 4^2) / -16",
+		options: [
+			{ option: "-9" },
+			{ option: "9" },
+			{ option: "5" },
+			{ option: "-5" },
+		],
+		answer: "-5",
+		solution: `    
+To evaluate the expression:
+-7 - (2 * 4^2) / -16
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expression inside the parentheses:
+4^2 = 16
+2. Then, multiply the result by 2:
+2 * 16 = 32
+3. Next, divide 32 by -16:
+32 / -16 = -2
+4. Finally, subtract -7 and -2:
+-7 - (-2) = -7 + 2 = -5
+So, the value of the expression is -5.
+`,
+	},
+	{
+		id: "38",
+		level: 1,
+		question: "Evaluate the expression: -19 - (19 * 16) / 4^2",
+		options: [
+			{ option: "-38" },
+			{ option: "38" },
+			{ option: "0" },
+			{ option: "both a & b" },
+		],
+		answer: "-38",
+		solution: `    
+To evaluate the expression:
+-19 - (19 * 16) / 4^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expression inside the parentheses:
+19 * 16 = 304
+2. Then, evaluate the exponentiation:
+4^2 = 16
+3. Next, divide 304 by 16:
+304 / 16 = 19
+4. Finally, subtract 19 from -19:
+-19 - 19 = -38
+So, the value of the expression is -38.
+`,
+	},
+	{
+		id: "39",
+		level: 1,
+		question: "Evaluate the expression: -3^2 - (23 * 14) / 23",
+		options: [
+			{ option: "23" },
+			{ option: "5" },
+			{ option: "-5" },
+			{ option: "none of the above" },
+		],
+		answer: "-5",
+		solution: `    
+To evaluate the expression:
+-3^2 - (23 * 14) / 23
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the exponentiation:
+-3^2 = 9
+2. Next, multiply 23 by 14:
+23 * 14 = 322
+3. Then, divide 322 by 23:
+322 / 23 ≈ 14
+4. Finally, subtract 14 from 9:
+9 - 14 = -5
+So, the value of the expression is -5.
+`,
+	},
+	{
+		id: "40",
+		level: 1,
+		question: "Evaluate the expression: 9^2 - (41 * 18) / 2",
+		options: [
+			{ option: "-288" },
+			{ option: "-450" },
+			{ option: "450" },
+			{ option: "280" },
+		],
+		answer: "-288",
+		solution: `    
+To evaluate the expression:
+9^2 - (41 * 18) / 2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the exponentiation:
+9^2 = 81
+2. Next, multiply 41 by 18:
+41 * 18 = 738
+3. Then, divide 738 by 2:
+738 / 2 = 369
+4. Finally, subtract 369 from 81:
+81 - 369 = -288
+So, the value of the expression is -288.
+`,
+	},
+	{
+		id: "41",
+		level: 1,
+		question: "Evaluate the expression: (3^2 * 6) - (-3 * 2)^2",
+		options: [
+			{ option: "-18" },
+			{ option: "18" },
+			{ option: "90" },
+			{ option: "none of the above" },
+		],
+		answer: "18",
+		solution: `    
+To evaluate the expression:
+(3^2 * 6) - (-3 * 2)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the exponentiation inside the parentheses:
+3^2 = 9
+(-3 * 2)^2 = (-6)^2 = 36
+2. Next, multiply the results:
+9 * 6 = 54
+3. Finally, subtract the second result from the first:
+54 - 36 = 18
+So, the value of the expression is 18.
+`,
+	},
+	{
+		id: "42",
+		level: 1,
+		question: "Evaluate the expression: (9^2 * 3) - (-4 * 3)^2",
+		options: [
+			{ option: "66" },
+			{ option: "99" },
+			{ option: "96" },
+			{ option: "69" },
+		],
+		answer: "99",
+		solution: `    
+To evaluate the expression:
+(9^2 * 3) - (-4 * 3)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the exponentiation inside the parentheses:
+9^2 = 81
+(-4 * 3)^2 = (-12)^2 = 144
+2. Next, multiply the results:
+81 * 3 = 243
+3. Finally, subtract the second result from the first:
+243 - 144 = 99
+So, the value of the expression is 99.
+`,
+	},
+	{
+		id: "43",
+		level: 1,
+		question: "Evaluate the expression: (3^3 * 3) - (4 * -2)^2",
+		options: [
+			{ option: "17" },
+			{ option: "145" },
+			{ option: "154" },
+			{ option: "71" },
+		],
+		answer: "99",
+		solution: `    
+To evaluate the expression:
+(3^3 * 3) - (4 * -2)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the exponentiation inside the parentheses:
+3^3 = 27
+(4 * -2)^2 = (-8)^2 = 64
+2. Next, multiply the results:
+27 * 3 = 81
+3. Finally, subtract the second result from the first:
+81 - 64 = 17
+So, the value of the expression is 17.
+`,
+	},
+	{
+		id: "44",
+		level: 1,
+		question: "Evaluate the expression: (4^3 * 3) - (8 * -2)^2",
+		options: [
+			{ option: "-64" },
+			{ option: "74" },
+			{ option: "-74" },
+			{ option: "84" },
+		],
+		answer: "-64",
+		solution: `    
+To evaluate the expression:
+(4^3 * 3) - (8 * -2)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the exponentiation inside the parentheses:
+4^3 = 64
+(8 * -2)^2 = (-16)^2 = 256
+2. Next, multiply the results:
+64 * 3 = 192
+3. Finally, subtract the second result from the first:
+192 - 256 = -64
+So, the value of the expression is -64.
+`,
+	},
+	{
+		id: "45",
+		level: 1,
+		question: "Evaluate the expression: (9 * 2)^2 + (24 / 3)^2",
+		options: [
+			{ option: "398" },
+			{ option: "388" },
+			{ option: "378" },
+			{ option: "338" },
+		],
+		answer: "388",
+		solution: `    
+To evaluate the expression:
+(9 * 2)^2 + (24 / 3)^2
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expressions inside the parentheses:
+(9 * 2) = 18
+(24 / 3) = 8
+2. Then, square the results:
+18^2 = 324
+8^2 = 64
+3. Finally, add the squared results together:
+324 + 64 = 388
+So, the value of the expression is 388.
+`,
+	},
+	{
+		id: "46",
+		level: 1,
+		question: "Evaluate the expression: (4 * 7) + 6^2 * -3",
+		options: [
+			{ option: "-90" },
+			{ option: "-80" },
+			{ option: "136" },
+			{ option: "-136" },
+		],
+		answer: "-80",
+		solution: `    
+To evaluate the expression:
+(4 * 7) + 6^2 * -3
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expressions inside the parentheses and exponents:
+(4 * 7) = 28
+6^2 = 36
+2. Then, multiply the result of the exponent by -3:
+36 * -3 = -108
+3. Finally, add the results together:
+28 + (-108) = -80
+So, the value of the expression is -80.
+`,
+	},
+	{
+		id: "47",
+		level: 1,
+		question: "Evaluate the expression: (4^2 * 8) - 5^2 * 7",
+		options: [
+			{ option: "-90" },
+			{ option: "-80" },
+			{ option: "136" },
+			{ option: "-136" },
+		],
+		answer: "-80",
+		solution: `    
+To evaluate the expression:
+(4 * 7) + 6^2 * -3
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expressions inside the parentheses and exponents:
+(4 * 7) = 28
+6^2 = 36
+2. Then, multiply the result of the exponent by -3:
+36 * -3 = -108
+3. Finally, add the results together:
+28 + (-108) = -80
+So, the value of the expression is -80.
+`,
+	},
+	{
+		id: "48",
+		level: 1,
+		question: "Evaluate the expression: (5^2 * 7) - 5^3 * -1",
+		options: [
+			{ option: "50" },
+			{ option: "-50" },
+			{ option: "300" },
+			{ option: "none of the above" },
+		],
+		answer: "300",
+		solution: `    
+To evaluate the expression:
+(5^2 * 7) - (5^3 * -1)
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expressions inside the parentheses and exponents:
+5^2 = 25
+5^3 = 125
+2. Then, multiply the results:
+25 * 7 = 175
+125 * (-1) = -125
+3. Finally, subtract the second result from the first:
+175 - (-125) = 175 + 125 = 300
+So, the value of the expression is 300.
+`,
+	},
+	{
+		id: "49",
+		level: 1,
+		question: "Evaluate the expression: (5 * 7)^2 - 5^3 / 5",
+		options: [
+			{ option: "1330" },
+			{ option: "1300" },
+			{ option: "1200" },
+			{ option: "1220" },
+		],
+		answer: "1200",
+		solution: `    
+To evaluate the expression:
+(5 * 7)^2 - 5^3 / 5
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expressions inside the parentheses and exponents:
+(5 * 7) = 35
+5^3 = 125
+2. Then, square the result of the first expression:
+35^2 = 1225
+3. Finally, divide the result of the second expression by 5:
+125 / 5 = 25
+4. Subtract the result of the division from the squared result:
+1225 - 25 = 1200
+So, the value of the expression is 1200.
+`,
+	},
+	{
+		id: "50",
+		level: 1,
+		question: "Evaluate the expression: (3^2 + 7)^2 + 7^2 * 3",
+		options: [
+			{ option: "403" },
+			{ option: "304" },
+			{ option: "394" },
+			{ option: "340" },
+		],
+		answer: "403",
+		solution: `    
+To evaluate the expression:
+(3^2 + 7)^2 + 7^2 * 3
+Follow the order of operations (PEMDAS/BODMAS):
+1. First, evaluate the expressions inside the parentheses and exponents:
+3^2 = 9
+7^2 = 49
+2. Then, add the results of the first expression:
+9 + 7 = 16
+3. Square the result of the addition:
+16^2 = 256
+4. Multiply the result of the second expression:
+49 * 3 = 147
+5. Finally, add the result of the multiplication to the squared result:
+256 + 147 = 403
+So, the value of the expression is 403.
+`,
+	},
+	{
+		id: "51",
+		level: 1,
+		question: "Solve for x in the equation 10x - 9 + 3x - 13 = y",
+		options: [
+			{ option: "x = (y + 22)/13" },
+			{ option: "x = (y – 22)/13" },
+			{ option: "x = (y + 4)/13" },
+			{ option: "x = (y – 4)/13" },
+		],
+		answer: "x = (y + 22)/13",
+		solution: `    
+To solve for x in the equation 10x - 9 + 3x - 13 = y, you can combine like terms and isolate x:
+10x + 3x - 9 - 13 = y
+Combine like terms:
+13x - 22 = y
+Now, to solve for x, you can isolate x by adding 22 to both sides of the equation:
+13x - 22 + 22 = y + 22
+13x = y + 22
+Finally, divide both sides by 13 to solve for x:
+13x/13 = (y + 22)/13
+x = (y + 22)/13
+So, the solution for x is x = (y + 22)/13.
+`,
+	},
+	{
+		id: "52",
+		level: 1,
+		question: "Solve for x in the equation -21x - 5 - 3x + 23 = y – 3",
+		options: [
+			{ option: "x = (y + 21)/24" },
+			{ option: "x = (y - 21)/-24" },
+			{ option: "x = (y - 15)/-24" },
+			{ option: "x = (y + 15)/24" },
+		],
+		answer: "x = (y - 21)/-24",
+		solution: `    
+To solve for x in the equation -21x - 5 - 3x + 23 = y - 3, you can combine like terms and isolate x:
+-21x - 3x - 5 + 23 = y - 3
+Combine like terms:
+-24x + 18 = y – 3
+Now, to solve for x, you can isolate x by moving the constants to the other side of the equation:
+-24x = y - 3 - 18
+-24x = y - 21
+Now, divide both sides by -24 to solve for x:
+-24x / -24 = (y - 21) / -24
+So, the solution for x is x = (y - 21) / -24.
+`,
+	},
+	{
+		id: "53",
+		level: 1,
+		question: "Solve for x in the equation -41x + 5 + 20x + 13 - 32x = y",
+		options: [
+			{ option: "x = (y + 18)/63" },
+			{ option: "x = (18 + y)53" },
+			{ option: "x = (y - 18)/63" },
+			{ option: "x = (y - 18)/-53" },
+		],
+		answer: "x = (y - 18)/-53",
+		solution: `    
+To solve for x in the equation -41x + 5 + 20x + 13 - 32x = y, you can combine like terms and isolate x:
+(-41x + 20x - 32x) + (5 + 13) = y
+Combine like terms on the left side of the equation:
+(-53x) + 18 = y
+Now, to solve for x, you can isolate x by moving the constants to the other side of the equation:
+-53x = y - 18
+Now, divide both sides by -53 to solve for x:
+-53x / -53 = (y - 18) / -53
+So, the solution for x is x = (y - 18) / -53.
+`,
+	},
+	{
+		id: "54",
+		level: 1,
+		question: "Solve for x in the equation -23x + 15 + 37x + 24 - 37x - 29= y",
+		options: [
+			{ option: "x = (y – 10)/-23" },
+			{ option: "x = (y – 20)/23" },
+			{ option: "x = (y + 10)-23" },
+			{ option: "x = (y + 20)/23" },
+		],
+		answer: "x = (y – 10)/-23",
+		solution: `    
+To solve for x in the equation -23x + 15 + 37x + 24 - 37x - 29 = y, you can combine like terms and simplify the equation:
+-23x + 37x - 37x + 15 + 24 - 29 = y
+Now, let's combine the x terms and the constant terms:
+(-23x + 37x - 37x) + (15 + 24 - 29) = y
+(-23x + 0) + (10) = y
+-23x + 10 = y
+Now, to isolate x, you can subtract 10 from both sides of the equation:
+-23x = y - 10
+Finally, divide both sides by -23 to solve for x:
+x = (y - 10) / -23
+So, the solution for x is: x = (y - 10) / -23
+`,
+	},
+	{
+		id: "55",
+		level: 1,
+		question: "Solve for x in the equation 34x + 25 - 17x - 14 + 17x - 27= y",
+		options: [
+			{ option: "x = (y + 26)/34" },
+			{ option: "x = (y – 26)/44" },
+			{ option: "x = (y – 19)/34" },
+			{ option: "x = (y + 16)/34" },
+		],
+		answer: "x = (y + 16)/34",
+		solution: `    
+To solve for x in the equation 34x + 25 - 17x - 14 + 17x - 27 = y, you can simplify the equation by combining like terms:
+34x - 17x + 17x + 25 - 14 - 27 = y
+Now, let's combine the x terms and the constant terms:
+(34x - 17x + 17x) + (25 - 14 - 27) = y
+(34x) + (25 - 14 - 27) = y
+Now, simplify further:
+34x - 16 = y
+To solve for x, you can isolate x by subtracting 16 from both sides of the equation:
+34x = y + 16
+Finally, divide both sides by 34 to solve for x:
+x = (y + 16) / 34
+So, the solution for x is: x = (y + 16) / 34
+`,
+	},
+	{
+		id: "56",
+		level: 1,
+		question: "Solve for x in the equation 22x + 27 - 27x - 24 + 19x - 32= y",
+		options: [
+			{ option: "x = (y – 29)/14" },
+			{ option: "x = (y – 19)/-14" },
+			{ option: "x = (y + 19)/-14" },
+			{ option: "x = (y + 29)/14" },
+		],
+		answer: "x = (y + 29)/14",
+		solution: `    
+To solve for x in the equation 22x + 27 - 27x - 24 + 19x - 32 = y, you can simplify the equation by combining like terms:
+22x - 27x + 19x + 27 - 24 - 32 = y
+Now, let's combine the x terms and the constant terms:
+(22x - 27x + 19x) + (27 - 24 - 32) = y
+(14x) + (-29) = y
+Now, simplify further: 14x - 29 = y
+To solve for x, you can isolate x by adding 29 to both sides of the equation:
+14x = y + 29
+Finally, divide both sides by 14 to solve for x:
+x = (y + 29) / 14
+So, the solution for x is: x = (y + 29) / 14
+`,
+	},
+	{
+		id: "57",
+		level: 1,
+		question: "Solve for x in the equation 35x + 17 - 37x - 11 + 11x - 32= y",
+		options: [
+			{ option: "x = (y – 26)/9" },
+			{ option: "x = (y – 38)/9" },
+			{ option: "x = (y + 26)/9" },
+			{ option: "none of the above" },
+		],
+		answer: "x = (y + 26)/9",
+		solution: `    
+To solve for x in the equation 35x + 17 - 37x - 11 + 11x - 32 = y, you can simplify the equation by combining like terms:
+35x - 37x + 11x + 17 - 11 - 32 = y
+Now, let's combine the x terms and the constant terms:
+(35x - 37x + 11x) + (17 - 11 - 32) = y
+(9x) + (-26) = y
+Now, simplify further:
+9x - 26 = y
+To solve for x, you can isolate x by adding 26 to both sides of the equation:
+9x = y + 26
+Finally, divide both sides by 9 to solve for x:
+x = (y + 26) / 9
+So, the solution for x is:
+x = (y + 26) / 9
+`,
+	},
+	{
+		id: "58",
+		level: 1,
+		question: "Solve for y in the equation 35x + 17 - 37x - 11 + 11x - 32= y",
+		options: [
+			{ option: "y = 9x + 26" },
+			{ option: "y = 9x - 26" },
+			{ option: "y = 26 – 9x" },
+			{ option: "none of the above" },
+		],
+		answer: "y = 9x - 26",
+		solution: `    
+To solve for y in the equation 35x + 17 - 37x - 11 + 11x - 32 = y, you can simplify the equation by combining like terms on the left side:
+(35x - 37x + 11x) + (17 - 11 - 32) = y
+(9x) + (-26) = y
+Now, simplify further:
+9x - 26 = y
+So, the value of y in terms of x is:
+y = 9x - 26
+`,
+	},
+	{
+		id: "59",
+		level: 1,
+		question: "Solve for y in the equation 22x + 27 - 27x - 24 + 19x - 32= y",
+		options: [
+			{ option: "y = 14x – 29" },
+			{ option: "y = 29 – 14x" },
+			{ option: "y = 14x + 29" },
+			{ option: "both a & b" },
+		],
+		answer: "y = 14x – 29",
+		solution: `    
+To solve for y in the equation 22x + 27 - 27x - 24 + 19x - 32 = y, you can simplify the equation by combining like terms on the left side:
+(22x - 27x + 19x) + (27 - 24 - 32) = y
+(14x) + (-29) = y
+Now, simplify further:
+14x - 29 = y
+So, the value of y in terms of x is:
+y = 14x - 29
+`,
+	},
+	{
+		id: "60",
+		level: 1,
+		question: "Solve for y in the equation 54x + 31 - 27y + 14 - 29x - 12= y",
+		options: [
+			{ option: "y = (33 – 25x)/28" },
+			{ option: "y = (25x + 33)28	" },
+			{ option: "y = (33x + 25)/28" },
+			{ option: "y = (25x – 33)/28" },
+		],
+		answer: "y = (25x – 33)/28",
+		solution: `    
+To solve for y in the equation 54x + 31 - 27y + 14 - 29x - 12 = y, you can simplify the equation by combining like terms:
+(54x - 29x) + (31 + 14 - 12) - 27y = y
+(25x) + (33) - 27y = y
+Now, let's isolate y on one side of the equation. First, move the term with -27y to the other side by adding 27y to both sides:
+25x + 33 = y + 27y
+Combine the y terms on the right side:
+25x + 33 = 28y
+Now, subtract 33 from both sides:
+25x = 28y - 33
+Finally, to solve for y, divide both sides by 28:
+y = (25x - 33) / 28
+So, the solution for y in terms of x is:
+y = (25x - 33) / 28
+`,
+	},
+	{
+		id: "61",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of 4 and a y-intercept at (0, 8)",
+		options: [
+			{ option: "y = -4x – 8" },
+			{ option: "y = 8x + 4" },
+			{ option: "y = 4x + 8" },
+			{ option: "y = 2x + 4" },
+		],
+		answer: "y = 4x + 8",
+		solution: `    
+The equation of a line in slope-intercept form is given by:
+y = mx + b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "x" is the independent variable (horizontal axis).
+- "m" is the slope of the line.
+- "b" is the y-intercept, the value of y when x is 0.
+In your case, the slope "m" is 4, and the y-intercept "b" is 8. You can plug these values into the equation:
+y = 4x + 8
+So, the equation of the line with a slope of 4 and a y-intercept at (0, 8) is:
+y = 4x + 8
+`,
+	},
+	{
+		id: "62",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of -2 and a y-intercept at (0, 6).",
+		options: [
+			{ option: "y = 2x – 6" },
+			{ option: "y = -2x + 6" },
+			{ option: "y = -6x – 2" },
+			{ option: "y = 6x + 2" },
+		],
+		answer: "y = -2x + 6",
+		solution: `    
+The equation of a line in slope-intercept form is given by:
+y = mx + b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "x" is the independent variable (horizontal axis).
+- "m" is the slope of the line.
+- "b" is the y-intercept, the value of y when x is 0.
+In your case, the slope "m" is -2, and the y-intercept "b" is 6. You can plug these values into the equation:
+y = -2x + 6
+So, the equation of the line with a slope of -2 and a y-intercept at (0, 6) is:
+y = -2x + 6
+`,
+	},
+	{
+		id: "63",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of 1/2 and a y-intercept at (0, 3).",
+		options: [
+			{ option: "y = (1/2)x + 3" },
+			{ option: "y = (-1/2)x + 3" },
+			{ option: "y = 3x + (1/2)" },
+			{ option: "y = 3x - (1/2)" },
+		],
+		answer: "y = (1/2)x + 3",
+		solution: `    
+The equation of a line in slope-intercept form is given by:
+y = mx + b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "x" is the independent variable (horizontal axis).
+- "m" is the slope of the line.
+- "b" is the y-intercept, the value of y when x is 0.
+In your case, the slope "m" is 1/2, and the y-intercept "b" is 3. You can plug these values into the equation:
+y = (1/2)x + 3
+So, the equation of the line with a slope of 1/2 and a y-intercept at (0, 3) is:
+y = (1/2)x + 3
+`,
+	},
+	{
+		id: "64",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of -5/3 and a y-intercept at (0, -7).",
+		options: [
+			{ option: "y = (5/3)x + 7" },
+			{ option: "y = 7x + (5/3)" },
+			{ option: "y = (-5/3)x – 7" },
+			{ option: "none of the above" },
+		],
+		answer: "y = (-5/3)x – 7",
+		solution: `    
+The equation of a line in slope-intercept form is given by:
+y = mx + b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "x" is the independent variable (horizontal axis).
+- "m" is the slope of the line.
+- "b" is the y-intercept, the value of y when x is 0.
+In your case, the slope "m" is -5/3, and the y-intercept "b" is -7. You can plug these values into the equation:
+y = (-5/3)x - 7
+So, the equation of the line with a slope of -5/3 and a y-intercept at (0, -7) is:
+y = (-5/3)x - 7
+`,
+	},
+	{
+		id: "65",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of 0 and a y-intercept at (0, 2).",
+		options: [
+			{ option: "y = 0x + 2" },
+			{ option: "y = x + 2" },
+			{ option: "y = 2" },
+			{ option: "both b & c" },
+		],
+		answer: "y = 2",
+		solution: `    
+A line with a slope of 0 is a horizontal line, and its equation can be written as:
+y = b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "b" is the y-intercept, which is the value of y when x is 0.
+In your case, you mentioned the y-intercept is (0, 2), which means the value of y when x is 0 is 2. Therefore, the equation of the line with a slope of 0 and a y-intercept at (0, 2) is simply:
+y = 2
+`,
+	},
+	{
+		id: "66",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of -7 and a y-intercept at (0, 0).",
+		options: [
+			{ option: "y = 7x + 0" },
+			{ option: "y = -7x" },
+			{ option: "y = x – 7" },
+			{ option: "y = x + 7" },
+		],
+		answer: "y = -7x",
+		solution: `    
+The equation of a line in slope-intercept form is given by:
+y = mx + b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "x" is the independent variable (horizontal axis).
+- "m" is the slope of the line.
+- "b" is the y-intercept, the value of y when x is 0.
+In your case, the slope "m" is -7, and the y-intercept "b" is 0. You can plug these values into the equation:
+y = -7x + 0
+Since the y-intercept is 0, the equation simplifies to:
+y = -7x
+So, the equation of the line with a slope of -7 and a y-intercept at (0, 0) is:
+y = -7x
+`,
+	},
+	{
+		id: "67",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of 3/4 and a y-intercept at (0, 5).",
+		options: [
+			{ option: "y = (3/4)x – 5" },
+			{ option: "y = 5x + (3/4)" },
+			{ option: "y = (3/4)x" },
+			{ option: "none of the above" },
+		],
+		answer: "none of the above",
+		solution: `    
+The equation of a line in slope-intercept form is given by:
+y = mx + b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "x" is the independent variable (horizontal axis).
+- "m" is the slope of the line.
+- "b" is the y-intercept, which is the value of y when x is 0.
+In your case, the slope "m" is 3/4, and the y-intercept "b" is 5. You can plug these values into the equation:
+y = (3/4)x + 5
+So, the equation of the line with a slope of 3/4 and a y-intercept at (0, 5) is:
+y = (3/4)x + 5
+`,
+	},
+	{
+		id: "68",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of 2/3 and a y-intercept at (0, 1).",
+		options: [
+			{ option: "y = x + (2/3)" },
+			{ option: "y = (2/3)x – 1" },
+			{ option: "y = (2/3)x + 1" },
+			{ option: "y = x – (2/3)" },
+		],
+		answer: "y = (2/3)x + 1",
+		solution: `    
+The equation of a line in slope-intercept form is given by:
+y = mx + b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "x" is the independent variable (horizontal axis).
+- "m" is the slope of the line.
+- "b" is the y-intercept, which is the value of y when x is 0.
+In your case, the slope "m" is 2/3, and the y-intercept "b" is 1. You can plug these values into the equation:
+y = (2/3)x + 1
+So, the equation of the line with a slope of 2/3 and a y-intercept at (0, 1) is:
+y = (2/3)x + 1
+`,
+	},
+	{
+		id: "69",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of -1/5 and a y-intercept at (0, -4)",
+		options: [
+			{ option: "y = (1/5)x – 4" },
+			{ option: "y = (-1/5)x – 4" },
+			{ option: "y = 4x + (1/5)" },
+			{ option: "y = -4x + (-1/5)" },
+		],
+		answer: "y = (-1/5)x – 4",
+		solution: `    
+The equation of a line in slope-intercept form is given by:
+y = mx + b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "x" is the independent variable (horizontal axis).
+- "m" is the slope of the line.
+- "b" is the y-intercept, which is the value of y when x is 0.
+In your case, the slope "m" is -1/5, and the y-intercept "b" is -4. You can plug these values into the equation:
+y = (-1/5)x - 4
+So, the equation of the line with a slope of -1/5 and a y-intercept at (0, -4) is:
+y = (-1/5)x - 4
+`,
+	},
+	{
+		id: "70",
+		level: 1,
+		question:
+			"Write an equation of the line with a slope of 6 and a y-intercept at (0, 10).",
+		options: [
+			{ option: "y = -6x + 10" },
+			{ option: "y = 10x + 6" },
+			{ option: "y = 6x – 10" },
+			{ option: "y = 6x + 10" },
+		],
+		answer: "y = 6x + 10",
+		solution: `    
+The equation of a line in slope-intercept form is given by:
+y = mx + b
+Where:
+- "y" is the dependent variable (vertical axis).
+- "x" is the independent variable (horizontal axis).
+- "m" is the slope of the line.
+- "b" is the y-intercept, which is the value of y when x is 0.
+In your case, the slope "m" is 6, and the y-intercept "b" is 10. You can plug these values into the equation:
+y = 6x + 10
+So, the equation of the line with a slope of 6 and a y-intercept at (0, 10) is:
+y = 6x + 10
+`,
+	},
+	{
+		id: "71",
+		level: 1,
+		question: "Expand and simplify the expression: (3x + 2)(5x + 7).",
+		options: [
+			{ option: "15x^2 + 11x + 14" },
+			{ option: "15x^2 – 11x + 14" },
+			{ option: "3x^2 + 7x + 3" },
+			{ option: "15x^2 + 31x + 14" },
+		],
+		answer: "15x^2 + 31x + 14",
+		solution: `    
+To expand and simplify the expression (3x + 2)(5x + 7), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(3x + 2)(5x + 7) = (3x * 5x) + (3x * 7) + (2 * 5x) + (2 * 7)
+Now, perform the multiplications:
+(15x^2) + (21x) + (10x) + (14)
+Combine like terms:
+15x^2 + 31x + 14
+So, the expanded and simplified expression is:
+15x^2 + 31x + 14
+`,
+	},
+	{
+		id: "72",
+		level: 1,
+		question: "Expand and simplify the expression: (x - 4)(2x + 3).",
+		options: [
+			{ option: "2x^2 – 11x + 12" },
+			{ option: "2x^2 – 5x - 12" },
+			{ option: "2x^2 + 5x – 12" },
+			{ option: "2x^2 + 11x + 12" },
+		],
+		answer: "2x^2 – 5x - 12",
+		solution: `    
+To expand and simplify the expression (x - 4)(2x + 3), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(x - 4)(2x + 3) = (x * 2x) + (x * 3) + (-4 * 2x) + (-4 * 3)
+Now, perform the multiplications:
+(2x^2) + (3x) + (-8x) + (-12)
+Combine like terms:
+2x^2 - 5x - 12
+So, the expanded and simplified expression is:
+2x^2 - 5x - 12
+`,
+	},
+	{
+		id: "73",
+		level: 1,
+		question: "Expand and simplify the expression: (2x + 1)(3x - 2).",
+		options: [
+			{ option: "6x^2 + 8x - 2" },
+			{ option: "6x^2 – 8x - 2" },
+			{ option: "6x^2 - x - 2" },
+			{ option: "6x^2 + x - 2" },
+		],
+		answer: "6x^2 - x - 2",
+		solution: `    
+To expand and simplify the expression (2x + 1)(3x - 2), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(2x + 1)(3x - 2) = (2x * 3x) + (2x * -2) + (1 * 3x) + (1 * -2)
+Now, perform the multiplications:
+(6x^2) - (4x) + (3x) - 2
+Combine like terms:
+6x^2 - x - 2
+So, the expanded and simplified expression is:
+6x^2 - x - 2
+`,
+	},
+	{
+		id: "74",
+		level: 1,
+		question: "Expand and simplify the expression: (4x - 5)(6x + 9).",
+		options: [
+			{ option: "24x^2 + 6x - 45" },
+			{ option: "12x^2 + 3x – 23" },
+			{ option: "24x^2 + 66x + 45" },
+			{ option: "24x^2 + 66x - 45" },
+		],
+		answer: "24x^2 + 6x - 45",
+		solution: `    
+To expand and simplify the expression (4x - 5)(6x + 9), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(4x - 5)(6x + 9) = (4x * 6x) + (4x * 9) + (-5 * 6x) + (-5 * 9)
+Now, perform the multiplications:
+(24x^2) + (36x) + (-30x) + (-45)
+Combine like terms:
+24x^2 + (36x - 30x) - 45
+Simplify the terms in the parentheses:
+24x^2 + 6x - 45
+So, the expanded and simplified expression is:
+24x^2 + 6x - 45
+`,
+	},
+	{
+		id: "75",
+		level: 1,
+		question: "Expand and simplify the expression: (x + 3)(2x - 4).",
+		options: [
+			{ option: "2x^2 – 2x + 12" },
+			{ option: "2x^2 + 2x + 12" },
+			{ option: "2x^2 – 2x - 12" },
+			{ option: "2x^2 + 2x - 12" },
+		],
+		answer: "2x^2 + 2x - 12",
+		solution: `    
+To expand and simplify the expression (x + 3)(2x - 4), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(x + 3)(2x - 4) = (x * 2x) + (x * -4) + (3 * 2x) + (3 * -4)
+Now, perform the multiplications:
+(2x^2) - (4x) + (6x) - 12
+Combine like terms:
+2x^2 + (6x - 4x) - 12
+Simplify the terms in the parentheses:
+2x^2 + 2x - 12
+So, the expanded and simplified expression is:
+2x^2 + 2x - 12
+`,
+	},
+	{
+		id: "76",
+		level: 1,
+		question: "Expand and simplify the expression: (3x - 2)(5x - 1).",
+		options: [
+			{ option: "15x^2 – 7x - 2" },
+			{ option: "15x^2 - 13x + 2" },
+			{ option: "15x^2 – 7x + 2" },
+			{ option: "15x^2 + 13x - 2" },
+		],
+		answer: "15x^2 - 13x + 2",
+		solution: `    
+To expand and simplify the expression (3x - 2)(5x - 1), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(3x - 2)(5x - 1) = (3x * 5x) + (3x * -1) + (-2 * 5x) + (-2 * -1)
+Now, perform the multiplications:
+(15x^2) - (3x) - (10x) + 2
+Combine like terms:
+15x^2 - (3x + 10x) + 2
+Simplify the terms in the parentheses:
+15x^2 - 13x + 2
+So, the expanded and simplified expression is: 15x^2 - 13x + 2
+`,
+	},
+	{
+		id: "77",
+		level: 1,
+		question: "Expand and simplify the expression: (2x + 4)(3x + 6).",
+		options: [
+			{ option: "3x^2 + 12x + 12" },
+			{ option: "x^2 + 4x + 4" },
+			{ option: "6x^2 + x + 24" },
+			{ option: "6x^2 + 24x + 24" },
+		],
+		answer: "6x^2 + 24x + 24",
+		solution: `    
+To expand and simplify the expression (2x + 4)(3x + 6), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(2x + 4)(3x + 6) = (2x * 3x) + (2x * 6) + (4 * 3x) + (4 * 6)
+Now, perform the multiplications:
+(6x^2) + (12x) + (12x) + 24
+Combine like terms:
+6x^2 + (12x + 12x) + 24
+Simplify the terms in the parentheses:
+6x^2 + 24x + 24
+So, the expanded and simplified expression is:
+6x^2 + 24x + 24
+`,
+	},
+	{
+		id: "78",
+		level: 1,
+		question: "Expand and simplify the expression: (x - 3)(4x + 5).",
+		options: [
+			{ option: "4x^2 – 19x + 15" },
+			{ option: "4x^2 + 7x - 15" },
+			{ option: "4x^2 - 7x - 15" },
+			{ option: "4x^2 – 19x - 15" },
+		],
+		answer: "4x^2 - 7x - 15",
+		solution: `    
+To expand and simplify the expression (x - 3)(4x + 5), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(x - 3)(4x + 5) = (x * 4x) + (x * 5) + (-3 * 4x) + (-3 * 5)
+Now, perform the multiplications:
+(4x^2) + (5x) + (-12x) + (-15)
+Combine like terms:
+4x^2 + (5x - 12x) - 15
+Simplify the terms in the parentheses:
+4x^2 - 7x - 15
+So, the expanded and simplified expression is:
+4x^2 - 7x - 15
+`,
+	},
+	{
+		id: "79",
+		level: 1,
+		question: "Expand and simplify the expression: (2x + 2)(5x - 1).",
+		options: [
+			{ option: "10x62 – 8x - 2" },
+			{ option: "10x^2 + 12x - 2" },
+			{ option: "5x^2 + 4x" },
+			{ option: "10x^2 + 8x - 2" },
+		],
+		answer: "10x^2 + 8x - 2",
+		solution: `    
+To expand and simplify the expression (2x + 2)(5x - 1), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(2x + 2)(5x - 1) = (2x * 5x) + (2x * -1) + (2 * 5x) + (2 * -1)
+Now, perform the multiplications:
+(10x^2) - (2x) + (10x) - 2
+Combine like terms:
+(10x^2) + (10x - 2x) - 2
+Simplify the terms in the parentheses:
+10x^2 + 8x - 2
+So, the expanded and simplified expression is:
+10x^2 + 8x - 2
+`,
+	},
+	{
+		id: "80",
+		level: 1,
+		question: "Expand and simplify the expression: (4x + 1)(3x + 2).",
+		options: [
+			{ option: "12x^2 – 5x + 2" },
+			{ option: "12x^2 + 11x + 2" },
+			{ option: "12x^2 + 5x + 2" },
+			{ option: "12x^2 – 11x + 2" },
+		],
+		answer: "12x^2 + 11x + 2",
+		solution: `    
+To expand and simplify the expression (4x + 1)(3x + 2), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(4x + 1)(3x + 2) = (4x * 3x) + (4x * 2) + (1 * 3x) + (1 * 2)
+Now, perform the multiplications:
+(12x^2) + (8x) + (3x) + 2
+Combine like terms:
+(12x^2) + (8x + 3x) + 2
+Simplify the terms in the parentheses:
+12x^2 + 11x + 2
+So, the expanded and simplified expression is:
+12x^2 + 11x + 2
+`,
+	},
+	{
+		id: "81",
+		level: 1,
+		question: "Expand and simplify the expression: (4x + 1)(3x + 2).",
+		options: [
+			{ option: "6x^2 + 9x - 6" },
+			{ option: "2x^2 + 3x - 2" },
+			{ option: "6x^2 – 15x – 6" },
+			{ option: "6x^2 + 15x + 6" },
+		],
+		answer: "6x^2 + 9x - 6",
+		solution: `    
+To expand and simplify the expression (x + 2)(6x - 3), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(x + 2)(6x - 3) = (x * 6x) + (x * -3) + (2 * 6x) + (2 * -3)
+Now, perform the multiplications:
+(6x^2) - (3x) + (12x) - 6
+Combine like terms:
+(6x^2) + (12x - 3x) - 6
+Simplify the terms in the parentheses:
+6x^2 + 9x - 6
+So, the expanded and simplified expression is:
+6x^2 + 9x - 6
+`,
+	},
+	{
+		id: "82",
+		level: 1,
+		question: "Expand and simplify the expression: (2x - 1)(4x - 2).",
+		options: [
+			{ option: "8x^2 – 2x - 2" },
+			{ option: "8x^2 – 8x + 2" },
+			{ option: "8x^2 + 8x + 2" },
+			{ option: "8x^2 + 2" },
+		],
+		answer: "8x^2 + 2",
+		solution: `    
+To expand and simplify the expression (2x - 1)(4x - 2), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(2x - 1)(4x - 2) = (2x * 4x) + (2x * -2) + (-1 * 4x) + (-1 * -2)
+Now, perform the multiplications:
+(8x^2) - (4x) - (4x) + 2
+Combine like terms:
+(8x^2) - (4x - 4x) + 2
+Simplify the terms in the parentheses:
+8x^2 + 2
+So, the expanded and simplified expression is:
+8x^2 + 2
+`,
+	},
+	{
+		id: "83",
+		level: 1,
+		question: "Expand and simplify the expression: (3x + 1)(5x - 4).",
+		options: [
+			{ option: "15x^2 + 22x - 4" },
+			{ option: "15x^2 – 22x - 4" },
+			{ option: "15x^2 - 7x – 4" },
+			{ option: "None of the above" },
+		],
+		answer: "15x^2 - 7x – 4",
+		solution: `    
+To expand and simplify the expression (3x + 1)(5x - 4), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(3x + 1)(5x - 4) = (3x * 5x) + (3x * -4) + (1 * 5x) + (1 * -4)
+Now, perform the multiplications:
+(15x^2) - (12x) + (5x) - 4
+Combine like terms:
+(15x^2) + (5x - 12x) - 4
+Simplify the terms in the parentheses:
+15x^2 - 7x - 4
+So, the expanded and simplified expression is:
+15x^2 - 7x – 4
+`,
+	},
+	{
+		id: "84",
+		level: 1,
+		question: "Expand and simplify the expression: (x - 2)(2x + 1).",
+		options: [
+			{ option: "2x^2 - 3x – 2" },
+			{ option: "2x^2 – 5x -2" },
+			{ option: "2x^2 + 5x - 2" },
+			{ option: "2x^2 + 3x - 2" },
+		],
+		answer: "2x^2 - 3x – 2",
+		solution: `    
+To expand and simplify the expression (x - 2)(2x + 1), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(x - 2)(2x + 1) = (x * 2x) + (x * 1) + (-2 * 2x) + (-2 * 1)
+Now, perform the multiplications:
+(2x^2) + (x) + (-4x) - 2
+Combine like terms:
+(2x^2) + (x - 4x) - 2
+Simplify the terms in the parentheses:
+2x^2 - 3x - 2
+So, the expanded and simplified expression is:
+2x^2 - 3x – 2
+`,
+	},
+	{
+		id: "85",
+		level: 1,
+		question: "Expand and simplify the expression: (2x + 3)(3x + 5).",
+		options: [
+			{ option: "6x^2 – 19x + 15" },
+			{ option: "6x^2 + 19x + 15" },
+			{ option: "6x^2 – 19x - 15" },
+			{ option: "6x^2 + 19x - 15" },
+		],
+		answer: "6x^2 + 19x + 15",
+		solution: `    
+To expand and simplify the expression (2x + 3)(3x + 5), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(2x + 3)(3x + 5) = (2x * 3x) + (2x * 5) + (3 * 3x) + (3 * 5)
+Now, perform the multiplications:
+(6x^2) + (10x) + (9x) + 15
+Combine like terms:
+(6x^2) + (10x + 9x) + 15
+Simplify the terms in the parentheses:
+6x^2 + 19x + 15
+So, the expanded and simplified expression is:
+6x^2 + 19x + 15
+`,
+	},
 ];
