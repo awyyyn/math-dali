@@ -6889,4 +6889,298 @@ So, the expanded and simplified expression is:
 6x^2 + 19x + 15
 `,
 	},
+	{
+		id: "86",
+		level: 1,
+		question: "Expand and simplify the expression: (4x + 3)(2x - 2).",
+		options: [
+			{ option: "8x^2 + 2x - 6" },
+			{ option: "4x^2 + x - 3" },
+			{ option: "4x^2 – x - 3" },
+			{ option: "8x^2 - 2x – 6" },
+		],
+		answer: "8x^2 - 2x – 6",
+		solution: `    
+To expand and simplify the expression (4x + 3)(2x - 2), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(4x + 3)(2x - 2) = (4x * 2x) + (4x * -2) + (3 * 2x) + (3 * -2)
+Now, perform the multiplications:
+(8x^2) - (8x) + (6x) - 6
+Combine like terms:
+(8x^2) - (8x - 6x) - 6
+Simplify the terms in the parentheses:
+8x^2 - 2x - 6
+So, the expanded and simplified expression is:
+8x^2 - 2x – 6
+`,
+	},
+	{
+		id: "87",
+		level: 1,
+		question: "Expand and simplify the expression: (x + 4)(5x + 2).",
+		options: [
+			{ option: "5x^2 + 22x + 8" },
+			{ option: "5x^2 + 22x - 8" },
+			{ option: "5x^2 - 22x + 8" },
+			{ option: "5x^2 - 22x - 8" },
+		],
+		answer: "5x^2 + 22x + 8",
+		solution: `    
+To expand and simplify the expression (x + 4)(5x + 2), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(x + 4)(5x + 2) = (x * 5x) + (x * 2) + (4 * 5x) + (4 * 2)
+Now, perform the multiplications:
+(5x^2) + (2x) + (20x) + 8
+Combine like terms:
+(5x^2) + (2x + 20x) + 8
+Simplify the terms in the parentheses:
+5x^2 + 22x + 8
+So, the expanded and simplified expression is:
+5x^2 + 22x + 8
+`,
+	},
+	{
+		id: "88",
+		level: 1,
+		question: "Expand and simplify the expression: (3x - 1)(4x + 6).",
+		options: [
+			{ option: "12x^2 - 14x – 6" },
+			{ option: "12x^2 + 22x – 6" },
+			{ option: "12x^2 - 22x – 6" },
+			{ option: "12x^2 + 14x – 6" },
+		],
+		answer: "12x^2 + 14x – 6",
+		solution: `    
+To expand and simplify the expression (3x - 1)(4x + 6), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(3x - 1)(4x + 6) = (3x * 4x) + (3x * 6) + (-1 * 4x) + (-1 * 6)
+Now, perform the multiplications:
+(12x^2) + (18x) + (-4x) - 6
+Combine like terms:
+(12x^2) + (18x - 4x) - 6
+Simplify the terms in the parentheses:
+12x^2 + 14x - 6
+So, the expanded and simplified expression is:
+12x^2 + 14x – 6
+`,
+	},
+	{
+		id: "89",
+		level: 1,
+		question: "Expand and simplify the expression: (2x - 5)(5x - 7).",
+		options: [
+			{ option: "10x^2 + 39x + 35" },
+			{ option: "10x^2 - 39x + 35" },
+			{ option: "10x^2 + 11x + 35" },
+			{ option: "10x^2 - 11x + 35" },
+		],
+		answer: "10x^2 - 39x + 35",
+		solution: `    
+To expand and simplify the expression (2x - 5)(5x - 7), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(2x - 5)(5x - 7) = (2x * 5x) + (2x * -7) + (-5 * 5x) + (-5 * -7)
+Now, perform the multiplications:
+(10x^2) - (14x) - (25x) + 35
+Combine like terms:
+(10x^2) - (14x - 25x) + 35
+Simplify the terms in the parentheses:
+10x^2 - 39x + 35
+So, the expanded and simplified expression is:
+10x^2 - 39x + 35
+`,
+	},
+	{
+		id: "90",
+		level: 1,
+		question: "Expand and simplify the expression: (x + 5)(3x + 4).",
+		options: [
+			{ option: "3x^2 + 19x - 20" },
+			{ option: "3x^2 - 19x + 20" },
+			{ option: "3x^2 + 19x + 20" },
+			{ option: "3x^2 - 19x - 20" },
+		],
+		answer: "3x^2 + 19x + 20",
+		solution: `    
+To expand and simplify the expression (x + 5)(3x + 4), you can use the distributive property (FOIL method), which stands for First, Outer, Inner, Last. Multiply each term in the first expression by each term in the second expression:
+(x + 5)(3x + 4) = (x * 3x) + (x * 4) + (5 * 3x) + (5 * 4)
+Now, perform the multiplications:
+(3x^2) + (4x) + (15x) + 20
+Combine like terms:
+(3x^2) + (4x + 15x) + 20
+Simplify the terms in the parentheses:
+3x^2 + 19x + 20
+So, the expanded and simplified expression is:
+3x^2 + 19x + 20
+`,
+	},
+	{
+		id: "91",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = (1/4)x + 6.",
+		options: [
+			{ option: "-4" },
+			{ option: "1/4" },
+			{ option: "4" },
+			{ option: "6" },
+		],
+		answer: "-4",
+		solution: `    
+To find the slope of the line perpendicular to the line y = (1/4)x + 6, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line has a slope of 1/4.
+The slope of the line perpendicular to it will be the negative reciprocal of 1/4, which is -4. So, the slope of the line perpendicular to y = (1/4)x + 6 is -4.
+`,
+	},
+	{
+		id: "92",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = (2/5)x - 3.",
+		options: [
+			{ option: "5" },
+			{ option: "-5/2" },
+			{ option: "-3" },
+			{ option: "3" },
+		],
+		answer: "-5/2",
+		solution: `    
+To find the slope of the line perpendicular to the line y = (2/5)x - 3, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line has a slope of 2/5.
+The slope of the line perpendicular to it will be the negative reciprocal of 2/5. To find the negative reciprocal, you can take the reciprocal of 2/5, which is 5/2, and then change the sign to negative. So, the slope of the line perpendicular to y = (2/5)x - 3 is -5/2.
+`,
+	},
+	{
+		id: "93",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = 2x - 4.",
+		options: [
+			{ option: "-4" },
+			{ option: "2" },
+			{ option: "-1/2" },
+			{ option: "1/2" },
+		],
+		answer: "-1/2",
+		solution: `    
+To find the slope of the line perpendicular to the line y = 2x - 4, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line has a slope of 2.
+The slope of the line perpendicular to it will be the negative reciprocal of 2. To find the negative reciprocal, you can take the reciprocal of 2, which is 1/2, and then change the sign to negative. So, the slope of the line perpendicular to y = 2x - 4 is -1/2.
+`,
+	},
+	{
+		id: "94",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = (-1/2)x + 2.",
+		options: [
+			{ option: "-1/2" },
+			{ option: "1/2" },
+			{ option: "-2" },
+			{ option: "2" },
+		],
+		answer: "-2",
+		solution: `    
+To find the slope of the line perpendicular to the line y = (-1/2)x + 2, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line has a slope of -1/2.
+The slope of the line perpendicular to it will be the negative reciprocal of -1/2. To find the negative reciprocal, you can take the reciprocal of -1/2, which is -2, and then change the sign to negative. So, the slope of the line perpendicular to y = (-1/2)x + 2 is -2.
+`,
+	},
+	{
+		id: "95",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = (3/7)x - 1.",
+		options: [
+			{ option: "-1" },
+			{ option: "1" },
+			{ option: "-7/3" },
+			{ option: "7/3" },
+		],
+		answer: "-7/3",
+		solution: `    
+To find the slope of the line perpendicular to the line y = (3/7)x - 1, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line has a slope of 3/7.
+The slope of the line perpendicular to it will be the negative reciprocal of 3/7. To find the negative reciprocal, you can take the reciprocal of 3/7, which is 7/3, and then change the sign to negative. So, the slope of the line perpendicular to y = (3/7)x - 1 is -7/3.
+`,
+	},
+	{
+		id: "96",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = 5x + 8.",
+		options: [
+			{ option: "-1/5" },
+			{ option: "1/5" },
+			{ option: "-5" },
+			{ option: "8" },
+		],
+		answer: "-1/5",
+		solution: `    
+To find the slope of the line perpendicular to the line y = 5x + 8, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line has a slope of 5.
+The slope of the line perpendicular to it will be the negative reciprocal of 5. To find the negative reciprocal, you can take the reciprocal of 5, which is 1/5, and then change the sign to negative. So, the slope of the line perpendicular to y = 5x + 8 is -1/5.
+`,
+	},
+	{
+		id: "97",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = (-1/3)x - 5.",
+		options: [
+			{ option: "3" },
+			{ option: "-3" },
+			{ option: "5" },
+			{ option: "1/3" },
+		],
+		answer: "3",
+		solution: `    
+To find the slope of the line perpendicular to the line y = (-1/3)x - 5, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line has a slope of -1/3.
+The slope of the line perpendicular to it will be the negative reciprocal of -1/3. To find the negative reciprocal, you can take the reciprocal of -1/3, which is -3, and then change the sign to negative. So, the slope of the line perpendicular to y = (-1/3)x - 5 is 3.
+`,
+	},
+	{
+		id: "98",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = (1/2)x + 3.",
+		options: [
+			{ option: "-3" },
+			{ option: "1/2" },
+			{ option: "-2" },
+			{ option: "2" },
+		],
+		answer: "-2",
+		solution: `    
+To find the slope of a line perpendicular to another line, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line is in the form y = (1/2)x + 3, which means its slope is 1/2.
+The slope of a line perpendicular to this one would be the negative reciprocal of 1/2, which is -2. So, the slope of the line perpendicular to y = (1/2)x + 3 is -2.
+`,
+	},
+	{
+		id: "99",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = (-2/9)x + 1.",
+		options: [
+			{ option: "9/2" },
+			{ option: "-9/2" },
+			{ option: "1" },
+			{ option: "-1" },
+		],
+		answer: "9/2",
+		solution: `    
+To find the slope of a line perpendicular to another line, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line is in the form y = (-2/9)x + 1, which means its slope is -2/9.
+The slope of a line perpendicular to this one would be the negative reciprocal of -2/9. To find the negative reciprocal, you can flip the fraction and change the sign:
+Negative reciprocal = -1 / (-2/9) = 9/2
+So, the slope of the line perpendicular to y = (-2/9)x + 1 is 9/2.
+`,
+	},
+	{
+		id: "100",
+		level: 1,
+		question:
+			"Find the slope of the line perpendicular to the line y = (4/3)x - 2.",
+		options: [
+			{ option: "-2" },
+			{ option: "2" },
+			{ option: "-3/4" },
+			{ option: "3/4" },
+		],
+		answer: "-3/4",
+		solution: `     
+To find the slope of a line perpendicular to another line, you can use the fact that the slopes of perpendicular lines are negative reciprocals of each other. The given line is in the form y = (4/3)x - 2, which means its slope is 4/3.
+The slope of a line perpendicular to this one would be the negative reciprocal of 4/3. To find the negative reciprocal, you can flip the fraction and change the sign:
+Negative reciprocal = -1 / (4/3) = -3/4
+So, the slope of the line perpendicular to y = (4/3)x - 2 is -3/4.
+`,
+	},
 ];
